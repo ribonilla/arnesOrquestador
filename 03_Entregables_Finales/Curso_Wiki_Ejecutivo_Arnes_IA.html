@@ -1,0 +1,1863 @@
+<!doctype html>
+<html lang="es" data-page="index">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fffdf8" />
+    <title>Cerebro Digital — Arnés IA, Obsidian & Metodología Ejecutiva</title>
+
+    <!-- Tipografía Editorial Original de Michelle Kaye Washington (Cormorant Garamond + JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ==========================================================================
+           CLON DEL SISTEMA DE DISEÑO DE MICHELLE KAYE WASHINGTON (DEEP/BUTTER BASE)
+           ========================================================================== */
+        :root {
+            --paper: #fffdf8;
+            --paper-2: #f6f0e8;
+            --ink: #120a09;
+            --ink-2: #2b201d;
+            --rose: #9a675c;
+            --rose-2: #c68f81;
+            --tan: #b7a397;
+            --rule: rgb(18 10 9 / 14%);
+            --rule-strong: rgb(18 10 9 / 24%);
+            --fg: var(--ink);
+            --bg: var(--paper);
+            --muted: #7a6560;
+            --nav-w: clamp(230px, 18vw, 320px);
+            --pad: clamp(1.25rem, 3vw, 3.8rem);
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --serif: "Cormorant", Georgia, "Times New Roman", serif;
+            --mono: "JetBrains Mono", monospace;
+            color-scheme: light;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: var(--serif);
+            font-size: clamp(17px, 1.05vw + 10px, 21px);
+            line-height: 1.45;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+        /* ---------- Shell: Wordmark, Navegación y Créditos ---------- */
+        .shell {
+            position: fixed;
+            inset: 0 auto 0 0;
+            width: var(--nav-w);
+            padding: var(--pad) 0 var(--pad) var(--pad);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 30;
+            pointer-events: none;
+            border-right: 1px solid var(--rule);
+        }
+        .shell > * { pointer-events: auto; }
+
+        .wordmark {
+            display: grid;
+            gap: 0.35rem;
+            text-decoration: none;
+        }
+        .wordmark-name {
+            font-size: 1.35rem;
+            letter-spacing: 0.01em;
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .wordmark-rule {
+            width: 2.2rem;
+            height: 1px;
+            background: var(--rose);
+            opacity: 0.8;
+        }
+        .wordmark-fine {
+            font-size: 0.78rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .site-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: auto 0;
+            max-height: calc(100vh - 340px);
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+        .site-nav::-webkit-scrollbar { width: 3px; }
+        .site-nav::-webkit-scrollbar-thumb { background: var(--rule-strong); }
+
+        .nav-index {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.25rem;
+        }
+        .nav-index button {
+            display: grid;
+            grid-template-columns: 2.1rem 1fr;
+            align-items: baseline;
+            text-decoration: none;
+            font-size: 0.98rem;
+            color: var(--muted);
+            transition: color 0.3s var(--ease);
+            padding: 2px 0;
+            text-align: left;
+            width: 100%;
+        }
+        .nav-num {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            font-family: var(--mono);
+        }
+        .nav-label {
+            position: relative;
+            justify-self: start;
+        }
+        .nav-label::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            height: 1px;
+            background: var(--rose);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.45s var(--ease);
+        }
+        .nav-index button:hover,
+        .nav-index button.active {
+            color: var(--fg);
+        }
+        .nav-index button:hover .nav-label::after,
+        .nav-index button.active .nav-label::after {
+            transform: scaleX(1);
+        }
+
+        /* Créditos de Autor en el Shell */
+        .author-signature {
+            padding-top: 1rem;
+            border-top: 1px solid var(--rule);
+            display: grid;
+            gap: 0.25rem;
+            margin-right: 1.2rem;
+        }
+        .auth-label {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            color: var(--tan);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+        .auth-name {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        .auth-role {
+            font-size: 0.78rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+        .auth-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            margin-top: 0.3rem;
+        }
+        .auth-link {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--rose);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .auth-link:hover {
+            color: var(--ink);
+            text-decoration: underline;
+        }
+
+        /* ---------- Escenario de Diapositivas ---------- */
+        main.stage {
+            position: fixed;
+            inset: 0 0 0 var(--nav-w);
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slide-deck {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .home {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
+            align-items: center;
+            column-gap: clamp(2rem, 4.5vw, 5.5rem);
+            padding: var(--pad) clamp(2rem, 5vw, 6rem) var(--pad) clamp(1.5rem, 3vw, 4rem);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(35px);
+            transition: opacity 0.6s var(--ease), transform 0.6s var(--ease), visibility 0.6s;
+            pointer-events: none;
+        }
+
+        .home.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        /* Columna Editorial Izquierda */
+        .home-copy {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 530px;
+        }
+
+        .home-title {
+            margin: 0;
+            font-weight: 300;
+            line-height: 0.88;
+            letter-spacing: -0.02em;
+            font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+            color: var(--ink);
+        }
+        .home-title-line { display: block; }
+        .home-title-line-2 { padding-left: 0.42em; font-style: italic; color: var(--rose); }
+
+        .home-fine {
+            margin: 0.9rem 0 1.4rem;
+            font-size: 0.78rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--rose);
+            font-family: var(--mono);
+        }
+
+        .home-about {
+            max-width: 42ch;
+            margin-bottom: 1.6rem;
+        }
+        .eyebrow {
+            margin: 0 0 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .home-about p {
+            margin: 0.35rem 0;
+            font-size: 1.08rem;
+            line-height: 1.48;
+            color: var(--ink-2);
+        }
+
+        /* Botón .cta Original MKW */
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.75rem 1.4rem;
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: all 0.35s var(--ease);
+            background: transparent;
+            cursor: pointer;
+        }
+        .cta:hover {
+            background: var(--ink);
+            color: var(--paper);
+        }
+        .cta-arrow {
+            font-family: var(--mono);
+            font-size: 1.1rem;
+            transition: transform 0.3s var(--ease);
+        }
+        .cta:hover .cta-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Columna Gráfica Derecha */
+        .home-figure {
+            position: relative;
+            margin: 0;
+            width: 100%;
+        }
+
+        .home-frame {
+            position: absolute;
+            inset: -14px 14px 14px -14px;
+            border: 1px solid var(--rose-2);
+            pointer-events: none;
+        }
+
+        .canvas-mat {
+            background: var(--paper-2);
+            border: 1px solid var(--rule);
+            padding: clamp(1.2rem, 2.2vw, 2.4rem);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(18, 10, 9, 0.05);
+            max-height: 78vh;
+            overflow-y: auto;
+        }
+        .canvas-mat::-webkit-scrollbar { width: 5px; }
+        .canvas-mat::-webkit-scrollbar-thumb { background: var(--rule-strong); border-radius: 4px; }
+
+        /* ---------- COMPONENTES DE DIAPOSITIVAS ---------- */
+
+        /* 01: Métricas */
+        .grid-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+        .kpi-entry { border-bottom: 1px solid var(--rule); padding-bottom: 0.8rem; }
+        .kpi-val { font-size: 2.8rem; font-weight: 300; line-height: 1; margin-bottom: 0.2rem; color: var(--ink); }
+        .kpi-val span { font-size: 1.4rem; color: var(--rose); font-style: italic; }
+        .kpi-head { font-size: 0.92rem; font-weight: 600; color: var(--ink); margin-bottom: 0.2rem; }
+        .kpi-text { font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
+
+        /* 02: Fundamentos (4 Tecnologías) */
+        .tech-quad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .tech-box {
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            padding: 1rem 1.2rem;
+        }
+        .tech-num { font-family: var(--mono); font-size: 0.72rem; color: var(--rose); margin-bottom: 0.2rem; }
+        .tech-name { font-size: 1.15rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+        .tech-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+
+        /* 03: Obsidian */
+        .obsidian-deck { display: grid; gap: 0.9rem; }
+        .obs-item {
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            padding: 1rem 1.3rem;
+        }
+        .obs-head { font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+        .obs-p { font-size: 0.88rem; color: var(--muted); line-height: 1.4; }
+
+        /* 04: Metodología PARA-Zettelkasten */
+        .method-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+        .method-card {
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            padding: 1.2rem;
+        }
+        .m-tag { font-family: var(--mono); font-size: 0.72rem; color: var(--rose); text-transform: uppercase; margin-bottom: 0.3rem; }
+        .m-title { font-size: 1.25rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+        .m-desc { font-size: 0.85rem; color: var(--ink-2); line-height: 1.4; }
+
+        /* 05: Anatomía de Arnés con PIN GRUESO Y SCROLLBAR ROBUSTO */
+        .pin-slider-wrapper {
+            margin-bottom: 1rem;
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            padding: 0.85rem 1.1rem;
+            border-radius: 6px;
+        }
+        .pin-slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .pin-hint {
+            font-family: var(--mono);
+            font-size: 0.74rem;
+            color: var(--rose);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+        }
+        .pin-nav-arrows {
+            display: flex;
+            gap: 0.4rem;
+        }
+        .pin-arrow-btn {
+            border: 1px solid var(--rule-strong);
+            background: var(--paper-2);
+            color: var(--ink);
+            padding: 0.2rem 0.65rem;
+            border-radius: 4px;
+            font-family: var(--mono);
+            font-weight: 700;
+            font-size: 0.88rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .pin-arrow-btn:hover {
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        .pin-track-container {
+            width: 100%;
+            margin: 0.4rem 0 0.8rem;
+        }
+        #anatomyPinSlider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 12px;
+            background: var(--tan);
+            border-radius: 6px;
+            outline: none;
+            cursor: pointer;
+        }
+        #anatomyPinSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--rose);
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+            cursor: grab;
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+        #anatomyPinSlider::-webkit-slider-thumb:hover,
+        #anatomyPinSlider::-webkit-slider-thumb:active {
+            transform: scale(1.15);
+            background: var(--ink);
+            cursor: grabbing;
+        }
+        #anatomyPinSlider::-moz-range-thumb {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--rose);
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+            cursor: grab;
+        }
+
+        .pin-anchors {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.4rem;
+        }
+        .pin-tab {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            padding: 0.35rem 0.2rem;
+            text-align: center;
+            border: 1px solid var(--rule);
+            background: var(--paper-2);
+            color: var(--muted);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .pin-tab.active, .pin-tab:hover {
+            background: var(--ink);
+            color: var(--paper);
+            border-color: var(--ink);
+        }
+
+        .anatomy-horizontal-strip {
+            display: flex;
+            gap: 1.1rem;
+            overflow-x: auto;
+            padding-bottom: 1.2rem;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            /* Scrollbar Grueso Fácil de Agarrar */
+            scrollbar-width: auto;
+            scrollbar-color: var(--rose) var(--paper-2);
+        }
+        .anatomy-horizontal-strip::-webkit-scrollbar {
+            height: 14px;
+        }
+        .anatomy-horizontal-strip::-webkit-scrollbar-track {
+            background: var(--paper-2);
+            border: 1px solid var(--rule);
+            border-radius: 7px;
+        }
+        .anatomy-horizontal-strip::-webkit-scrollbar-thumb {
+            background: var(--rose);
+            border-radius: 7px;
+            border: 2px solid var(--paper-2);
+            cursor: grab;
+        }
+        .anatomy-horizontal-strip::-webkit-scrollbar-thumb:hover {
+            background: var(--ink);
+        }
+
+        .anat-slide-card {
+            min-width: 290px;
+            max-width: 320px;
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            padding: 1.2rem 1.4rem;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
+        .anat-type { font-family: var(--mono); font-size: 0.75rem; color: var(--rose); text-transform: uppercase; margin-bottom: 0.3rem; font-weight: 600; }
+        .anat-title { font-size: 1.2rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+        .anat-desc { font-size: 0.85rem; color: var(--ink-2); line-height: 1.45; }
+
+        /* 06: Cadena de Mando (Árbol Jerárquico) */
+        .tree-container { display: grid; gap: 0.5rem; }
+        .tree-row {
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            padding: 0.65rem 1rem;
+            display: grid;
+            grid-template-columns: 2.2rem 150px 1fr auto;
+            gap: 0.8rem;
+            align-items: baseline;
+            transition: all 0.2s ease;
+        }
+        .tree-row:hover { border-color: var(--rose); transform: translateX(3px); }
+        .t-lvl { font-family: var(--mono); font-size: 0.74rem; color: var(--rose); font-weight: 700; }
+        .t-name { font-size: 0.95rem; font-weight: 600; color: var(--ink); }
+        .t-desc { font-size: 0.83rem; color: var(--muted); }
+        .t-arr { font-family: var(--mono); font-size: 0.75rem; color: var(--tan); }
+
+        /* 07: Gauntlet */
+        .gauntlet-wrap { display: flex; flex-direction: column; gap: 0.9rem; }
+        .tribunal-box { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+        .actor-pane { background: var(--paper); border: 1px solid var(--rule); padding: 0.9rem 1rem; }
+        .actor-tag { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; margin-bottom: 0.2rem; font-weight: 600; }
+        .actor-title { font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+        .actor-p { font-size: 0.82rem; color: var(--ink-2); line-height: 1.4; }
+        .verdict-banner {
+            border: 1px dashed var(--rule-strong);
+            padding: 0.9rem;
+            text-align: center;
+            background: var(--paper);
+        }
+        .v-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .v-desc { font-size: 0.83rem; color: var(--muted); }
+        .scen-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+        .scen-btn {
+            font-size: 0.75rem;
+            padding: 0.45rem;
+            border: 1px solid var(--rule);
+            background: var(--paper);
+            color: var(--muted);
+            text-align: center;
+            font-family: var(--mono);
+        }
+        .scen-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+        /* 08: Estaciones (Experiencia de Usuario) */
+        .user-stages-grid { display: grid; gap: 0.55rem; }
+        .stage-line {
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            padding: 0.65rem 1rem;
+            display: grid;
+            grid-template-columns: 2.2rem 160px 1fr;
+            align-items: baseline;
+            gap: 0.8rem;
+        }
+        .st-num { font-family: var(--mono); font-size: 0.8rem; color: var(--rose); font-weight: 700; }
+        .st-name { font-size: 0.92rem; font-weight: 600; color: var(--ink); }
+        .st-desc { font-size: 0.83rem; color: var(--muted); }
+
+        /* 09: Las 3 Macro-Carpetas (TIPOGRAFÍA GRANDE Y NEGRILLA) */
+        .folder-list { display: grid; gap: 0.9rem; }
+        .f-box {
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            border-left: 4px solid var(--rose);
+            padding: 1rem 1.3rem;
+        }
+        .f-tag {
+            font-family: var(--mono);
+            font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+            font-weight: 700;
+            color: var(--ink);
+            background: var(--paper-2);
+            border: 1px solid var(--rule-strong);
+            padding: 0.3rem 0.75rem;
+            display: inline-block;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+        .f-name { font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+        .f-desc { font-size: 0.85rem; color: var(--ink-2); line-height: 1.4; }
+
+        /* 10: Cockpit y Herramientas */
+        .cockpit-tools-deck { display: grid; gap: 0.75rem; }
+        .tool-link-card {
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            padding: 0.85rem 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+        .tool-link-card:hover { border-color: var(--ink); transform: translateX(3px); }
+        .t-badge-link { font-family: var(--mono); font-size: 0.75rem; color: var(--rose); text-transform: uppercase; font-weight: 600; }
+
+        /* 11: Cómo Iniciar tu Proyecto */
+        .kickoff-flow { display: grid; gap: 0.8rem; }
+        .k-step { background: var(--paper); border: 1px solid var(--rule); padding: 0.9rem 1.2rem; display: grid; grid-template-columns: 2.2rem 1fr; gap: 0.9rem; }
+
+        /* 12 & 13: BONO GUÍA Y PROMPT MAESTRO */
+        .builder-guide-deck { display: grid; gap: 0.8rem; }
+        .guide-card {
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            padding: 1rem 1.3rem;
+        }
+        .guide-tag { font-family: var(--mono); font-size: 0.72rem; color: var(--rose); text-transform: uppercase; margin-bottom: 0.2rem; font-weight: 600; }
+        .guide-title { font-size: 1.15rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+        .guide-text { font-size: 0.85rem; color: var(--ink-2); line-height: 1.4; }
+
+        /* Caja de Código para el Prompt Maestro (Slide 13) */
+        .prompt-code-container {
+            background: #1c1514;
+            color: #f7f2ea;
+            border: 1px solid var(--ink);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .prompt-code-header {
+            background: #120a09;
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #332420;
+        }
+        .prompt-filename {
+            font-family: var(--mono);
+            font-size: 0.74rem;
+            color: var(--rose-2);
+            letter-spacing: 0.05em;
+        }
+        .copy-btn {
+            background: var(--rose);
+            color: #fff;
+            border: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .copy-btn:hover { background: #b87b70; transform: scale(1.02); }
+        .copy-btn.copied { background: #15803d; }
+
+        .prompt-code-body {
+            padding: 1rem;
+            max-height: 48vh;
+            overflow-y: auto;
+            font-family: var(--mono);
+            font-size: 0.76rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-word;
+            background: #1c1514;
+            color: #e8ded2;
+        }
+        .prompt-code-body::-webkit-scrollbar { width: 5px; }
+        .prompt-code-body::-webkit-scrollbar-thumb { background: #4a342f; }
+
+        /* ---------- Pager Oficial MKW ---------- */
+        .pager {
+            position: fixed;
+            right: var(--pad);
+            bottom: calc(var(--pad) * 0.8);
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            z-index: 30;
+        }
+        .pager-count { margin: 0; font-size: 0.95rem; letter-spacing: 0.08em; white-space: nowrap; }
+        .pager-of { color: var(--muted); }
+        .pager-name { margin-left: 0.5rem; font-style: italic; color: var(--ink); }
+        .pager-arrow {
+            font-size: 1.3rem;
+            color: var(--ink);
+            padding: 0.2rem 0.6rem;
+            transition: transform 0.2s var(--ease), color 0.2s ease;
+        }
+        .pager-arrow:hover:not(:disabled) { transform: scale(1.2); color: var(--rose); }
+        .pager-arrow:disabled { opacity: 0.25; cursor: not-allowed; }
+
+        /* Elementos que solo aparecen al imprimir */
+        .print-banner, .print-footer-banner { display: none; }
+
+        /* ==========================================================================
+           REGLAS DE IMPRESIÓN OFICIAL DIRECTIVA (PDF MULTIPÁGINA DE 13 DIAPOSITIVAS)
+           ========================================================================== */
+        @media print {
+            @page {
+                size: landscape;
+                margin: 1.2cm 1.5cm 1.5cm 1.5cm;
+            }
+
+            *, *::before, *::after {
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+
+            html, body {
+                overflow: visible !important;
+                height: auto !important;
+                background: #ffffff !important;
+                color: #120a09 !important;
+                font-size: 10.5pt !important;
+                line-height: 1.4 !important;
+            }
+
+            /* Ocultar elementos interactivos en impresión */
+            .shell, .pager, .cta, .pin-slider-wrapper, .scen-bar, #gauntletVerdict button, .copy-btn, .nav-secondary {
+                display: none !important;
+            }
+
+            main.stage, .slide-deck {
+                position: static !important;
+                height: auto !important;
+                overflow: visible !important;
+            }
+
+            .home {
+                display: grid !important;
+                grid-template-columns: 1fr 1.2fr !important;
+                position: static !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                page-break-after: always !important;
+                break-after: page !important;
+                height: auto !important;
+                min-height: 85vh !important;
+                padding: 1.8rem 0 !important;
+                border-bottom: 2px solid #e5e0d8;
+                column-gap: 2.5rem !important;
+            }
+
+            .home-copy {
+                max-width: 100% !important;
+            }
+
+            .home-title {
+                font-size: 2.8rem !important;
+                line-height: 0.92 !important;
+            }
+
+            .canvas-mat {
+                max-height: none !important;
+                overflow: visible !important;
+                background: #faf7f2 !important;
+                border: 1px solid #d4cdc5 !important;
+                padding: 1.2rem !important;
+            }
+
+            .home-frame {
+                display: none !important;
+            }
+
+            .anatomy-horizontal-strip {
+                overflow-x: visible !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.8rem !important;
+                padding-bottom: 0 !important;
+            }
+            .anat-slide-card {
+                min-width: 0 !important;
+                max-width: none !important;
+                page-break-inside: avoid !important;
+            }
+
+            .prompt-code-body {
+                max-height: none !important;
+                overflow: visible !important;
+                font-size: 7pt !important;
+                color: #120a09 !important;
+                background: #fdfaf6 !important;
+                border: 1px solid #d4cdc5 !important;
+            }
+            .prompt-code-header { background: #e5e0d8 !important; }
+            .prompt-filename { color: #120a09 !important; font-weight: 700; }
+
+            /* Banners para Membrete y Pie de Página en PDF */
+            .print-banner {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: baseline;
+                border-bottom: 1.5px solid #9a675c;
+                padding-bottom: 0.35rem;
+                margin-bottom: 1rem;
+                font-family: var(--mono);
+                font-size: 8pt;
+                color: #7a6560;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                grid-column: 1 / -1;
+            }
+
+            .print-footer-banner {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 1px solid #d4cdc5;
+                padding-top: 0.5rem;
+                margin-top: 1.5rem;
+                font-family: var(--mono);
+                font-size: 8pt;
+                color: #7a6560;
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 899px) {
+            :root { --nav-w: 0px; }
+            html, body { overflow: auto; height: auto; }
+            .shell { position: static; width: auto; height: auto; padding: 1.2rem 1.5rem; flex-direction: column; align-items: flex-start; border-bottom: 1px solid var(--rule); border-right: none; }
+            .site-nav { display: none; }
+            main.stage { position: static; height: auto; }
+            .home {
+                position: static;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
+                border-bottom: 1px solid var(--rule);
+            }
+            .home-figure { order: -1; }
+            .home-frame { inset: -8px 8px 8px -8px; }
+            .pager { display: none; }
+            .grid-kpis, .tech-quad-grid, .method-split, .tribunal-box { grid-template-columns: 1fr; }
+            .tree-row, .stage-line { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         SHELL: IDENTIDAD, NAVEGACIÓN Y CRÉDITOS DE AUTOR (13 DIAPOSITIVAS)
+         ========================================================================== -->
+    <header class="shell">
+        <a class="wordmark" href="javascript:showSlide(0)" aria-label="Cerebro Digital">
+            <span class="wordmark-name">Cerebro Digital</span>
+            <span class="wordmark-rule" aria-hidden="true"></span>
+            <span class="wordmark-fine">Arnés IA & Obsidian</span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Navegación de Diapositivas">
+            <ol class="nav-index">
+                <li><button onclick="showSlide(0)" class="active" id="nav-0"><span class="nav-num">01</span><span class="nav-label">El Reto</span></button></li>
+                <li><button onclick="showSlide(1)" id="nav-1"><span class="nav-num">02</span><span class="nav-label">Fundamentos</span></button></li>
+                <li><button onclick="showSlide(2)" id="nav-2"><span class="nav-num">03</span><span class="nav-label">Obsidian</span></button></li>
+                <li><button onclick="showSlide(3)" id="nav-3"><span class="nav-num">04</span><span class="nav-label">PARA-Zettelkasten</span></button></li>
+                <li><button onclick="showSlide(4)" id="nav-4"><span class="nav-num">05</span><span class="nav-label">Ingeniería de Arnés</span></button></li>
+                <li><button onclick="showSlide(5)" id="nav-5"><span class="nav-num">06</span><span class="nav-label">Cadena de Mando</span></button></li>
+                <li><button onclick="showSlide(6)" id="nav-6"><span class="nav-num">07</span><span class="nav-label">Protocolo Gauntlet</span></button></li>
+                <li><button onclick="showSlide(7)" id="nav-7"><span class="nav-num">08</span><span class="nav-label">Estaciones (UX)</span></button></li>
+                <li><button onclick="showSlide(8)" id="nav-8"><span class="nav-num">09</span><span class="nav-label">3 Macro-Carpetas</span></button></li>
+                <li><button onclick="showSlide(9)" id="nav-9"><span class="nav-num">10</span><span class="nav-label">El Cockpit (Tools)</span></button></li>
+                <li><button onclick="showSlide(10)" id="nav-10"><span class="nav-num">11</span><span class="nav-label">Iniciar Proyecto</span></button></li>
+                <li><button onclick="showSlide(11)" id="nav-11"><span class="nav-num">12</span><span class="nav-label">Bono: Crea tu Arnés</span></button></li>
+                <li><button onclick="showSlide(12)" id="nav-12"><span class="nav-num">13</span><span class="nav-label">Bono: Prompt Maestro</span></button></li>
+            </ol>
+        </nav>
+
+        <!-- Firma de Autor y Contacto -->
+        <div class="author-signature">
+            <div class="auth-label">Diseñado por</div>
+            <div class="auth-name">Ricardo Bonilla</div>
+            <div class="auth-role">Consultor en Ciencia de Datos</div>
+            <div class="auth-contact">
+                <a href="mailto:ribonilla@gmail.com" class="auth-link">✉ ribonilla@gmail.com</a>
+                <a href="https://www.linkedin.com/in/ricardo-bonilla-jimenez/" target="_blank" rel="noopener" class="auth-link">🔗 LinkedIn ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         ESCENARIO DE DIAPOSITIVAS (THE STAGE DECK - 13 SLIDES)
+         ========================================================================== -->
+    <main class="stage" id="stage">
+        <div class="slide-deck">
+
+            <!-- 01: EL RETO -->
+            <section class="home active" id="slide-0" data-name="El Reto">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 01 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">El Reto</span>
+                        <span class="home-title-line home-title-line-2">Ejecutivo</span>
+                    </h2>
+                    <p class="home-fine">Amnesia vs. Cerebro Digital</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Diagnóstico Directivo</h3>
+                        <p>El 80% de las corporaciones interactúan con la IA como un chat efímero. Cada sesión empieza de cero: amnesia entre juntas, cifras inventadas y cero trazabilidad.</p>
+                        <p>El Arnés PARA-Zettelkasten convierte a los modelos en un Chief of Staff que auto-escribe en tu disco, valida datos en caliente y no alucina.</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(1)"><span class="cta-label">Ver Fundamentos</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="grid-kpis">
+                            <div class="kpi-entry">
+                                <div class="kpi-val">0<span>%</span></div>
+                                <div class="kpi-head">Amnesia Institucional</div>
+                                <div class="kpi-text">Todo acuerdo y cálculo se persiste físicamente en tu disco duro local.</div>
+                            </div>
+                            <div class="kpi-entry">
+                                <div class="kpi-val">100<span>%</span></div>
+                                <div class="kpi-head">Fórmulas Vivas en Excel</div>
+                                <div class="kpi-text">Cero cifras pegadas a mano; cálculos matemáticos auditados activamente.</div>
+                            </div>
+                            <div class="kpi-entry">
+                                <div class="kpi-val">16<span>pt</span></div>
+                                <div class="kpi-head">Piso Tipográfico PPTX</div>
+                                <div class="kpi-text">Presentaciones diseñadas con rigor visual para comités ejecutivos.</div>
+                            </div>
+                            <div class="kpi-entry">
+                                <div class="kpi-val">2<span>x</span></div>
+                                <div class="kpi-head">Rondas de Autocorrección</div>
+                                <div class="kpi-text">Circuit Breaker automático: la IA no entra en bucles infinitos.</div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 02: FUNDAMENTOS (4 PILARES) -->
+            <section class="home" id="slide-1" data-name="Fundamentos">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 02 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">Cuatro</span>
+                        <span class="home-title-line home-title-line-2">Pilares</span>
+                    </h2>
+                    <p class="home-fine">Fundamentos del Sistema Corporativo</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Integración Tecnológica</h3>
+                        <p>No se trata de "usar ChatGPT". Es la articulación de cuatro tecnologías y métodos complementarios:</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(2)"><span class="cta-label">Ver Obsidian</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="tech-quad-grid">
+                            <div class="tech-box">
+                                <div class="tech-num">01 / BASE LOCAL</div>
+                                <div class="tech-name">Obsidian</div>
+                                <div class="tech-desc">Tu bóveda privada en archivos Markdown. Cero fuga de datos y soberanía corporativa total.</div>
+                            </div>
+                            <div class="tech-box">
+                                <div class="tech-num">02 / MÉTODO DUAL</div>
+                                <div class="tech-name">PARA + Zettelkasten</div>
+                                <div class="tech-desc">Orden ejecutivo de acción inmediata (Forte) combinado con conocimiento compuesto a largo plazo (Luhmann).</div>
+                            </div>
+                            <div class="tech-box">
+                                <div class="tech-num">03 / GOBERNANZA</div>
+                                <div class="tech-name">Ingeniería de Arnés</div>
+                                <div class="tech-desc">La cadena de montaje con reglas duras que impiden a la IA improvisar o complacerte sin auditar.</div>
+                            </div>
+                            <div class="tech-box">
+                                <div class="tech-num">04 / AUDITORÍA</div>
+                                <div class="tech-name">Protocolo Gauntlet</div>
+                                <div class="tech-desc">Careo interno adversarial (Builder vs. Revisor Crítico) antes de que un documento llegue a tu vista.</div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 03: OBSIDIAN (LA BÓVEDA LOCAL) -->
+            <section class="home" id="slide-2" data-name="Obsidian">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 03 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">La Bóveda</span>
+                        <span class="home-title-line home-title-line-2">Obsidian</span>
+                    </h2>
+                    <p class="home-fine">Soberanía de Datos y Persistencia Local</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Base Física</h3>
+                        <p>A diferencia de las plataformas SaaS en la nube, Obsidian guarda todo en archivos de texto plano dentro de tu propio equipo corporativo:</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(3)"><span class="cta-label">Ver Metodología</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="obsidian-deck">
+                            <div class="obs-item">
+                                <div class="obs-head">1. Cero Dependencia de la Nube</div>
+                                <div class="obs-p">Tus notas, acuerdos y números son archivos Markdown (.md) estándar. Si la empresa proveedora de IA cambia sus políticas, tus activos siguen intactos en tu disco duro.</div>
+                            </div>
+                            <div class="obs-item">
+                                <div class="obs-head">2. Enlaces Bidireccionales Orgánicos</div>
+                                <div class="obs-p">Conecta una decisión directiva ([[Matriz_de_Cambios_y_Acuerdos]]) con su entregable final ([[Informe_Q4]]) y el debate original, construyendo un grafo vivo de conocimiento corporativo.</div>
+                            </div>
+                            <div class="obs-item">
+                                <div class="obs-head">3. Privacidad y Cumplimiento Normativo</div>
+                                <div class="obs-p">Cumple con los estándares más estrictos de seguridad de la información: la IA solo lee y escribe localmente con tu autorización expresa.</div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 04: METODOLOGÍA PARA-ZETTELKASTEN -->
+            <section class="home" id="slide-3" data-name="PARA-Zettelkasten">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 04 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">Método</span>
+                        <span class="home-title-line home-title-line-2">Dual</span>
+                    </h2>
+                    <p class="home-fine">Acción Inmediata + Conocimiento Compuesto</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Estructura Cerebral</h3>
+                        <p>Cómo organizamos el cerebro digital para no perder tiempo buscando archivos y aprender de cada interacción:</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(4)"><span class="cta-label">Ver Anatomía de Arnés</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="method-split">
+                            <div class="method-card">
+                                <div class="m-tag">Tiago Forte</div>
+                                <div class="m-title">Metodología P.A.R.A.</div>
+                                <div class="m-desc">
+                                    <strong>Organización para la Acción:</strong> Clasifica en Proyectos (metas con fecha), Áreas (responsabilidades continuas), Recursos (temas de consulta) y Archivo (inactivos). Encuentras cualquier reporte en menos de 3 clics.
+                                </div>
+                            </div>
+                            <div class="method-card">
+                                <div class="m-tag">Niklas Luhmann</div>
+                                <div class="m-title">Método Zettelkasten</div>
+                                <div class="m-desc">
+                                    <strong>Conocimiento Compuesto:</strong> Cada duda, corrección o aprendizaje se registra como una nota atómica interconectada. Entre más proyectos completas con el arnés, más inteligente y preciso se vuelve tu equipo digital.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 05: INGENIERÍA DE ARNÉS (ANATOMÍA CON PIN Y SCROLL ROBUSTO) -->
+            <section class="home" id="slide-4" data-name="Ingeniería de Arnés">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 05 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">Anatomía</span>
+                        <span class="home-title-line home-title-line-2">del Arnés</span>
+                    </h2>
+                    <p class="home-fine">Los 4 Componentes Internos del Sistema</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Gobernanza Modular</h3>
+                        <p>Un arnés no es magia. Es un ensamblaje preciso de cuatro piezas de ingeniería.</p>
+                        <p>Deslizá el pin hacia la derecha o hacé clic en los botones para inspeccionar cada elemento:</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(5)"><span class="cta-label">Ver Cadena de Mando</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+
+                        <!-- CONTROL DE PIN GRUESO Y NAVEGACIÓN DIRECTA -->
+                        <div class="pin-slider-wrapper">
+                            <div class="pin-slider-header">
+                                <span class="pin-hint">Deslizá el pin o explorá con las flechas:</span>
+                                <div class="pin-nav-arrows">
+                                    <button class="pin-arrow-btn" onclick="scrollAnatomy(-1)" title="Anterior">←</button>
+                                    <button class="pin-arrow-btn" onclick="scrollAnatomy(1)" title="Siguiente">→</button>
+                                </div>
+                            </div>
+
+                            <div class="pin-track-container">
+                                <input type="range" id="anatomyPinSlider" min="0" max="100" value="0" step="1" oninput="onAnatomySlider(this.value)" aria-label="Pin deslizador de componentes">
+                            </div>
+
+                            <div class="pin-anchors">
+                                <button class="pin-tab active" id="ptab-0" onclick="scrollAnatomyTo(0)">01. Agente</button>
+                                <button class="pin-tab" id="ptab-1" onclick="scrollAnatomyTo(1)">02. Skill</button>
+                                <button class="pin-tab" id="ptab-2" onclick="scrollAnatomyTo(2)">03. Script</button>
+                                <button class="pin-tab" id="ptab-3" onclick="scrollAnatomyTo(3)">04. MCP</button>
+                            </div>
+                        </div>
+
+                        <!-- TIRA HORIZONTAL CON SCROLLBAR GRUESO -->
+                        <div class="anatomy-horizontal-strip" id="anatomyStrip" onscroll="syncSliderFromStrip()">
+
+                            <!-- TARJETA 1: CÓMO SE ARMA UN AGENTE -->
+                            <div class="anat-slide-card" id="card-anat-0">
+                                <div class="anat-type">Componente 01</div>
+                                <div class="anat-title">¿Cómo se arma un Agente?</div>
+                                <div class="anat-desc">
+                                    Es un perfil de cargo con 3 directivas: (1) <strong>Identidad y Mandato</strong> (ej. Revisor Crítico), (2) <strong>Reglas Innegociables</strong> (prohibido alucinar o aprobar sin fórmulas vivas) y (3) <strong>Permisos de Acceso</strong> a carpetas locales.
+                                </div>
+                            </div>
+
+                            <!-- TARJETA 2: CÓMO SE ARMA UNA SKILL -->
+                            <div class="anat-slide-card" id="card-anat-1">
+                                <div class="anat-type">Componente 02</div>
+                                <div class="anat-title">¿Cómo se arma una Skill?</div>
+                                <div class="anat-desc">
+                                    Es un <strong>Manual SOP empaquetado</strong> en una carpeta: (1) Un archivo directivo <code>SKILL.md</code> con el paso a paso, (2) Scripts en Python para cálculos duros y (3) Plantillas directivas del entregable final.
+                                </div>
+                            </div>
+
+                            <!-- TARJETA 3: QUÉ ES UN SCRIPT -->
+                            <div class="anat-slide-card" id="card-anat-2">
+                                <div class="anat-type">Componente 03</div>
+                                <div class="anat-title">¿Qué es un Script?</div>
+                                <div class="anat-desc">
+                                    Es código determinista en Python que se ejecuta en memoria para resolver cálculos matemáticos exactos, validar celdas vivas en Excel y cruzar tablas sin margen de error ni estimaciones al ojo.
+                                </div>
+                            </div>
+
+                            <!-- TARJETA 4: QUÉ ES UN MCP -->
+                            <div class="anat-slide-card" id="card-anat-3">
+                                <div class="anat-type">Componente 04</div>
+                                <div class="anat-title">¿Qué es un MCP?</div>
+                                <div class="anat-desc">
+                                    <em>Model Context Protocol:</em> Es la tubería y pasaporte de seguridad que permite a la IA consultar bases de datos (SQL, ERP, CRM) sin exponer credenciales y sin copiar manualmente archivos sensibles.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 06: CADENA DE MANDO (QUIÉN LLAMA A QUIÉN) -->
+            <section class="home" id="slide-5" data-name="Cadena de Mando">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 06 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">Cadena de</span>
+                        <span class="home-title-line home-title-line-2">Mando</span>
+                    </h2>
+                    <p class="home-fine">Quién Llama a Quién en la Ejecución Real</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Organigrama de Invocación</h3>
+                        <p>La autoridad baja en cascada desde que emites tu directriz de negocio en lenguaje natural hasta que el informe final se resguarda físicamente en tu disco local.</p>
+                        <p>Cada nivel tiene responsabilidades y límites estrictos:</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(6)"><span class="cta-label">Ver Protocolo Gauntlet</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="tree-container">
+                            <div class="tree-row" id="tr-0">
+                                <span class="t-lvl">L0</span><span class="t-name">Sponsor Humano</span>
+                                <span class="t-desc">Define la directriz de negocio en lenguaje natural</span>
+                                <span class="t-arr">ordena ↓</span>
+                            </div>
+                            <div class="tree-row" id="tr-1">
+                                <span class="t-lvl">L1</span><span class="t-name">Cockpit CLI</span>
+                                <span class="t-desc">Consola local segura que autoriza el acceso al disco</span>
+                                <span class="t-arr">conecta ↓</span>
+                            </div>
+                            <div class="tree-row" id="tr-2">
+                                <span class="t-lvl">L2</span><span class="t-name">El Arnés (Runtime)</span>
+                                <span class="t-desc">Impone auto-escritura, trazabilidad y compuerta Gauntlet</span>
+                                <span class="t-arr">gobierna ↓</span>
+                            </div>
+                            <div class="tree-row" id="tr-3">
+                                <span class="t-lvl">L3</span><span class="t-name">Orquestador (PM)</span>
+                                <span class="t-desc">Diagnóstica el propósito, crea Kanban y convoca roles</span>
+                                <span class="t-arr">delega ↓</span>
+                            </div>
+                            <div class="tree-row" id="tr-4">
+                                <span class="t-lvl">L4</span><span class="t-name">Agente Especialista</span>
+                                <span class="t-desc">Asume el rigor del rol (Auditor Financiero, Redactor Minto)</span>
+                                <span class="t-arr">aplica ↓</span>
+                            </div>
+                            <div class="tree-row" id="tr-5">
+                                <span class="t-lvl">L5</span><span class="t-name">Skill (SOP)</span>
+                                <span class="t-desc">Carga el manual de procedimientos y plantillas directivas</span>
+                                <span class="t-arr">ejecuta ↓</span>
+                            </div>
+                            <div class="tree-row" id="tr-6">
+                                <span class="t-lvl">L6</span><span class="t-name">MCPs & Scripts</span>
+                                <span class="t-desc">Conectores de datos y cálculo duro en Python sin margen de error</span>
+                                <span class="t-arr">persiste ↓</span>
+                            </div>
+                            <div class="tree-row" id="tr-7">
+                                <span class="t-lvl">L7</span><span class="t-name">Bóveda Obsidian</span>
+                                <span class="t-desc">Word limpio (.docx), Markdown gemelo y Kanban sincronizado</span>
+                                <span class="t-arr">✔ listo</span>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 07: PROTOCOLO GAUNTLET (COMPUERTA ADVERSARIAL) -->
+            <section class="home" id="slide-6" data-name="Protocolo Gauntlet">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 07 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">Tribunal</span>
+                        <span class="home-title-line home-title-line-2">Gauntlet</span>
+                    </h2>
+                    <p class="home-fine">Careo Interno Antes de Cada Entregable</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Auditoría Activa</h3>
+                        <p>El sistema nunca te entrega el primer borrador. Activa un careo de dos roles con un listón observable y límite de dos rondas:</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(7)"><span class="cta-label">Ver Estaciones (UX)</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="gauntlet-wrap">
+                            <div class="tribunal-box">
+                                <div class="actor-pane">
+                                    <div class="actor-tag" style="color: var(--rose);">Constructor</div>
+                                    <div class="actor-title">The Builder</div>
+                                    <div class="actor-p">Genera el modelo en Excel o memorando Minto según estándares directivos.</div>
+                                </div>
+                                <div class="actor-pane">
+                                    <div class="actor-tag" style="color: var(--ink);">Auditor Severo</div>
+                                    <div class="actor-title">Revisor Crítico</div>
+                                    <div class="actor-p">Audita celdas vivas, Gate 0 de datos y piso tipográfico de 16pt sin complacencia.</div>
+                                </div>
+                            </div>
+
+                            <div class="verdict-banner" id="gauntletVerdict">
+                                <div class="v-title" id="gvTag" style="color: var(--rose);">Veredicto: APROBADO (Ronda 1)</div>
+                                <div class="v-desc" id="gvDesc">Cero fórmulas quemadas. Datos y granularidad validados. Pasa directo a auto-escritura en disco.</div>
+                            </div>
+
+                            <div class="scen-bar">
+                                <button class="scen-btn active" onclick="setGauntletScenario('pass')">1. Aprobado Directo</button>
+                                <button class="scen-btn" onclick="setGauntletScenario('fix')">2. Autocorrección</button>
+                                <button class="scen-btn" onclick="setGauntletScenario('circuit')">3. Circuit Breaker</button>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 08: LAS ESTACIONES (LA EXPERIENCIA DEL USUARIO) -->
+            <section class="home" id="slide-7" data-name="Estaciones (UX)">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 08 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">Las Seis</span>
+                        <span class="home-title-line home-title-line-2">Estaciones</span>
+                    </h2>
+                    <p class="home-fine">Lo que el Directivo Experimenta en el Frente</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Flujo Frontal</h3>
+                        <p>Antes vimos qué sucede por detrás. Esto es exactamente lo que tú experimentas al interactuar con el arnés en tu día a día:</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(8)"><span class="cta-label">Ver Carpetas</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="user-stages-grid">
+                            <div class="stage-line">
+                                <span class="st-num">01</span><span class="st-name">Diagnóstico Inicial</span>
+                                <span class="st-desc">El arnés te hace 3 preguntas clave: Sponsor, Propósito y Restricciones.</span>
+                            </div>
+                            <div class="stage-line">
+                                <span class="st-num">02</span><span class="st-name">Plan Concertado</span>
+                                <span class="st-desc">Te presenta las tareas para tu visto bueno antes de mover un archivo.</span>
+                            </div>
+                            <div class="stage-line">
+                                <span class="st-num">03</span><span class="st-name">Invocación Experta</span>
+                                <span class="st-desc">Professor Synapse llama al especialista adecuado (Financiero, Documental).</span>
+                            </div>
+                            <div class="stage-line">
+                                <span class="st-num">04</span><span class="st-name">Compuerta Gauntlet</span>
+                                <span class="st-desc">Auditoría interna en caliente con autocorrección (máximo 2 rondas).</span>
+                            </div>
+                            <div class="stage-line">
+                                <span class="st-num">05</span><span class="st-name">Auto-Escritura</span>
+                                <span class="st-desc">Escribe directamente en tu disco el Word final limpio y el Markdown gemelo.</span>
+                            </div>
+                            <div class="stage-line">
+                                <span class="st-num">06</span><span class="st-name">Aprendizaje</span>
+                                <span class="st-desc">Capitaliza toda duda o corrección en una lección atómica en Zettelkasten.</span>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 09: LAS 3 MACRO-CARPETAS (CON TIPOGRAFÍA GRANDE Y NEGRILLA) -->
+            <section class="home" id="slide-8" data-name="3 Macro-Carpetas">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 09 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">Resguardo</span>
+                        <span class="home-title-line home-title-line-2">en Disco</span>
+                    </h2>
+                    <p class="home-fine">La Regla de las 3 Macro-Carpetas</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Aterrizaje Físico</h3>
+                        <p>Todo lo que ocurre en las Estaciones se guarda de forma estructurada en tres carpetas físicas para que encuentres todo en 1 clic:</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(9)"><span class="cta-label">Ver El Cockpit</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="folder-list">
+                            <div class="f-box">
+                                <div class="f-tag">01_Direccion_y_Estrategia/</div>
+                                <div class="f-name">¿Por qué y bajo qué reglas?</div>
+                                <div class="f-desc">Mandato del sponsor, límites innegociables y Matriz de Acuerdos auditada con fecha y hora (`YYYY-MM-DD HH:MM`).</div>
+                            </div>
+                            <div class="f-box">
+                                <div class="f-tag">02_Ejecucion_y_Seguimiento/</div>
+                                <div class="f-name">¿En qué trabajamos hoy?</div>
+                                <div class="f-desc">Tablero Kanban sincronizado en tiempo real, tareas atómicas TAR_XX y minutas completas de debate.</div>
+                            </div>
+                            <div class="f-box">
+                                <div class="f-tag">03_Entregables_Finales/</div>
+                                <div class="f-name">¿Qué entregamos limpio a la Junta?</div>
+                                <div class="f-desc">Word directivo maquetado para firma, réplica gemela en Markdown e histórico con diferencias en rojo.</div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 10: EL COCKPIT Y HERRAMIENTAS (CON DESCARGA DE STARTER KIT) -->
+            <section class="home" id="slide-9" data-name="El Cockpit (Tools)">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 10 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">El Cockpit</span>
+                        <span class="home-title-line home-title-line-2">Maestro</span>
+                    </h2>
+                    <p class="home-fine">¿Qué Necesitas Instalado en tu Equipo?</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Infraestructura Ligera</h3>
+                        <p>No requieres servidores corporativos. Solo tres piezas ligeras con instalación en un clic y tu Starter Kit listo para usar:</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(10)"><span class="cta-label">Cómo Iniciar Proyecto</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="cockpit-tools-deck">
+                            <a href="Starter_Kit_Arnes_Universal.zip" download="Starter_Kit_Arnes_Universal.zip" class="tool-link-card" style="border-left: 4px solid var(--rose);">
+                                <div>
+                                    <div class="tech-name">📦 Starter Kit del Arnés (.zip)</div>
+                                    <div class="tech-desc">Bóveda universal completa con las 3 macro-carpetas, plantillas y motor .harness/.</div>
+                                </div>
+                                <span class="t-badge-link" style="color: var(--rose); font-weight: 700;">Descargar ZIP ↗</span>
+                            </a>
+                            <a href="https://obsidian.md/download" target="_blank" rel="noopener" class="tool-link-card">
+                                <div>
+                                    <div class="tech-name">1. Obsidian</div>
+                                    <div class="tech-desc">Tu bóveda local de conocimiento e interfaz visual para leer el proyecto.</div>
+                                </div>
+                                <span class="t-badge-link">Descargar ↗</span>
+                            </a>
+                            <a href="https://www.python.org/downloads/" target="_blank" rel="noopener" class="tool-link-card">
+                                <div>
+                                    <div class="tech-name">2. Python 3.10+</div>
+                                    <div class="tech-desc">Motor silencioso para auditorías matemáticas y validación de celdas vivas.</div>
+                                </div>
+                                <span class="t-badge-link">Descargar ↗</span>
+                            </a>
+                            <div class="tool-link-card" style="cursor: default;">
+                                <div>
+                                    <div class="tech-name">3. Una CLI a Elección</div>
+                                    <div class="tech-desc">Tu cabina de control: <strong>Claude Code</strong> (Anthropic), <strong>Antigravity</strong> (Google), <strong>Codex</strong> (OpenAI), <strong>Pi</strong> u <strong>OpenCode</strong>.</div>
+                                </div>
+                                <span class="t-badge-link">Consola Local</span>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 11: CÓMO INICIAR TU PROYECTO (KICKOFF EN 3 PASOS) -->
+            <section class="home" id="slide-10" data-name="Iniciar Proyecto">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 11 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">Kickoff</span>
+                        <span class="home-title-line home-title-line-2">en 3 Pasos</span>
+                    </h2>
+                    <p class="home-fine">Cómo Arrancar Cualquier Proyecto Real</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Cero Fricción</h3>
+                        <p>Para iniciar cualquier iniciativa en tu empresa, solo sigues esta rutina de 3 pasos:</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(11)"><span class="cta-label">Ver Bono: Crea tu Arnés</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="kickoff-flow">
+                            <div class="k-step">
+                                <span class="st-num">01</span>
+                                <div>
+                                    <div class="tech-name">Descargar o Copiar el Starter Kit</div>
+                                    <div class="tech-desc">Descarga el <a href="Starter_Kit_Arnes_Universal.zip" download="Starter_Kit_Arnes_Universal.zip" style="color: var(--rose); text-decoration: underline; font-weight: 600;">Starter Kit (.zip)</a>, descomprímelo en tu nueva carpeta de trabajo y ábrelo como bóveda en Obsidian.</div>
+                                </div>
+                            </div>
+                            <div class="k-step">
+                                <span class="st-num">02</span>
+                                <div>
+                                    <div class="tech-name">Abrir la Terminal y Lanzar la CLI</div>
+                                    <div class="tech-desc">Abre tu terminal en esa carpeta y ejecuta tu CLI preferida (ej. <code>antigravity</code> o <code>claude</code>).</div>
+                                </div>
+                            </div>
+                            <div class="k-step">
+                                <span class="st-num">03</span>
+                                <div>
+                                    <div class="tech-name">Emitir tu Mandato en Lenguaje Natural</div>
+                                    <div class="tech-desc">Escribe lo que necesitas (ej: *"Iniciemos el análisis financiero Q4"*). El arnés activará el diagnóstico y armará el Kanban automáticamente.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 12: BONO DIRECTIVO (ARQUITECTURA DE ARNÉS A MEDIDA) -->
+            <section class="home" id="slide-11" data-name="Bono: Crea tu Arnés">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 12 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">Construye</span>
+                        <span class="home-title-line home-title-line-2">tu Arnés</span>
+                    </h2>
+                    <p class="home-fine">Principios de Arquitectura para Líderes</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Ingeniería a Medida</h3>
+                        <p>Este arnés es genérico, pero puedes diseñar uno a la medida exacta de tu área o negocio.</p>
+                        <p>Cada petición del usuario no es un proyecto entero: <strong>cada prompt es un loop independiente</strong> que ejecuta, audita y entrega.</p>
+                    </div>
+                    <button class="cta" onclick="showSlide(12)"><span class="cta-label">Ver Prompt Maestro</span><span class="cta-arrow">→</span></button>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="builder-guide-deck">
+                            <div class="guide-card">
+                                <div class="guide-tag">Principio Central</div>
+                                <div class="guide-title">Cada Petición es un Loop Completo</div>
+                                <div class="guide-text">Si pides "cruzar dos bases de datos", el loop llama al agente de datos, audita la cardinalidad (Gate 0), corre el script y entrega. Si pides "redactar informe", corre otro loop con el redactor Minto.</div>
+                            </div>
+                            <div class="guide-card">
+                                <div class="guide-tag">Criterio de Arquitectura</div>
+                                <div class="guide-title">¿Agente o Skill? ¿Cuándo extraer?</div>
+                                <div class="guide-text">Un <strong>Agente</strong> tiene autonomía, criterio y personalidad. Una <strong>Skill</strong> es un manual SOP técnico y reutilizable. Si lo que le redactas al agente es un procedimiento que otros pueden usar, ¡extráelo a una Skill!</div>
+                            </div>
+                            <div class="guide-card">
+                                <div class="guide-tag">Músculo Determinista</div>
+                                <div class="guide-title">Scripts en Python y Conectores MCP</div>
+                                <div class="guide-text">No permitas que la IA estime números al ojo. Para cálculos financieros, asigna scripts deterministas en Python. Para leer sistemas corporativos, enlaza MCPs seguros.</div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+            <!-- 13: BONO 2: PROMPT MAESTRO DE CO-DISEÑO -->
+            <section class="home" id="slide-12" data-name="Bono: Prompt Maestro">
+                <div class="print-banner">
+                    <span>Cerebro Digital Corporativo — Arnés PARA-Zettelkasten con IA</span>
+                    <span>Diapositiva 13 / 13</span>
+                </div>
+                <div class="home-copy">
+                    <h2 class="home-title">
+                        <span class="home-title-line">Prompt</span>
+                        <span class="home-title-line home-title-line-2">Maestro</span>
+                    </h2>
+                    <p class="home-fine">Co-Diseña tu Arnés con Cualquier IA</p>
+                    <div class="home-about">
+                        <h3 class="eyebrow">Instrucción de Arranque</h3>
+                        <p>1. Descargá el <strong>Starter Kit (.zip)</strong> y descomprimilo en tu equipo.</p>
+                        <p>2. Abrí la terminal con tu CLI (Claude, Antigravity, Codex) y pegá este prompt maestro. La IA entenderá de inmediato la arquitectura y empezará a armar tu staff a medida.</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                        <a href="Starter_Kit_Arnes_Universal.zip" download="Starter_Kit_Arnes_Universal.zip" class="cta">
+                            <span class="cta-label">📦 Descargar Starter Kit (.zip)</span>
+                        </a>
+                        <button class="cta" onclick="window.print()">
+                            <span class="cta-label">🖨️ Imprimir Manual Completo (PDF)</span><span class="cta-arrow">→</span>
+                        </button>
+                    </div>
+                </div>
+                <figure class="home-figure">
+                    <div class="home-frame"></div>
+                    <div class="canvas-mat">
+                        <div class="prompt-code-container">
+                            <div class="prompt-code-header">
+                                <span class="prompt-filename">prompt_maestro_arquitectura_arnes.md</span>
+                                <button class="copy-btn" id="copyPromptBtn" onclick="copyMasterPrompt()">📋 Copiar Prompt al Portapapeles</button>
+                            </div>
+                            <pre class="prompt-code-body" id="masterPromptText">Actúa como un Arquitecto de Sistemas de IA Senior y Chief of Staff empresarial. 
+Estoy iniciando la construcción de un ARNÉS DE IA A MEDIDA para mi área corporativa: [ESPECIFICA AQUÍ TU ÁREA: ej. Operaciones / Recursos Humanos / Auditoría Financiera / Cadena de Suministro].
+
+Acabo de desplegar una arquitectura base con metodología PARA (Tiago Forte) y Zettelkasten (Niklas Luhmann) sobre Obsidian, operada a través de una consola CLI con acceso a mi disco local.
+
+Tu objetivo es co-diseñar conmigo el arnés exacto para automatizar, blindar y auditar los flujos de trabajo de mi departamento. Para ello, debes estructurar nuestro sistema bajo estos principios innegociables:
+
+1. FILOSOFÍA DEL LOOP POR PETICIÓN:
+Entiende que en este arnés, cada solicitud mía no es un chat efímero, sino un loop cerrado de ejecución y control. Cada petición debe:
+- Identificar el requerimiento de negocio exacto.
+- Seleccionar y activar al agente especialista adecuado.
+- Ejecutar validaciones matemáticas o cruces de datos mediante scripts deterministas en Python (sin alucinaciones numéricas).
+- Pasar obligatoriamente por una compuerta adversarial tipo "Gauntlet" (Constructor vs. Auditor Crítico, con un máximo de 2 rondas de corrección antes de elevar discrepancias).
+- Auto-escribir el resultado directamente en disco en las 3 macro-carpetas físicas.
+- Extraer cualquier duda, corrección o aprendizaje en una nota atómica de Zettelkasten para capitalizar el conocimiento compuesto.
+
+2. DEFINICIÓN DEL STAFF DE AGENTES DE MI ÁREA:
+Ayúdame a definir entre 4 y 6 agentes especialistas necesarios para mi operación cotidiana. Para cada agente, define:
+- Rol e Identidad ejecutiva.
+- Restricciones y límites innegociables (qué NO puede hacer).
+- Entregables típicos que produce.
+
+3. CATÁLOGO DE SKILLS MODULARES:
+Aplica el principio de desacoplamiento: si una instrucción es un procedimiento repetible, plantilla o estándar técnico, NO debe ir dentro del prompt del agente, sino empaquetada como una "Skill" (carpeta con SKILL.md, plantillas y scripts en Python). Propón las 3 skills prioritarias que mi área requiere.
+
+4. CONECTIVIDAD DETERMINISTA (MCPS Y SCRIPTS):
+Identifica qué fuentes de datos corporativas externas requerirán un conector MCP seguro (ej. ERP SAP, base SQL, Salesforce, API de logística) y qué validaciones críticas deben delegarse a scripts de Python con Gate 0 de datos (cardinalidad, llaves primarias, consistencia contable).
+
+5. RESGUARDO EN LAS 3 MACRO-CARPETAS:
+Todo el sistema debe persistir en las 3 macro-carpetas físicas:
+- 01_Direccion_y_Estrategia/ (Mandatos, límites y Matriz de Decisiones con fecha y hora YYYY-MM-DD HH:MM).
+- 02_Ejecucion_y_Seguimiento/ (Tablero Kanban, tareas TAR_XX y minutas de sesión).
+- 03_Entregables_Finales/ (Informes limpios en Word, réplicas gemelas en Markdown y versiones históricas con diffs).
+
+PARA EMPEZAR AHORA MISMO:
+Hazme las 3 preguntas clave del Diagnóstico Inicial (Sponsor/Audiencia, Propósito de Negocio Principal y Restricciones/Plazos) adaptadas a mi departamento, y presenta tu propuesta preliminar del staff de agentes para mi aprobación.</pre>
+                        </div>
+                    </div>
+                </figure>
+                <div class="print-footer-banner">
+                    <span>Diseñado por Ricardo Bonilla · Consultor en Ciencia de Datos</span>
+                    <span>ribonilla@gmail.com · linkedin.com/in/ricardo-bonilla-jimenez</span>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ==========================================================================
+         PAGER INFERIOR OFICIAL MKW (13 DIAPOSITIVAS)
+         ========================================================================== -->
+    <nav class="pager" aria-label="Navegador de Páginas">
+        <button class="pager-arrow" id="prevSlide" onclick="prevSlide()" aria-label="Página anterior">←</button>
+        <p class="pager-count">
+            <span id="pagerNum">01</span><span class="pager-of"> / 13</span>
+            <span class="pager-name" id="pagerName">El Reto</span>
+        </p>
+        <button class="pager-arrow" id="nextSlide" onclick="nextSlide()" aria-label="Página siguiente">→</button>
+    </nav>
+
+    <!-- ==========================================================================
+         CONTROL JAVASCRIPT: NAVEGACIÓN, PIN SLIDER Y EVENTOS
+         ========================================================================== -->
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 13;
+        const slides = document.querySelectorAll('.home');
+        const navButtons = document.querySelectorAll('.nav-index button');
+        const pagerNum = document.getElementById('pagerNum');
+        const pagerName = document.getElementById('pagerName');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+
+        function updateSlideUI() {
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('active', idx === currentSlide);
+            });
+
+            navButtons.forEach((btn, idx) => {
+                btn.classList.toggle('active', idx === currentSlide);
+            });
+
+            const slideName = slides[currentSlide].getAttribute('data-name');
+            pagerNum.innerText = String(currentSlide + 1).padStart(2, '0');
+            pagerName.innerText = slideName;
+
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        function showSlide(index) {
+            if (index < 0 || index >= totalSlides) return;
+            currentSlide = index;
+            updateSlideUI();
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) showSlide(currentSlide - 1);
+        }
+
+        // Teclado
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                prevSlide();
+            }
+        });
+
+        // RUEDA DEL RATÓN CON PROTECCIÓN PARA LA TIRA HORIZONTAL DE ANATOMÍA
+        let wheelLocked = false;
+        window.addEventListener('wheel', (e) => {
+            if (window.innerWidth <= 899) return;
+
+            // Si el cursor está sobre la diapositiva de Anatomía (slide-4), hacer scroll horizontal en la tira y NO cambiar de diapositiva
+            const strip = document.getElementById('anatomyStrip');
+            if (e.target.closest('#slide-4') || e.target.closest('.anatomy-horizontal-strip')) {
+                if (strip) {
+                    strip.scrollLeft += (e.deltaY * 1.2);
+                    syncSliderFromStrip();
+                }
+                return; // Bloquea el cambio de diapositiva
+            }
+
+            if (wheelLocked) return;
+            wheelLocked = true;
+            setTimeout(() => { wheelLocked = false; }, 600);
+
+            if (e.deltaY > 25) {
+                nextSlide();
+            } else if (e.deltaY < -25) {
+                prevSlide();
+            }
+        }, { passive: false });
+
+        // CONTROL DEL PIN DESLIZADOR EN ANATOMÍA
+        function onAnatomySlider(val) {
+            const strip = document.getElementById('anatomyStrip');
+            if (!strip) return;
+            const maxScroll = strip.scrollWidth - strip.clientWidth;
+            strip.scrollLeft = (val / 100) * maxScroll;
+            updateActivePinTab(val);
+        }
+
+        function syncSliderFromStrip() {
+            const strip = document.getElementById('anatomyStrip');
+            const slider = document.getElementById('anatomyPinSlider');
+            if (!strip || !slider) return;
+            const maxScroll = strip.scrollWidth - strip.clientWidth;
+            if (maxScroll <= 0) return;
+            const pct = (strip.scrollLeft / maxScroll) * 100;
+            slider.value = Math.round(pct);
+            updateActivePinTab(pct);
+        }
+
+        function updateActivePinTab(pct) {
+            const tabs = [document.getElementById('ptab-0'), document.getElementById('ptab-1'), document.getElementById('ptab-2'), document.getElementById('ptab-3')];
+            tabs.forEach(t => t && t.classList.remove('active'));
+            let activeIdx = 0;
+            if (pct >= 75) activeIdx = 3;
+            else if (pct >= 50) activeIdx = 2;
+            else if (pct >= 25) activeIdx = 1;
+            if (tabs[activeIdx]) tabs[activeIdx].classList.add('active');
+        }
+
+        function scrollAnatomy(direction) {
+            const strip = document.getElementById('anatomyStrip');
+            if (!strip) return;
+            const cardWidth = 320;
+            strip.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+            setTimeout(syncSliderFromStrip, 350);
+        }
+
+        function scrollAnatomyTo(idx) {
+            const card = document.getElementById('card-anat-' + idx);
+            const strip = document.getElementById('anatomyStrip');
+            if (!card || !strip) return;
+            card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+            setTimeout(syncSliderFromStrip, 350);
+        }
+
+        // GAUNTLET SCENARIOS
+        const gScenarios = {
+            pass: {
+                tag: "Veredicto: APROBADO (Ronda 1)",
+                desc: "Cero fórmulas quemadas. Datos y granularidad validados. Pasa directo a auto-escritura en disco.",
+                color: "var(--rose)"
+            },
+            fix: {
+                tag: "Veredicto: AUTOCORREGIDO (Ronda 2)",
+                desc: "Ronda 1 detectó falla de cardinalidad. The Builder corrigió en caliente y el Revisor aprobó sin molestar al usuario.",
+                color: "var(--ink)"
+            },
+            circuit: {
+                tag: "Alerta: CIRCUIT BREAKER (Límite 2 Rondas)",
+                desc: "Conflicto irreconciliable en supuestos financieros. El arnés frena la publicación y eleva la consulta al director con evidencia exacta.",
+                color: "#991b1b"
+            }
+        };
+
+        function setGauntletScenario(key) {
+            document.querySelectorAll('.scen-btn').forEach(b => b.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            const item = gScenarios[key];
+            if (!item) return;
+
+            const tag = document.getElementById('gvTag');
+            tag.innerText = item.tag;
+            tag.style.color = item.color;
+            document.getElementById('gvDesc').innerText = item.desc;
+        }
+
+        // COPIAR PROMPT MAESTRO AL PORTAPAPELES
+        function copyMasterPrompt() {
+            const text = document.getElementById('masterPromptText').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copyPromptBtn');
+                btn.innerText = '✔ ¡Copiado al Portapapeles!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerText = '📋 Copiar Prompt al Portapapeles';
+                    btn.classList.remove('copied');
+                }, 3000);
+            }).catch(err => {
+                alert('No se pudo copiar automáticamente. Por favor selecciónalo manualmente.');
+            });
+        }
+
+        // Inicializar
+        updateSlideUI();
+    </script>
+</body>
+</html>

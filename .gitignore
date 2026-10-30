@@ -1,0 +1,29 @@
+# Obsidian
+.obsidian/workspace*
+.obsidian/cache*
+.obsidian/indexed*
+.trash/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# OS & Environment
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.tmp
+*.temp
+
+# Node / Scratch
+node_modules/
+.npm

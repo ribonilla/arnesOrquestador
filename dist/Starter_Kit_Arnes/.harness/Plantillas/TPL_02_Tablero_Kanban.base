@@ -1,0 +1,41 @@
+filters:
+  or:
+    - file.inFolder("02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tareas")
+    - file.hasTag("tarea")
+
+properties:
+  file.name:
+    displayName: "Tarea / Hito"
+  estado:
+    displayName: "Estado"
+  prioridad:
+    displayName: "Prioridad"
+  fase:
+    displayName: "Fase del Proyecto"
+  asignado:
+    displayName: "Responsable / Agente"
+  fecha_limite:
+    displayName: "Fecha Límite"
+
+views:
+  - type: cards
+    name: "Tablero Kanban (Cards)"
+    groupBy:
+      property: estado
+      direction: ASC
+    order:
+      - file.name
+      - prioridad
+      - fase
+      - asignado
+      - fecha_limite
+
+  - type: table
+    name: "Tabla de Gestión y Control"
+    order:
+      - file.name
+      - estado
+      - prioridad
+      - fase
+      - asignado
+      - fecha_limite
