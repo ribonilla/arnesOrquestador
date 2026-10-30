@@ -10,6 +10,12 @@ Es el escaparate limpio de la bóveda. Solo contiene las versiones definitivas l
 
 ### 📄 1. Raíz de la Carpeta (`03_Entregables_Finales/`)
 * **Propósito:** Alojar exclusivamente los archivos vigentes y aprobados.
+* **Catálogo de Entregables Principales:**
+  - 🔄 [[03_Entregables_Finales/Flujograma_Orquestador_y_Ciclo_de_Vida.md|Flujograma de Ciclo de Vida: Professor Synapse y Gauntlet Loop]]
+  - 🌐 [[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.html|Curso y Wiki Ejecutiva Monolítica (13 Diapositivas)]]
+  - 📄 [[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.md|Guía Ejecutiva del Curso en Markdown]]
+  - 🌐 [[03_Entregables_Finales/Manual_de_Uso_del_Arnes.html|Manual de Uso Integral del Arnés]]
+  - 📦 [[03_Entregables_Finales/Starter_Kit_Arnes_Universal.zip|Starter Kit Universal Listo para Despliegue]]
 * **Archivos Admitidos:**
   - Informes ejecutivos limpios en Word (`.docx`).
   - Contrapartes bimodal idénticas en Markdown (`.md`) para lectura nativa directa en Obsidian.

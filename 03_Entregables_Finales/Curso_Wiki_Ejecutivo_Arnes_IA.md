@@ -1,8 +1,8 @@
 ---
 titulo: "Cerebro Digital Corporativo: Curso y Wiki Ejecutiva"
 tipo: "Entregable Final / Inducción C-Level"
-fecha: "2026-10-29"
-version: "4.1 - 13 Diapositivas, Pin Deslizador, Descarga ZIP y Prompt Maestro"
+fecha: "2026-10-29 19:35"
+version: "5.0 - 14 Diapositivas, Flujograma Completo Synapse & Mermaid Integrado"
 autor: "Ricardo Bonilla"
 rol: "Consultor en Ciencia de Datos"
 email: "ribonilla@gmail.com"
@@ -10,6 +10,7 @@ linkedin: "https://www.linkedin.com/in/ricardo-bonilla-jimenez/"
 audiencia: "Vicepresidentes y Directores C-Level (Operaciones, RRHH, Logística)"
 archivo_html_gemelo: "[[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.html]]"
 paquete_starter_kit: "[[03_Entregables_Finales/Starter_Kit_Arnes_Universal.zip]]"
+flujograma_maestro: "[[03_Entregables_Finales/Flujograma_Orquestador_y_Ciclo_de_Vida.md]]"
 ---
 
 # 🏛️ Cerebro Digital Corporativo: Arquitectura de Arnés con IA, Obsidian y Metodología Ejecutiva
@@ -81,7 +82,7 @@ Trazabilidad jerárquica de invocación desde el mandato de negocio hasta la per
        │ Asume el vocabulario y rigor temático (Auditor Cuantitativo, Redactor Minto)
        ▼
 [ Nivel 5: SKILL (MANUAL SOP EMPAQUETADO) ]
-       │ Carga el procedimiento `SKILL.md` con reglas y plantillas directivas
+       │ Carga el manual operativo `SKILL.md` con reglas y plantillas directivas
        ▼
 [ Nivel 6: MCPS & SCRIPTS DETERMINISTAS ]
        ├── MCPs: Conectores cifrados a ERP, SQL o archivos de la bóveda
@@ -93,7 +94,72 @@ Trazabilidad jerárquica de invocación desde el mandato de negocio hasta la per
 
 ---
 
-## 🛡️ 07. Protocolo Gauntlet (Loop de Calidad & Circuit Breaker)
+## 🔄 07. Flujograma de Ciclo de Vida: El Motor de Decisiones
+
+El arnés discrimina en tiempo real el tipo de trabajo antes de actuar:
+1. **Rama de Co-Diseño Estratégico (Professor Synapse):** Si el requerimiento es conceptual, debate o estrategia, convoca un experto temático a medida para sostener un diálogo socrático paso a paso.
+2. **Rama de Producción Directa (Staff de Especialistas):** Si el concepto está maduro o es un pedido de formato directo, enruta al Auditor Cuantitativo (.xlsx), Diseñador Documental (.docx), Diseñador PPTX o Especialista HTML.
+3. Ambas ramas pasan por el **Tribunal Gauntlet** antes de tocar el disco.
+
+```mermaid
+flowchart TD
+    Start([📥 Entrada del Usuario]) --> InitCheck{¿Bóveda inicializada?<br/>00_Centro_de_Mando existe}
+    
+    InitCheck -- No --> Phase1[Diagnóstico Inicial: 3 Preguntas]
+    Phase1 --> Phase2[Propuesta Plan Kanban]
+    Phase2 --> SetupVault[Setup Carpetas y Tareas TAR_XX]
+    
+    InitCheck -- Sí --> ReqCheck[Analizar Intención del Usuario]
+    SetupVault --> ReqCheck
+    
+    ReqCheck --> ScopeCheck{¿Entra en el Alcance?}
+    ScopeCheck -- Desviación --> ScopeAlert[⚠️ Alerta de Alcance y Negociación]
+    
+    ScopeCheck -- En Alcance --> TypeCheck{¿Qué tipo de trabajo es?}
+
+    TypeCheck -- "Debate / Estrategia / Técnica" --> Synapse[🧙🏾‍♂️ Professor Synapse: Invoca Experto de Dominio Dinámico]
+    subgraph CoCreacion [Co-Creación Temática Socrática]
+        Synapse --> Expert[🧠 Experto Temático a Medida]
+        Expert --> Dialogo[Diálogo socrático paso a paso con el Usuario]
+        Dialogo --> Maduro{¿Contenido maduro?}
+        Maduro -- No --> Dialogo
+    end
+    Maduro -- Sí --> NeedsArtifact{¿Requiere entregable formal?}
+    NeedsArtifact -- No --> PersistSession[Persistir Minuta en Sesiones_y_Borradores]
+
+    TypeCheck -- "Artefacto Directo" --> Routing[Enrutador de Producción]
+    NeedsArtifact -- Sí --> Routing
+
+    subgraph StaffEspecialistas [Staff de Formato y Producción]
+        Routing -->|Métricas / Finanzas| E_Fin[📊 Auditor Cuantitativo]
+        Routing -->|Informes / Minto| E_Doc[📄 Diseñador Documental]
+        Routing -->|Presentaciones| E_Vis[🎨 Especialista PPTX 16pt]
+        Routing -->|Web / Visual| E_Web[🌐 Especialista HTML]
+        Routing -->|Bóveda / Markdown| E_Arq[🏛️ Arquitecto Bóveda]
+    end
+
+    StaffEspecialistas --> CritFilter{¿Es Tarea Crítica?}
+    CritFilter -- No --> PersistStd[Persistir en Bóveda]
+    
+    CritFilter -- Sí --> Gauntlet[🛡️ Tribunal Gauntlet: Builder vs Revisor Crítico]
+    subgraph GauntletLoop [Compuerta Gauntlet]
+        Gauntlet --> Builder[Builder genera entregable]
+        Builder --> Critic[Revisor audita Gate 0 y celdas vivas]
+        Critic --> Veredicto{¿Aprobado?}
+        Veredicto -- No --> Circuit{¿Ronda < 2?}
+        Circuit -- Sí --> Fix[Autocorrección silenciosa] --> Builder
+        Circuit -- No --> Escalar[Circuit Breaker: Frena y Consulta al Humano]
+    end
+    
+    Veredicto -- Sí --> PersistFinal[Persistir en 03_Entregables_Finales]
+    Escalar --> PersistFinal
+    PersistFinal --> UpdateKanban[Actualizar Kanban y Centro de Mando]
+    UpdateKanban --> Zettel[¿Hay aprendizaje? -> Nota Zettelkasten]
+```
+
+---
+
+## 🛡️ 08. Protocolo Gauntlet (Loop de Calidad & Circuit Breaker)
 El arnés nunca te entrega un primer borrador sin someterlo a un careo interno entre dos actores:
 1. **The Builder (Constructor):** Genera el informe, modelo o propuesta siguiendo las mejores prácticas.
 2. **Revisor Crítico (Auditor Severo):** Aplica la compuerta *Gate 0 de Datos* (cardinalidad, llaves compuestas, relaciones 1:1, 1:N), verifica fórmulas vivas en hojas de cálculo y piso tipográfico de 16pt.
@@ -103,7 +169,7 @@ El arnés nunca te entrega un primer borrador sin someterlo a un careo interno e
 
 ---
 
-## 🔄 08. Las Seis Estaciones (Experiencia Directiva UX)
+## 🔄 09. Las Seis Estaciones (Experiencia Directiva UX)
 Lo que el directivo experimenta en el frente de trabajo:
 1. **Estación 1: Diagnóstico Inicial:** 3 preguntas clave (Sponsor/Audiencia, Propósito de Negocio, Restricciones/Plazos).
 2. **Estación 2: Plan Concertado:** Aprobación del desglose de tareas antes de mover un solo byte.
@@ -114,14 +180,14 @@ Lo que el directivo experimenta en el frente de trabajo:
 
 ---
 
-## 📂 09. Las 3 Macro-Carpetas (Resguardo en Disco)
+## 📂 10. Las 3 Macro-Carpetas (Resguardo en Disco)
 * `01_Direccion_y_Estrategia/`: Contiene el mandato del sponsor, los límites de gobernanza y la `Matriz_de_Cambios_y_Acuerdos.md` auditada con fecha y hora (`YYYY-MM-DD HH:MM`).
 * `02_Ejecucion_y_Seguimiento/`: Aloja el tablero Kanban nativo, las tareas atómicas `TAR_XX.md` y las minutas cronológicas de sesión.
 * `03_Entregables_Finales/`: Almacena los informes Word limpios (`.docx`), sus réplicas Markdown gemelas (`.md`) y el histórico de cambios visuales en rojo dentro de `Historico/`.
 
 ---
 
-## ⚡ 10. El Cockpit Maestro (Herramientas & Descargas)
+## ⚡ 11. El Cockpit Maestro (Herramientas & Descargas)
 Infraestructura local ligera y sin servidores dedicados:
 1. **Starter Kit del Arnés (.zip):** Bóveda lista para descargar y descomprimir ([Descargar Starter Kit](Starter_Kit_Arnes_Universal.zip)).
 2. **Obsidian:** Bóveda de conocimiento e interfaz gráfica ([Descargar en obsidian.md](https://obsidian.md/download)).
@@ -130,14 +196,14 @@ Infraestructura local ligera y sin servidores dedicados:
 
 ---
 
-## 🚀 11. Cómo Arrancar un Proyecto (Kickoff en 3 Pasos)
+## 🚀 12. Cómo Arrancar un Proyecto (Kickoff en 3 Pasos)
 1. **Descargar o Copiar el Starter Kit:** Descomprime el archivo `.zip` en tu nuevo directorio de trabajo y ábrelo como bóveda en Obsidian.
 2. **Lanzar la CLI:** Abre la terminal en dicha carpeta y ejecuta el comando de tu CLI preferida (ej. `antigravity` o `claude`).
 3. **Emitir el Mandato:** Escribe tu objetivo en lenguaje natural (ej. *"Iniciemos el análisis de proveedores del Q4"*). El arnés iniciará el diagnóstico y desplegará el plan de trabajo de inmediato.
 
 ---
 
-## 🎁 12. Bono Directivo 1: Arquitectura de tu Propio Arnés
+## 🎁 13. Bono Directivo 1: Arquitectura de tu Propio Arnés
 * **Cada Petición es un Loop Completo:** Un arnés no es un proyecto de una sola vez. Cada interacción del usuario es un loop cerrado que arranca, diagnostica, convoca agentes, corre scripts, audita en Gauntlet, persiste el resultado y se reinicia listo para el siguiente requerimiento.
 * **Criterio de Arquitectura: ¿Agente o Skill?**
   * Crea un **Agente** cuando requieras un *rol* con autonomía, criterio de negocio, estilo de comunicación y juicio crítico.
@@ -146,7 +212,7 @@ Infraestructura local ligera y sin servidores dedicados:
 
 ---
 
-## 🎁 13. Bono Directivo 2: Prompt Maestro de Co-Diseño
+## 🎁 14. Bono Directivo 2: Prompt Maestro de Co-Diseño
 
 Copia y pega este prompt maestro directamente en tu CLI (Claude Code, Antigravity o Codex) al abrir tu nueva bóveda:
 

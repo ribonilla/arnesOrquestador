@@ -124,7 +124,98 @@ El arnés opera bajo un árbol de ejecución jerárquico que desciende desde la 
 
 ---
 
-## 🛡️ 6. Protocolo Gauntlet: Auditoría Adversarial Activa
+## 🔄 6. Flujograma Completo del Ciclo de Vida: El Motor de Decisiones
+
+A diferencia de un chat simple, el arnés evalúa la madurez de cada requerimiento, discrimina entre **co-diseño conceptual socrático (Professor Synapse)** y **producción de entregables (Staff Especialista)**, y somete todo entregable a la compuerta **Gauntlet**:
+
+```mermaid
+flowchart TD
+    Start([📥 Entrada del Usuario]) --> InitCheck{¿Bóveda inicializada?<br/>00_Centro_de_Mando existe}
+    
+    %% FASE INICIAL: DIAGNÓSTICO
+    InitCheck -- No / Comando /iniciar --> Phase1[Fase 1: Diagnóstico de Inicio<br/>3 Preguntas: Sponsor, Propósito, Restricciones]
+    Phase1 --> Phase2[Fase 2: Propuesta de Fases y Tareas]
+    Phase2 --> Phase2Wait[/¿Concertamos este plan?/]
+    Phase2Wait --> ApprovePlan{¿Usuario aprueba?}
+    ApprovePlan -- Ajustes --> Phase2
+    ApprovePlan -- Sí --> SetupVault[Fase 3: Setup Inicial Bóveda<br/>Crear Tareas TAR_XX, Tablero_Kanban.base y Centro_de_Mando]
+    SetupVault --> NextTask[Seleccionar Tarea Inmediata ⏳ En Progreso]
+
+    %% CICLO CONTINUO DE INTERACCIÓN
+    InitCheck -- Sí --> ReqCheck[Analizar Intención del Usuario]
+    NextTask --> ReqCheck
+    
+    ReqCheck --> ScopeCheck{¿El requerimiento entra en el alcance<br/>y restricciones del proyecto?}
+    ScopeCheck -- Desviación de Alcance --> ScopeAlert[⚠️ Alerta de Alcance y Registro en Matriz]
+    ScopeAlert --> ConsultUser[/Consultar si ajustamos alcance o descartamos/]
+    
+    ScopeCheck -- En Alcance --> TypeCheck{¿Qué tipo de trabajo es?}
+
+    %% CAMINO TEMÁTICO: PROFESSOR SYNAPSE
+    TypeCheck -- "Co-diseño / Debate / Estrategia" --> SynapseSummon[🧙🏾‍♂️ Professor Synapse: Invocar Experto de Dominio Dinámico]
+    subgraph SynapseCoCreation [Co-creación Temática Socrática]
+        SynapseSummon --> DynamicExpert[🧠 Experto Temático Invocado a Medida]
+        DynamicExpert --> CoDesignStep[Diálogo socrático paso a paso con el Usuario]
+        CoDesignStep --> ValidateContent{¿Contenido técnico maduro?}
+        ValidateContent -- No --> CoDesignStep
+    end
+    ValidateContent -- Sí --> NeedsArtifact{¿Requiere artefacto formal o entregable?}
+    NeedsArtifact -- "No (Solo diseño / acuerdo)" --> PersistSession[Persistir Minuta en 02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores]
+
+    %% CAMINO DE PRODUCCIÓN: ESPECIALISTAS DE FORMATO
+    TypeCheck -- "Artefacto directo" --> Routing[Enrutamiento a Especialista de Artefacto]
+    NeedsArtifact -- "Sí (Requiere entrega)" --> Routing
+
+    subgraph StaffArtefactos [Especialistas de Formato y Producción]
+        Routing -->|Finanzas / Métricas| E_Fin[📊 Auditor Cuantitativo]
+        Routing -->|Documentos / Minto| E_Doc[📄 Diseñador Documental]
+        Routing -->|Presentaciones| E_Vis[🎨 Especialista PPTX 16pt]
+        Routing -->|Web / Storytelling| E_Web[🌐 Especialista HTML]
+        Routing -->|Estructura / Enlaces| E_Arq[🏛️ Arquitecto Bóveda]
+    end
+
+    E_Fin --> CritFilter{¿Es Tarea Crítica?<br/>Entregable final, finanzas, alta dirección}
+    E_Doc --> CritFilter
+    E_Vis --> CritFilter
+    E_Web --> CritFilter
+    E_Arq --> CritFilter
+
+    %% CAMINO ESTÁNDAR
+    CritFilter -- No (Tarea rutinaria/borrador) --> ExecStd[Ejecución Estándar]
+    ExecStd --> PersistStd[Persistir en Bóveda]
+
+    %% PROTOCOLO GAUNTLET LOOP
+    CritFilter -- Sí (Crítica) --> Gauntlet[🛡️ Disparo de Protocolo Gauntlet en 4 Bloques]
+    
+    subgraph GauntletLoop [Compuerta de Calidad: Gauntlet Loop con Auditoría Activa]
+        Gauntlet --> BuilderStep[The Builder: Generar Artefacto según Estándar]
+        BuilderStep --> CriticStep[Revisor Adversarial: Auditoría Activa en Caliente<br/>Evaluar celdas .xlsx / fuentes .pptx / HTML]
+        CriticStep --> BenchCheck{¿Cumple el Listón?<br/>Cero discrepancias numéricas y diseño directivo}
+        BenchCheck -- Aprobado --> PassGauntlet[Veredicto: APROBADO]
+        BenchCheck -- Rechazado --> IterCheck{¿Iteraciones < 2?}
+        IterCheck -- Sí --> FixStep[Reporte de Defectos -> Subsanar en caliente]
+        FixStep --> BuilderStep
+        IterCheck -- "No (Circuit Breaker)" --> Escalation[Circuit Breaker: Escalar discrepancias al Usuario]
+    end
+
+    Escalation --> UserResolve[/Decisión del Usuario/]
+    UserResolve --> PassGauntlet
+
+    %% FASE DE CIERRE Y PERSISTENCIA FÍSICA
+    PassGauntlet --> PersistCritical[Persistir en 03_Entregables_Finales y registrar en 01_Direccion/Decisiones]
+    PersistStd --> UpdateKanban[Actualizar Estado en Kanban y 00_Centro_de_Mando]
+    PersistSession --> UpdateKanban
+    PersistCritical --> UpdateKanban
+
+    UpdateKanban --> LearnCheck{¿Hay lección, regla o patrón reutilizable?}
+    LearnCheck -- Sí --> SaveZettelkasten[Crear Nota Atómica en 01_Direccion/Aprendizajes_y_Conocimiento]
+    LearnCheck -- No --> TurnClose[Sintetizar resultado y esperar siguiente turno]
+    SaveZettelkasten --> TurnClose
+```
+
+---
+
+## 🛡️ 7. Protocolo Gauntlet: Auditoría Adversarial Activa
 
 Ningún entregable se publica en el primer borrador. El arnés activa un careo interno entre dos actores:
 
@@ -145,7 +236,7 @@ flowchart TD
 
 ---
 
-## 🔄 7. Las Seis Estaciones (Experiencia Directiva UX)
+## 🔄 8. Las Seis Estaciones (Experiencia Directiva UX)
 
 Lo que el directivo experimenta en el frente de trabajo:
 
@@ -158,7 +249,7 @@ Lo que el directivo experimenta en el frente de trabajo:
 
 ---
 
-## ⚡ 8. El Cockpit Maestro & Inicio Rápido (Kickoff en 3 Pasos)
+## ⚡ 9. El Cockpit Maestro & Inicio Rápido (Kickoff en 3 Pasos)
 
 No se requieren servidores corporativos ni configuraciones complejas. Solo necesitas tres piezas ligeras:
 
@@ -182,7 +273,7 @@ antigravity
 
 ---
 
-## 🎁 9. Bono Directivo: Prompt Maestro para Co-Diseñar tu Arnés
+## 🎁 10. Bono Directivo: Prompt Maestro para Co-Diseñar tu Arnés
 
 ¿Deseas armar un arnés a la medida exacta de tu departamento (Operaciones, RRHH, Finanzas, Legal)?
 
@@ -229,7 +320,7 @@ Hazme las 3 preguntas clave del Diagnóstico Inicial (Sponsor/Audiencia, Propós
 
 ---
 
-## 👤 10. Autor y Contacto
+## 👤 11. Autor y Contacto
 
 Diseñado y desarrollado por:
 
@@ -241,6 +332,6 @@ Diseñado y desarrollado por:
 
 ---
 
-## 📄 11. Licencia
+## 📄 12. Licencia
 
 Este proyecto está distribuido bajo la licencia MIT. Eres libre de usarlo, adaptarlo e implementarlo en tu organización manteniendo los créditos de autoría originales.

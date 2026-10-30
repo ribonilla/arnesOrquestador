@@ -43,13 +43,13 @@ ultimo_repaso: "2026-10-29 12:30"
 
 ## 📌 1. Ficha Ejecutiva del Proyecto
 
-| Atributo | Definición |
-|---|---|
-| **Sponsor / Solicitante** | Ricardo Bonilla |
-| **Audiencia / Usuarios** | Equipos corporativos, analistas de negocio, desarrolladores (SvelteKit, Python) y consultores |
-| **Entregable Principal** | Bóveda starter autocontenida con 3 macro-carpetas, motor `.harness/`, banco de prompts y auditoría activa |
-| **Estructura Minimalista** | `01_Direccion_y_Estrategia`, `02_Ejecucion_y_Seguimiento`, `03_Entregables_Finales` |
-| **Criterio de Éxito** | Cero confusión de navegación; el usuario encuentra reportes y acuerdos en 1 clic |
+| Atributo                   | Definición                                                                                                |
+| -------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **Sponsor / Solicitante**  | Ricardo Bonilla                                                                                           |
+| **Audiencia / Usuarios**   | Equipos corporativos, analistas de negocio, desarrolladores (SvelteKit, Python) y consultores             |
+| **Entregable Principal**   | Bóveda starter autocontenida con 3 macro-carpetas, motor `.harness/`, banco de prompts y auditoría activa |
+| **Estructura Minimalista** | `01_Direccion_y_Estrategia`, `02_Ejecucion_y_Seguimiento`, `03_Entregables_Finales`                       |
+| **Criterio de Éxito**      | Cero confusión de navegación; el usuario encuentra reportes y acuerdos en 1 clic                          |
 
 ---
 
@@ -75,6 +75,7 @@ ultimo_repaso: "2026-10-29 12:30"
 
 ### 📦 `03_Entregables_Finales/` (El "Qué" se entrega a Dirección)
 * 📄 [[03_Entregables_Finales/README|Catálogo de Entregables Vigentes]]
+* 🔄 [[03_Entregables_Finales/Flujograma_Orquestador_y_Ciclo_de_Vida|Flujograma de Ciclo de Vida: Synapse y Gauntlet Loop]]
 * 🌐 [[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.html|Curso y Wiki Ejecutiva (Scrollytelling C-Level)]]
 * 📄 [[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.md|Guía Ejecutiva en Markdown]]
 * 🌐 [[03_Entregables_Finales/Manual_de_Uso_del_Arnes.html|Manual de Uso en HTML]]
