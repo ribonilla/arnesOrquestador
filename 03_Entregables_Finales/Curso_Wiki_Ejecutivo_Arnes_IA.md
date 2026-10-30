@@ -146,15 +146,16 @@ flowchart TD
         Gauntlet --> Builder[Builder genera entregable]
         Builder --> Critic[Revisor audita Gate 0 y celdas vivas]
         Critic --> Veredicto{¿Aprobado?}
-        Veredicto -- No --> Circuit{¿Ronda < 2?}
-        Circuit -- Sí --> Fix[Autocorrección silenciosa] --> Builder
+        Veredicto -- No --> Circuit{"¿Ronda menor a 2?"}
+        Circuit -- Sí --> Fix["Autocorrección silenciosa"]
+        Fix --> Builder
         Circuit -- No --> Escalar[Circuit Breaker: Frena y Consulta al Humano]
     end
     
     Veredicto -- Sí --> PersistFinal[Persistir en 03_Entregables_Finales]
     Escalar --> PersistFinal
     PersistFinal --> UpdateKanban[Actualizar Kanban y Centro de Mando]
-    UpdateKanban --> Zettel[¿Hay aprendizaje? -> Nota Zettelkasten]
+    UpdateKanban --> Zettel["¿Hay aprendizaje? Capturar en Zettelkasten"]
 ```
 
 ### 🏛️ La Pregunta Clave: ¿Dónde está codificado este flujo para que el agente lo siga mecánicamente?

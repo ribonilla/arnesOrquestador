@@ -192,8 +192,8 @@ flowchart TD
         BuilderStep --> CriticStep[Revisor Adversarial: Auditoría Activa en Caliente<br/>Evaluar celdas .xlsx / fuentes .pptx / HTML]
         CriticStep --> BenchCheck{¿Cumple el Listón?<br/>Cero discrepancias numéricas y diseño directivo}
         BenchCheck -- Aprobado --> PassGauntlet[Veredicto: APROBADO]
-        BenchCheck -- Rechazado --> IterCheck{¿Iteraciones < 2?}
-        IterCheck -- Sí --> FixStep[Reporte de Defectos -> Subsanar en caliente]
+        BenchCheck -- Rechazado --> IterCheck{"¿Iteraciones menor a 2?"}
+        IterCheck -- Sí --> FixStep["Reporte de Defectos: Subsanar en caliente"]
         FixStep --> BuilderStep
         IterCheck -- "No (Circuit Breaker)" --> Escalation[Circuit Breaker: Escalar discrepancias al Usuario]
     end

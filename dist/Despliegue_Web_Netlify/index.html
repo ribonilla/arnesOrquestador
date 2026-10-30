@@ -15,7 +15,16 @@
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <script>
         if (typeof mermaid !== 'undefined') {
-            mermaid.initialize({ startOnLoad: true, theme: 'neutral', securityLevel: 'loose' });
+            mermaid.initialize({
+                startOnLoad: false,
+                theme: 'neutral',
+                securityLevel: 'loose',
+                flowchart: {
+                    useMaxWidth: true,
+                    htmlLabels: true,
+                    curve: 'basis'
+                }
+            });
         }
     </script>
 
@@ -1446,61 +1455,69 @@
                         </div>
 
                         <!-- VISTA 2: DIAGRAMA GRÁFICO MERMAID RENDERIZADO -->
-                        <div id="flowViewMermaid" class="flow-mermaid-render" style="display: none; background: #fff; padding: 1rem; border: 1px solid var(--rule); border-radius: 6px; overflow-x: auto;">
-                            <div class="mermaid" id="mermaidDiagramContainer">
+                        <div id="flowViewMermaid" class="flow-mermaid-render" style="display: none; background: #fff; padding: 1.2rem; border: 1px solid var(--rule); border-radius: 6px; overflow-x: auto;">
+                            <!-- Definición pura de Mermaid oculta de escaneo prematuro -->
+                            <pre id="mermaidRawSource" style="display: none;">
 flowchart TD
-    Start([📥 Entrada del Usuario]) --> InitCheck{¿Bóveda inicializada?<br/>00_Centro_de_Mando existe}
+    Start(["📥 Entrada del Usuario"]) --> InitCheck{"¿Bóveda inicializada?<br/>00_Centro_de_Mando existe"}
     
-    InitCheck -- No --> Phase1[Diagnóstico Inicial: 3 Preguntas]
-    Phase1 --> Phase2[Propuesta Plan Kanban]
-    Phase2 --> SetupVault[Setup Inicial Bóveda]
+    InitCheck -->|No| Phase1["Diagnóstico Inicial: 3 Preguntas"]
+    Phase1 --> Phase2["Propuesta Plan Kanban"]
+    Phase2 --> SetupVault["Setup Inicial Bóveda"]
     
-    InitCheck -- Sí --> ReqCheck[Analizar Intención del Usuario]
+    InitCheck -->|Sí| ReqCheck["Analizar Intención del Usuario"]
     SetupVault --> ReqCheck
     
-    ReqCheck --> ScopeCheck{¿Entra en el Alcance?}
-    ScopeCheck -- Desviación --> ScopeAlert[⚠️ Alerta de Alcance y Negociación]
+    ReqCheck --> ScopeCheck{"¿Entra en el Alcance?"}
+    ScopeCheck -->|Desviación| ScopeAlert["⚠️ Alerta de Alcance y Negociación"]
     
-    ScopeCheck -- En Alcance --> TypeCheck{¿Qué tipo de trabajo es?}
+    ScopeCheck -->|En Alcance| TypeCheck{"¿Qué tipo de trabajo es?"}
 
-    TypeCheck -- "Debate / Estrategia" --> Synapse[🧙🏾‍♂️ Professor Synapse: Invoca Experto Dinámico]
-    subgraph CoCreacion [Co-Creación Temática Socrática]
-        Synapse --> Expert[🧠 Experto Temático a Medida]
-        Expert --> Dialogo[Diálogo socrático paso a paso]
-        Dialogo --> Maduro{¿Contenido maduro?}
-        Maduro -- No --> Dialogo
+    TypeCheck -->|"Debate / Estrategia"| Synapse["🧙🏾‍♂️ Professor Synapse: Invoca Experto Dinámico"]
+    subgraph CoCreacion ["Co-Creación Temática Socrática"]
+        Synapse --> Expert["🧠 Experto Temático a Medida"]
+        Expert --> Dialogo["Diálogo socrático paso a paso"]
+        Dialogo --> Maduro{"¿Contenido maduro?"}
+        Maduro -->|No| Dialogo
     end
-    Maduro -- Sí --> NeedsArtifact{¿Requiere entregable?}
-    NeedsArtifact -- No --> PersistSession[Persistir Minuta en Sesiones_y_Borradores]
+    Maduro -->|Sí| NeedsArtifact{"¿Requiere entregable?"}
+    NeedsArtifact -->|No| PersistSession["Persistir Minuta en Sesiones_y_Borradores"]
 
-    TypeCheck -- "Artefacto Directo" --> Routing[Enrutador de Producción]
-    NeedsArtifact -- Sí --> Routing
+    TypeCheck -->|"Artefacto Directo"| Routing["Enrutador de Producción"]
+    NeedsArtifact -->|Sí| Routing
 
-    subgraph StaffEspecialistas [Staff de Formato y Producción]
-        Routing -->|Finanzas| E_Fin[📊 Auditor Cuantitativo]
-        Routing -->|Informes| E_Doc[📄 Diseñador Documental]
-        Routing -->|Slides| E_Vis[🎨 Especialista PPTX 16pt]
-        Routing -->|Web| E_Web[🌐 Especialista HTML]
-        Routing -->|Bóveda| E_Arq[🏛️ Arquitecto Bóveda]
+    subgraph StaffEspecialistas ["Staff de Formato y Producción"]
+        Routing -->|Finanzas| E_Fin["📊 Auditor Cuantitativo"]
+        Routing -->|Informes| E_Doc["📄 Diseñador Documental"]
+        Routing -->|Slides| E_Vis["🎨 Especialista PPTX 16pt"]
+        Routing -->|Web| E_Web["🌐 Especialista HTML"]
+        Routing -->|Bóveda| E_Arq["🏛️ Arquitecto Bóveda"]
     end
 
-    StaffEspecialistas --> CritFilter{¿Es Tarea Crítica?}
-    CritFilter -- No --> PersistStd[Persistir en Bóveda]
+    StaffEspecialistas --> CritFilter{"¿Es Tarea Crítica?"}
+    CritFilter -->|No| PersistStd["Persistir en Bóveda"]
     
-    CritFilter -- Sí --> Gauntlet[🛡️ Tribunal Gauntlet: Builder vs Revisor Crítico]
-    subgraph GauntletLoop [Compuerta Gauntlet]
-        Gauntlet --> Builder[Builder genera entregable]
-        Builder --> Critic[Revisor audita Gate 0 y celdas vivas]
-        Critic --> Veredicto{¿Aprobado?}
-        Veredicto -- No --> Circuit{¿Ronda < 2?}
-        Circuit -- Sí --> Fix[Autocorrección silenciosa] --> Builder
-        Circuit -- No --> Escalar[Circuit Breaker: Frena y Consulta al Humano]
+    CritFilter -->|Sí| Gauntlet["🛡️ Tribunal Gauntlet: Builder vs Revisor Crítico"]
+    subgraph GauntletLoop ["Compuerta Gauntlet"]
+        Gauntlet --> Builder["Builder genera entregable"]
+        Builder --> Critic["Revisor audita Gate 0 y celdas vivas"]
+        Critic --> Veredicto{"¿Aprobado?"}
+        Veredicto -->|No| Circuit{"¿Ronda menor a 2?"}
+        Circuit -->|Sí| Fix["Autocorrección silenciosa"]
+        Fix --> Builder
+        Circuit -->|No| Escalar["Circuit Breaker: Frena y Consulta al Humano"]
     end
     
-    Veredicto -- Sí --> PersistFinal[Persistir en 03_Entregables_Finales]
+    Veredicto -->|Sí| PersistFinal["Persistir en 03_Entregables_Finales"]
     Escalar --> PersistFinal
-    PersistFinal --> UpdateKanban[Actualizar Kanban y Centro de Mando]
-    UpdateKanban --> Zettel[¿Hay aprendizaje? -> Nota Zettelkasten]
+    PersistFinal --> UpdateKanban["Actualizar Kanban y Centro de Mando"]
+    UpdateKanban --> Zettel["¿Hay aprendizaje? Capturar en Zettelkasten"]
+                            </pre>
+                            <!-- Contenedor donde se inyecta el SVG interactivo -->
+                            <div id="mermaidDiagramContainer" style="min-height: 480px; width: 100%; display: flex; justify-content: center; align-items: center;">
+                                <div style="color: var(--muted); font-size: 0.9rem; text-align: center; padding: 2rem;">
+                                    <span>Haz clic en "2. Diagrama Mermaid" para renderizar el diagrama de flujo interactivo...</span>
+                                </div>
                             </div>
                         </div>
 
@@ -1513,58 +1530,59 @@ flowchart TD
                                 </div>
                                 <pre class="prompt-code-body" id="mermaidCodeText">```mermaid
 flowchart TD
-    Start([📥 Entrada del Usuario]) --> InitCheck{¿Bóveda inicializada?<br/>00_Centro_de_Mando existe}
+    Start(["📥 Entrada del Usuario"]) --> InitCheck{"¿Bóveda inicializada?<br/>00_Centro_de_Mando existe"}
     
-    InitCheck -- No --> Phase1[Diagnóstico Inicial: 3 Preguntas]
-    Phase1 --> Phase2[Propuesta Plan Kanban]
-    Phase2 --> SetupVault[Setup Carpetas y Tareas TAR_XX]
+    InitCheck -->|No| Phase1["Diagnóstico Inicial: 3 Preguntas"]
+    Phase1 --> Phase2["Propuesta Plan Kanban"]
+    Phase2 --> SetupVault["Setup Carpetas y Tareas TAR_XX"]
     
-    InitCheck -- Sí --> ReqCheck[Analizar Intención del Usuario]
+    InitCheck -->|Sí| ReqCheck["Analizar Intención del Usuario"]
     SetupVault --> ReqCheck
     
-    ReqCheck --> ScopeCheck{¿Entra en el Alcance?}
-    ScopeCheck -- Desviación --> ScopeAlert[⚠️ Alerta de Alcance y Negociación]
+    ReqCheck --> ScopeCheck{"¿Entra en el Alcance?"}
+    ScopeCheck -->|Desviación| ScopeAlert["⚠️ Alerta de Alcance y Negociación"]
     
-    ScopeCheck -- En Alcance --> TypeCheck{¿Qué tipo de trabajo es?}
+    ScopeCheck -->|En Alcance| TypeCheck{"¿Qué tipo de trabajo es?"}
 
-    TypeCheck -- "Debate / Estrategia / Técnica" --> Synapse[🧙🏾‍♂️ Professor Synapse: Invoca Experto de Dominio Dinámico]
-    subgraph CoCreacion [Co-Creación Temática Socrática]
-        Synapse --> Expert[🧠 Experto Temático a Medida]
-        Expert --> Dialogo[Diálogo socrático paso a paso con el Usuario]
-        Dialogo --> Maduro{¿Contenido maduro?}
-        Maduro -- No --> Dialogo
+    TypeCheck -->|"Debate / Estrategia / Técnica"| Synapse["🧙🏾‍♂️ Professor Synapse: Invoca Experto de Dominio Dinámico"]
+    subgraph CoCreacion ["Co-Creación Temática Socrática"]
+        Synapse --> Expert["🧠 Experto Temático a Medida"]
+        Expert --> Dialogo["Diálogo socrático paso a paso con el Usuario"]
+        Dialogo --> Maduro{"¿Contenido maduro?"}
+        Maduro -->|No| Dialogo
     end
-    Maduro -- Sí --> NeedsArtifact{¿Requiere entregable formal?}
-    NeedsArtifact -- No --> PersistSession[Persistir Minuta en Sesiones_y_Borradores]
+    Maduro -->|Sí| NeedsArtifact{"¿Requiere entregable formal?"}
+    NeedsArtifact -->|No| PersistSession["Persistir Minuta en Sesiones_y_Borradores"]
 
-    TypeCheck -- "Artefacto Directo" --> Routing[Enrutador de Producción]
-    NeedsArtifact -- Sí --> Routing
+    TypeCheck -->|"Artefacto Directo"| Routing["Enrutador de Producción"]
+    NeedsArtifact -->|Sí| Routing
 
-    subgraph StaffEspecialistas [Staff de Formato y Producción]
-        Routing -->|Métricas / Finanzas| E_Fin[📊 Auditor Cuantitativo]
-        Routing -->|Informes / Minto| E_Doc[📄 Diseñador Documental]
-        Routing -->|Presentaciones| E_Vis[🎨 Especialista PPTX 16pt]
-        Routing -->|Web / Visual| E_Web[🌐 Especialista HTML]
-        Routing -->|Bóveda / Markdown| E_Arq[🏛️ Arquitecto Bóveda]
+    subgraph StaffEspecialistas ["Staff de Formato y Producción"]
+        Routing -->|Métricas / Finanzas| E_Fin["📊 Auditor Cuantitativo"]
+        Routing -->|Informes / Minto| E_Doc["📄 Diseñador Documental"]
+        Routing -->|Presentaciones| E_Vis["🎨 Especialista PPTX 16pt"]
+        Routing -->|Web / Visual| E_Web["🌐 Especialista HTML"]
+        Routing -->|Bóveda / Markdown| E_Arq["🏛️ Arquitecto Bóveda"]
     end
 
-    StaffEspecialistas --> CritFilter{¿Es Tarea Crítica?}
-    CritFilter -- No --> PersistStd[Persistir en Bóveda]
+    StaffEspecialistas --> CritFilter{"¿Es Tarea Crítica?"}
+    CritFilter -->|No| PersistStd["Persistir en Bóveda"]
     
-    CritFilter -- Sí --> Gauntlet[🛡️ Tribunal Gauntlet: Builder vs Revisor Crítico]
-    subgraph GauntletLoop [Compuerta Gauntlet]
-        Gauntlet --> Builder[Builder genera entregable]
-        Builder --> Critic[Revisor audita Gate 0 y celdas vivas]
-        Critic --> Veredicto{¿Aprobado?}
-        Veredicto -- No --> Circuit{¿Ronda < 2?}
-        Circuit -- Sí --> Fix[Autocorrección silenciosa] --> Builder
-        Circuit -- No --> Escalar[Circuit Breaker: Frena y Consulta al Humano]
+    CritFilter -->|Sí| Gauntlet["🛡️ Tribunal Gauntlet: Builder vs Revisor Crítico"]
+    subgraph GauntletLoop ["Compuerta Gauntlet"]
+        Gauntlet --> Builder["Builder genera entregable"]
+        Builder --> Critic["Revisor audita Gate 0 y celdas vivas"]
+        Critic --> Veredicto{"¿Aprobado?"}
+        Veredicto -->|No| Circuit{"¿Ronda menor a 2?"}
+        Circuit -->|Sí| Fix["Autocorrección silenciosa"]
+        Fix --> Builder
+        Circuit -->|No| Escalar["Circuit Breaker: Frena y Consulta al Humano"]
     end
     
-    Veredicto -- Sí --> PersistFinal[Persistir en 03_Entregables_Finales]
+    Veredicto -->|Sí| PersistFinal["Persistir en 03_Entregables_Finales"]
     Escalar --> PersistFinal
-    PersistFinal --> UpdateKanban[Actualizar Kanban y Centro de Mando]
-    UpdateKanban --> Zettel[¿Hay aprendizaje? -> Nota Zettelkasten]
+    PersistFinal --> UpdateKanban["Actualizar Kanban y Centro de Mando"]
+    UpdateKanban --> Zettel["¿Hay aprendizaje? Capturar en Zettelkasten"]
 ```</pre>
                             </div>
                         </div>
@@ -2128,7 +2146,7 @@ Hazme las 3 preguntas clave del Diagnóstico Inicial (Sponsor/Audiencia, Propós
         }
 
         // CONTROL DE VISTAS DEL FLUJOGRAMA DE DECISIONES (SLIDE 07)
-        function toggleFlowchartView(view) {
+        async function toggleFlowchartView(view) {
             const vVisual = document.getElementById('flowViewVisual');
             const vMermaid = document.getElementById('flowViewMermaid');
             const vCode = document.getElementById('flowViewCode');
@@ -2150,19 +2168,54 @@ Hazme las 3 preguntas clave del Diagnóstico Inicial (Sponsor/Audiencia, Propós
             } else if (view === 'mermaid') {
                 if (vMermaid) vMermaid.style.display = 'block';
                 if (btnM) btnM.classList.add('active');
-                if (window.mermaid) {
-                    try {
-                        mermaid.run({ nodes: [document.getElementById('mermaidDiagramContainer')] });
-                    } catch (e) {
-                        console.log('Mermaid render info:', e);
-                    }
-                }
+                await renderMermaidDiagram();
             } else if (view === 'code') {
                 if (vCode) vCode.style.display = 'block';
                 if (btnC) btnC.classList.add('active');
             } else if (view === 'arch') {
                 if (vArch) vArch.style.display = 'grid';
                 if (btnA) btnA.classList.add('active');
+            }
+        }
+
+        async function renderMermaidDiagram() {
+            const container = document.getElementById('mermaidDiagramContainer');
+            if (!container) return;
+            if (container.getAttribute('data-rendered') === 'true') return;
+
+            if (typeof mermaid === 'undefined') {
+                container.innerHTML = `
+                    <div style="padding: 1.5rem; text-align: center; color: var(--muted); border: 1px dashed var(--rule); border-radius: 6px; width: 100%;">
+                        <p style="font-weight: 600; color: var(--rose); margin-bottom: 0.5rem;">Librería Mermaid no disponible sin conexión a internet</p>
+                        <p style="font-size: 0.85rem; margin-bottom: 1rem;">Para ver el diagrama gráfico interactivo, asegurate de tener conexión (o abrí la versión en Netlify). En local podés consultar el <strong>Árbol de Decisión</strong> o copiar el código en la pestaña <strong>Código (Obsidian)</strong>.</p>
+                        <button class="cta" onclick="toggleFlowchartView('visual')" style="display:inline-flex;"><span class="cta-label">Ver Árbol de Decisión</span><span class="cta-arrow">→</span></button>
+                    </div>
+                `;
+                return;
+            }
+
+            try {
+                const rawSource = document.getElementById('mermaidRawSource');
+                if (!rawSource) return;
+                const code = rawSource.textContent.trim();
+                const renderId = 'mermaidRender_' + Math.floor(Math.random() * 1000000);
+                const { svg } = await mermaid.render(renderId, code);
+                container.innerHTML = svg;
+                container.setAttribute('data-rendered', 'true');
+                const svgElem = container.querySelector('svg');
+                if (svgElem) {
+                    svgElem.style.maxWidth = '100%';
+                    svgElem.style.height = 'auto';
+                }
+            } catch (err) {
+                console.warn('Detalle de advertencia Mermaid:', err);
+                container.innerHTML = `
+                    <div style="padding: 1.5rem; text-align: center; color: var(--muted); border: 1px dashed var(--rule); border-radius: 6px; width: 100%;">
+                        <p style="font-weight: 600; color: var(--rose); margin-bottom: 0.5rem;">Visualización Dinámica Alternativa</p>
+                        <p style="font-size: 0.85rem; margin-bottom: 1rem;">Podés explorar el flujo completo nodo a nodo en la pestaña <strong>1. Árbol de Decisión</strong> o copiar la definición en <strong>3. Código (Obsidian)</strong>.</p>
+                        <button class="cta" onclick="toggleFlowchartView('visual')" style="display:inline-flex;"><span class="cta-label">Ver Árbol de Decisión</span><span class="cta-arrow">→</span></button>
+                    </div>
+                `;
             }
         }
 
