@@ -127,4 +127,26 @@ Para entregables críticos de alta dirección, se activa el careo interno entre 
 
 ---
 
+## 🏛️ 3. La Pregunta Clave: ¿Dónde está codificado este flujo para que el agente lo siga mecánicamente?
+
+El agente **no "mira" el dibujo de Mermaid** para actuar en tiempo real. El diagrama visual es el plano de ingeniería que representa un sistema de reglas duras distribuidas en tres niveles de la arquitectura:
+
+1. **La Fontanería Real y el Código de Construcción (`AGENTS.md`, `GEMINI.md`, `CLAUDE.md` y `.harness/REGLAS_OPERATIVAS_IA.md`):**  
+   Son las **System Instructions** que cualquier CLI (Claude Code, Antigravity, Codex) inyecta de forma obligatoria en la memoria de trabajo de la IA en cada sesión. Allí están codificadas en directivas ejecutables:
+   * **Regla #0:** Auto-bootstrap y las 3 preguntas de diagnóstico inicial.
+   * **Regla #1:** Auto-escritura proactiva obligatoria en las 3 macro-carpetas físicas.
+   * **Regla #2:** Flujo de interacción de **Professor Synapse** (la plantilla de diálogo socrático paso a paso).
+   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos y el Circuit Breaker de 2 rondas).
+2. **El Organigrama del Staff (`.harness/Agentes/EXPERTOS_Y_ROLES.md`):**  
+   Define los perfiles de cargo exactos: el Orquestador PM, Professor Synapse (*Summoner* dinámico) y los 5 especialistas de formato (Auditor Cuantitativo, Diseñador Documental, PPTX, HTML y Arquitecto Bóveda).
+3. **El Tablero de Control para el Humano (`00_Centro_de_Mando.md`):**  
+   Este archivo **NO contiene las órdenes del agente**, sino la interfaz de usuario en Obsidian: el tablero de llaves de paso, switches e indicadores para que el director opere la casa en un clic sin tener que meterse en las cañerías de `.harness/`.
+
+> 💡 **La analogía arquitectónica:**
+> * **El diagrama Mermaid:** Es el **plano arquitectónico** que vemos humanos y directivos para entender de un vistazo cómo fluye el agua y la electricidad en el edificio.
+> * **`AGENTS.md` y `.harness/REGLAS_OPERATIVAS_IA.md`:** Es el **código de construcción y la fontanería real** que la IA lee para saber qué hacer en cada bifurcación.
+> * **`00_Centro_de_Mando.md`:** Es el **tablero de llaves y fusibles en la pared** para que el dueño opere la casa sin ensuciarse en las tuberías.
+
+---
+
 *Diseñado por **Ricardo Bonilla** · Consultor en Ciencia de Datos · [ribonilla@gmail.com](mailto:ribonilla@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)*

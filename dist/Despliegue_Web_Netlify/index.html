@@ -559,9 +559,31 @@
         /* 07: Flujograma de Decisiones (Motor Synapse vs Staff) */
         .flowchart-tab-bar {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.4rem;
             margin-bottom: 0.9rem;
+        }
+        .arch-analogy-box {
+            background: var(--paper-2);
+            border: 1px solid var(--rule-strong);
+            border-left: 3px solid var(--rose);
+            padding: 0.75rem 0.95rem;
+            margin-bottom: 1.3rem;
+            border-radius: 4px;
+            max-width: 44ch;
+        }
+        .arch-analogy-tag {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--rose);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .arch-analogy-text {
+            font-size: 0.8rem;
+            color: var(--ink-2);
+            line-height: 1.45;
         }
         .flow-interactive-deck {
             display: grid;
@@ -1366,6 +1388,17 @@
                         <p>El arnés evalúa en tiempo real: si tu solicitud requiere co-diseño socrático, <strong>Professor Synapse</strong> convoca a un mentor temático de dominio.</p>
                         <p>Si requiere un entregable formal, activa al <strong>Staff de Producción</strong>. Ambas rutas convergen en el <strong>Gauntlet</strong> antes de tocar el disco.</p>
                     </div>
+
+                    <!-- Cuadro de Analogía Arquitectónica Destacado -->
+                    <div class="arch-analogy-box">
+                        <div class="arch-analogy-tag">🏛️ La Analogía Arquitectónica</div>
+                        <div class="arch-analogy-text">
+                            <strong>• El Diagrama Mermaid:</strong> Es el <em>plano arquitectónico</em> que vemos humanos y directivos para entender el flujo.<br/>
+                            <strong>• AGENTS.md & REGLAS_OPERATIVAS:</strong> Es la <em>fontanería real y código de obra</em> que la IA lee y ejecuta en cada bifurcación.<br/>
+                            <strong>• 00_Centro_de_Mando.md:</strong> Es el <em>tablero de llaves y switches</em> para que el dueño opere la casa sin ensuciarse en las tuberías.
+                        </div>
+                    </div>
+
                     <button class="cta" onclick="showSlide(7)"><span class="cta-label">Ver Protocolo Gauntlet</span><span class="cta-arrow">→</span></button>
                 </div>
                 <figure class="home-figure">
@@ -1375,6 +1408,7 @@
                             <button class="scen-btn active" id="btnFlowVisual" onclick="toggleFlowchartView('visual')">1. Árbol de Decisión</button>
                             <button class="scen-btn" id="btnFlowMermaid" onclick="toggleFlowchartView('mermaid')">2. Diagrama Mermaid</button>
                             <button class="scen-btn" id="btnFlowCode" onclick="toggleFlowchartView('code')">3. Código (Obsidian)</button>
+                            <button class="scen-btn" id="btnFlowArch" onclick="toggleFlowchartView('arch')">4. ¿Dónde está codificado?</button>
                         </div>
 
                         <!-- VISTA 1: ÁRBOL VISUAL INTERACTIVO -->
@@ -1532,6 +1566,25 @@ flowchart TD
     PersistFinal --> UpdateKanban[Actualizar Kanban y Centro de Mando]
     UpdateKanban --> Zettel[¿Hay aprendizaje? -> Nota Zettelkasten]
 ```</pre>
+                            </div>
+                        </div>
+
+                        <!-- VISTA 4: DÓNDE ESTÁ CODIFICADO (FONTANERÍA REAL) -->
+                        <div id="flowViewArch" class="flow-arch-deck" style="display: none; grid-gap: 0.75rem;">
+                            <div class="f-step-card" style="border-left: 4px solid var(--rose);">
+                                <div class="f-step-tag">Capa 1: Fontanería Real y Código de Construcción</div>
+                                <div class="f-step-title"><code>AGENTS.md</code> & <code>.harness/REGLAS_OPERATIVAS_IA.md</code></div>
+                                <div class="f-step-desc">Son las <strong>System Instructions</strong> que cualquier CLI (Claude Code, Antigravity, Codex) inyecta obligatoriamente en la memoria de la IA en cada sesión. Contiene las 5 reglas de oro: Auto-bootstrap, Auto-escritura, Patrón Synapse y Protocolo Gauntlet.</div>
+                            </div>
+                            <div class="f-step-card" style="border-left: 4px solid #7c3aed;">
+                                <div class="f-step-tag">Capa 2: Organigrama del Staff</div>
+                                <div class="f-step-title"><code>.harness/Agentes/EXPERTOS_Y_ROLES.md</code></div>
+                                <div class="f-step-desc">Define los perfiles de cargo: el Orquestador PM, Professor Synapse (Summoner de expertos dinámicos) y los 5 especialistas de formato (Auditor Cuantitativo, Diseñador Documental, PPTX, HTML y Bóveda).</div>
+                            </div>
+                            <div class="f-step-card" style="border-left: 4px solid #2563eb;">
+                                <div class="f-step-tag">Capa 3: Tablero de Control Humano</div>
+                                <div class="f-step-title"><code>00_Centro_de_Mando.md</code></div>
+                                <div class="f-step-desc"><strong>NO contiene órdenes para el agente.</strong> Es la interfaz en Obsidian para el usuario humano: el tablero de llaves de paso, switches e indicadores para que el director opere la casa en un clic sin tocar la tubería técnica.</div>
                             </div>
                         </div>
                     </div>
@@ -2079,21 +2132,24 @@ Hazme las 3 preguntas clave del Diagnóstico Inicial (Sponsor/Audiencia, Propós
             const vVisual = document.getElementById('flowViewVisual');
             const vMermaid = document.getElementById('flowViewMermaid');
             const vCode = document.getElementById('flowViewCode');
+            const vArch = document.getElementById('flowViewArch');
             const btnV = document.getElementById('btnFlowVisual');
             const btnM = document.getElementById('btnFlowMermaid');
             const btnC = document.getElementById('btnFlowCode');
+            const btnA = document.getElementById('btnFlowArch');
 
-            [btnV, btnM, btnC].forEach(b => b && b.classList.remove('active'));
-            vVisual.style.display = 'none';
-            vMermaid.style.display = 'none';
-            vCode.style.display = 'none';
+            [btnV, btnM, btnC, btnA].forEach(b => b && b.classList.remove('active'));
+            if (vVisual) vVisual.style.display = 'none';
+            if (vMermaid) vMermaid.style.display = 'none';
+            if (vCode) vCode.style.display = 'none';
+            if (vArch) vArch.style.display = 'none';
 
             if (view === 'visual') {
-                vVisual.style.display = 'grid';
-                btnV.classList.add('active');
+                if (vVisual) vVisual.style.display = 'grid';
+                if (btnV) btnV.classList.add('active');
             } else if (view === 'mermaid') {
-                vMermaid.style.display = 'block';
-                btnM.classList.add('active');
+                if (vMermaid) vMermaid.style.display = 'block';
+                if (btnM) btnM.classList.add('active');
                 if (window.mermaid) {
                     try {
                         mermaid.run({ nodes: [document.getElementById('mermaidDiagramContainer')] });
@@ -2102,8 +2158,11 @@ Hazme las 3 preguntas clave del Diagnóstico Inicial (Sponsor/Audiencia, Propós
                     }
                 }
             } else if (view === 'code') {
-                vCode.style.display = 'block';
-                btnC.classList.add('active');
+                if (vCode) vCode.style.display = 'block';
+                if (btnC) btnC.classList.add('active');
+            } else if (view === 'arch') {
+                if (vArch) vArch.style.display = 'grid';
+                if (btnA) btnA.classList.add('active');
             }
         }
 
