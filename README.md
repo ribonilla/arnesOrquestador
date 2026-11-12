@@ -279,16 +279,20 @@ No se requieren servidores corporativos ni configuraciones complejas. Solo neces
 
 ### Rutina de Arranque:
 ```bash
-# 1. Clona este repositorio o descarga el Starter Kit
+# 1. Clona este repositorio o descomprime arnes_starter.zip en tu nueva carpeta
 git clone https://github.com/ribonilla/arnesOrquestador.git Mi_Nuevo_Proyecto
 cd Mi_Nuevo_Proyecto
+
+# (Opcional) Si estás en el repo de desarrollo y deseas empaquetar el kit limpio:
+python .harness/tools/build_starter_zip.py
 
 # 2. Lanza tu CLI preferida desde la carpeta del proyecto
 antigravity
 # o también: claude / codex
 
-# 3. Emite tu mandato de negocio en lenguaje natural
-# Ej: "Iniciemos la auditoría de costos logísticos del Q4"
+# 3. Emite tu saludo o mandato de negocio en lenguaje natural
+# Ej: "Hola" o "Iniciemos la auditoría de costos logísticos del Q4"
+# El agente detectará automáticamente que es un proyecto nuevo y ejecutará el Diagnóstico Inicial.
 ```
 
 ---

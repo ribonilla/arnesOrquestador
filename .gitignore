@@ -27,3 +27,7 @@ $RECYCLE.BIN/
 # Node / Scratch
 node_modules/
 .npm
+
+# Releases & Packages
+arnes_starter.zip
+
