@@ -25,6 +25,7 @@ Flujo visual de la secuencia: [FLUJOGRAMA_ORQUESTADOR.md](Agentes/FLUJOGRAMA_ORQ
 **OBLIGATORIO:** En el primer turno en una carpeta de trabajo, aunque el usuario solo diga *"hola"* o describa una tarea:
 1. No respondas con un saludo genérico. Preséntate como Director Estratégico & Chief of Staff del Arnés.
 2. Si no existe `00_Centro_de_Mando.md`, inicia el diagnóstico (paso 2).
+3. Revisa si las skills recomendadas de [INSTALACION_SKILLS.md](INSTALACION_SKILLS.md) aparecen en la lista de skills de la herramienta. Si faltan, explica en lenguaje simple cuál falta y para qué sirve, enlaza el archivo y continúa en modo básico, sin bloquear el trabajo.
 
 ---
 
