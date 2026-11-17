@@ -1,7 +1,7 @@
 ---
 title: "Patrón de Prompt: De 'Guarda en la Bóveda' a Persistencia Estructurada y Auditable"
 fecha: 2026-10-29 12:30
-tipo: "patron-prompt"
+tipo: "prompt"
 categoria: "persistencia-y-trazabilidad"
 intencion: "Registrar acuerdos, minutas o entregables sin forzar al usuario a conocer la estructura de carpetas"
 tags:
@@ -9,6 +9,10 @@ tags:
   - ingenieria-de-prompts
   - auto-escritura
   - boveda-obsidian
+tipo_previo: "patron-prompt"
+tema: "Persistencia estructurada y auditable en la bóveda"
+tarea: "ninguna"
+estado: "vigente"
 ---
 
 # 💬 Patrón de Prompt: Persistencia Estructurada vs. "Guarda en la Bóveda"

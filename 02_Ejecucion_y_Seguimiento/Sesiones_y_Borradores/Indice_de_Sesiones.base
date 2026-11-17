@@ -1,0 +1,42 @@
+# Verificar en Obsidian
+filters:
+  and:
+    - file.inFolder("02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores")
+    - note.tipo == "sesion"
+
+properties:
+  file.name:
+    displayName: "Sesión"
+  fecha:
+    displayName: "Fecha"
+  tema:
+    displayName: "Tema"
+  estado:
+    displayName: "Estado"
+  tarea:
+    displayName: "Tarea"
+
+views:
+  - type: cards
+    name: "Sesiones (Cards)"
+    order:
+      - file.name
+      - fecha
+      - tema
+      - estado
+      - tarea
+    sort:
+      - property: note.fecha
+        direction: DESC
+
+  - type: table
+    name: "Sesiones (Tabla)"
+    order:
+      - file.name
+      - fecha
+      - tema
+      - estado
+      - tarea
+    sort:
+      - property: note.fecha
+        direction: DESC

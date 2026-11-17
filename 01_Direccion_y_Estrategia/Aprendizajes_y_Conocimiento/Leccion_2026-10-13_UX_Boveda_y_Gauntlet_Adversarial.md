@@ -1,7 +1,7 @@
 ---
 title: "Lección de Arquitectura: Experiencia de Usuario en Bóvedas de IA y Protocolo Gauntlet Riguroso"
 fecha: 2026-10-13
-tipo: leccion-aprendida-arquitectura
+tipo: "aprendizaje"
 modulo: "Arnés Metodológico de IA (Harness Engine)"
 estado: integrado-en-core
 tags:
@@ -10,6 +10,9 @@ tags:
   - gauntlet-4-bloques
   - revisor-adversarial
   - living-document
+tipo_previo: leccion-aprendida-arquitectura
+tema: "UX de bóveda y Gauntlet adversarial"
+tarea: "ninguna"
 ---
 
 # 🧠 Lección de Arquitectura: UX en Bóvedas de IA y Rigor Adversarial

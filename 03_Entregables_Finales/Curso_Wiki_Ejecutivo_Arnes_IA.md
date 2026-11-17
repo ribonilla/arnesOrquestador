@@ -1,6 +1,6 @@
 ---
 titulo: "Cerebro Digital Corporativo: Curso y Wiki Ejecutiva"
-tipo: "Entregable Final / Inducción C-Level"
+tipo: "entregable"
 fecha: "2026-10-29 19:35"
 version: "5.0 - 14 Diapositivas, Flujograma Completo Synapse & Mermaid Integrado"
 autor: "Ricardo Bonilla"
@@ -11,6 +11,10 @@ audiencia: "Vicepresidentes y Directores C-Level (Operaciones, RRHH, Logística)
 archivo_html_gemelo: "[[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.html]]"
 paquete_starter_kit: "[[03_Entregables_Finales/Starter_Kit_Arnes_Universal.zip]]"
 flujograma_maestro: "[[03_Entregables_Finales/Flujograma_Orquestador_y_Ciclo_de_Vida.md]]"
+tipo_previo: "Entregable Final / Inducción C-Level"
+tema: "Curso y Wiki Ejecutiva del Arnés"
+tarea: "ninguna"
+estado: "vigente"
 ---
 
 # 🏛️ Cerebro Digital Corporativo: Arquitectura de Arnés con IA, Obsidian y Metodología Ejecutiva

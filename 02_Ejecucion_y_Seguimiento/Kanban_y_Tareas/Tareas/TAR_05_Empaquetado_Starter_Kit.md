@@ -8,6 +8,9 @@ fecha_limite: "2026-10-11"
 tags:
   - tarea
   - proyecto
+fecha: "2026-10-11 00:00"
+tema: "Creación y Empaquetado del Starter Kit Universal"
+tarea: "TAR_05"
 ---
 
 # 📌 Creación y Empaquetado del Starter Kit Universal

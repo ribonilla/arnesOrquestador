@@ -1,12 +1,17 @@
 ---
 id: "20261008-150000"
-tipo: "Criterio_Corporativo"
+tipo: "aprendizaje"
 proyecto_origen: "[[Arnés_PARA_Zettelkasten]]"
 fecha_creacion: "2026-10-08"
 tags:
   - gestion-proyectos
   - gobernanza
   - criterios-alcance
+tipo_previo: "Criterio_Corporativo"
+fecha: "2026-10-08 00:00"
+tema: "Delimitación negativa de alcance"
+tarea: "ninguna"
+estado: "vigente"
 ---
 
 # 🧠 Regla de Oro: La Delimitación Negativa de Alcance (Out-of-Scope)

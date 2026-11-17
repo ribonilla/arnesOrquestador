@@ -9,6 +9,9 @@ tags:
   - tarea
   - plantilla
   - skills
+fecha: "2026-11-17 16:32"
+tema: "Plantilla Limpia, Skills de Terceros y Bóveda de Trabajo"
+tarea: "TAR_07"
 ---
 
 # 📌 TAR_07: Plantilla Limpia, Skills de Terceros y Bóveda de Trabajo

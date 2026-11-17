@@ -8,6 +8,9 @@ fecha_limite: "2026-10-08"
 tags:
   - tarea
   - proyecto
+fecha: "2026-10-08 00:00"
+tema: "Despliegue de Arquitectura PARA + Zettelkasten"
+tarea: "TAR_01"
 ---
 
 # 📌 Despliegue de Arquitectura PARA + Zettelkasten

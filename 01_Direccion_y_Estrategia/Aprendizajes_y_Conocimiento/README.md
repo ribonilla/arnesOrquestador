@@ -1,3 +1,11 @@
+---
+tipo: "centro_de_mando"
+fecha: "2026-10-08 00:00"
+tema: "Banco de conocimiento y aprendizajes"
+tarea: "ninguna"
+estado: "vigente"
+---
+
 # 🧠 06. Banco Zettelkasten de Conocimiento Reutilizable
 
 Esta carpeta contiene **notas atómicas y autónomas** generadas a lo largo de tus proyectos:
@@ -17,3 +25,5 @@ Cada nota es corta, directa y reusable en futuros compromisos profesionales.
 * [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Aprendizaje_2026-11-17_1638_Configuracion_Local_No_Se_Versiona|La configuración local de Obsidian no se versiona]]
 * [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Aprendizaje_2026-11-17_1638_Verificar_Reportes_de_Subagentes|Verificar reportes de subagentes antes de aceptarlos]]
 * Prompts: [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Prompts/PROMPT_02_Delegacion_Por_Fases|Delegación por fases]] y [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Prompts/PROMPT_03_Prueba_De_Instalacion_Skills|Prueba de instalación de skills]]
+
+## ¿Qué hay aquí y cómo encuentro lo último?\n\n* Lo más reciente, ordenado por fecha: [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Indice_de_Aprendizajes.base|Índice de aprendizajes]].

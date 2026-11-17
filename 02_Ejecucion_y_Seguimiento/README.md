@@ -1,3 +1,11 @@
+---
+tipo: "centro_de_mando"
+fecha: "2026-10-08 00:00"
+tema: "Ejecución y seguimiento"
+tarea: "ninguna"
+estado: "vigente"
+---
+
 # ⚡ 02. Ejecución y Seguimiento
 
 Esta macro-carpeta responde a la pregunta de trabajo: **¿En qué estamos trabajando hoy y cómo avanza el plan?**
@@ -20,3 +28,5 @@ Es el taller activo de trabajo colaborativo entre el usuario y el arnés de IA.
 * **Documentos Clave:**
   - `Sesion_YYYY-MM-DD_HHmm_Tema.md`: Minutas automáticas generadas al finalizar reflexiones, sesiones de ideación o análisis de problemas complejos.
   - El arnés persiste aquí el progreso para que ninguna conversación valiosa se quede perdida en la ventana de chat.
+
+## ¿Qué hay aquí y cómo encuentro lo último?\n\n* Tareas y avance: [[02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tablero_Kanban.base|Tablero Kanban]].\n* Sesiones y borradores, ordenados por fecha: [[02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/Indice_de_Sesiones.base|Índice de sesiones]].

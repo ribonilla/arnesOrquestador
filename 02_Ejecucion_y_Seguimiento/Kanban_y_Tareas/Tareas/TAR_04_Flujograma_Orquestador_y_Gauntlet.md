@@ -8,6 +8,9 @@ fecha_limite: "2026-10-11"
 tags:
   - tarea
   - proyecto
+fecha: "2026-10-11 00:00"
+tema: "Flujograma del Orquestador y Compuerta Gauntlet Loop"
+tarea: "TAR_04"
 ---
 
 # 📌 Flujograma del Orquestador y Compuerta Gauntlet Loop

@@ -1,3 +1,11 @@
+---
+tipo: "centro_de_mando"
+fecha: "2026-10-08 00:00"
+tema: "Banco de prompts y patrones de interacción"
+tarea: "ninguna"
+estado: "vigente"
+---
+
 # 💬 Banco de Prompts y Patrones de Interacción (Prompt Engineering Asistido)
 
 Esta carpeta almacena registros atómicos que documentan **cómo formula el usuario sus instrucciones habitualmente**, cuál es la **versión optimizada (prompt de alto impacto)** recomendada, y **por qué** funciona mejor.
@@ -24,3 +32,5 @@ Cada nota debe seguir la estructura:
 - **Formulación Sugerida de Alto Impacto:** Versión optimizada con estructura directiva.
 - **Análisis de Valor Agregado:** Por qué la versión enriquecida genera mejores entregables.
 - **Mapeo Automático del Arnés:** Qué acciones internas toma el agente ante esa instrucción.
+
+## ¿Qué hay aquí y cómo encuentro lo último?\n\n* Esta carpeta todavía no tiene índice Base propio. Para lo más reciente, consulta el [[00_Centro_de_Mando|Centro de Mando]] (sección Dónde quedé).

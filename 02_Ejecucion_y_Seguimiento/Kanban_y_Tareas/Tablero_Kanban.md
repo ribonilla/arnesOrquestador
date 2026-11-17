@@ -1,3 +1,11 @@
+---
+tipo: "centro_de_mando"
+fecha: "2026-10-08 00:00"
+tema: "Tablero Kanban: desarrollo y calibración del arnés"
+tarea: "ninguna"
+estado: "vigente"
+---
+
 # 📋 Tablero Kanban: Desarrollo y Calibración del Arnés
 
 **Fase Activa:** [[02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tablero_Kanban.base|Abrir Base Nativa en Obsidian Bases]]

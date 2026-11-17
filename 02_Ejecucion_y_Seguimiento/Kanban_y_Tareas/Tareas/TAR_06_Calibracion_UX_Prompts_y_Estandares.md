@@ -10,6 +10,9 @@ tags:
   - ux-boveda
   - prompts
   - kanban-base
+fecha: "2026-10-29 00:00"
+tema: "Calibración de UX, Prompts Asistidos y Estándares HTML"
+tarea: "TAR_06"
 ---
 
 # 📌 TAR_06: Calibración de UX, Prompts Asistidos, Preguntas como Aprendizaje y Estándares HTML

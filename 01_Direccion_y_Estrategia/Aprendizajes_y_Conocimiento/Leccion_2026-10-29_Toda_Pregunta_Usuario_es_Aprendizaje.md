@@ -1,7 +1,7 @@
 ---
 title: "Principio de Aprendizaje Continuo: Toda Pregunta o Discrepancia del Usuario es Objeto de Aprendizaje"
 fecha: 2026-10-29 12:30
-tipo: "leccion-aprendida-arquitectura"
+tipo: "aprendizaje"
 modulo: "Arnés Metodológico de IA (Harness Engine)"
 estado: "integrado-en-core"
 tags:
@@ -10,6 +10,9 @@ tags:
   - auditoria-cognitiva
   - validacion-discrepancias
   - zettelkasten
+tipo_previo: "leccion-aprendida-arquitectura"
+tema: "Toda pregunta o discrepancia del usuario es aprendizaje"
+tarea: "TAR_06"
 ---
 
 # 🧠 Principio de Aprendizaje Continuo: Toda Interacción con Preguntas es un Aprendizaje

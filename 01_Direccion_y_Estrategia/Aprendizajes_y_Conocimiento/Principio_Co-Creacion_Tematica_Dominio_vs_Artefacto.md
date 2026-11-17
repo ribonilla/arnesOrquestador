@@ -1,3 +1,11 @@
+---
+tipo: "aprendizaje"
+fecha: "2026-10-11 00:00"
+tema: "Separación entre dominio y artefacto (co-creación temática)"
+tarea: "ninguna"
+estado: "vigente"
+---
+
 # 🧠 Principio de Co-Creación Temática: Separación entre Dominio y Artefacto
 
 **Fecha:** 2026-10-11  

@@ -1,6 +1,6 @@
 ---
 proyecto: "Construcción y Calibración del Arnés de Decisiones y Entregables (Harness IA)"
-tipo: "Estratégico / Infraestructura de Productividad con IA"
+tipo: "centro_de_mando"
 sponsor: "Ricardo Bonilla"
 fecha_inicio: "2026-10-08"
 fecha_limite: "En despliegue continuo"
@@ -8,6 +8,11 @@ estado_general: "🟢 En Ejecución / Calibración de UX y Entregables Activa"
 fase_activa: "Fase 3: Calibración y Navegación Centrada en el Usuario"
 avance_global: "95%"
 ultimo_repaso: "2026-10-29 12:30"
+tipo_previo: "Estratégico / Infraestructura de Productividad con IA"
+fecha: "2026-10-29 12:30"
+tema: "Centro de Mando del arnés"
+tarea: "ninguna"
+estado: "vigente"
 ---
 
 # 🎯 Centro de Mando: Arnés PARA-Zettelkasten con IA
@@ -21,10 +26,11 @@ ultimo_repaso: "2026-10-29 12:30"
 
 * **Última sesión:** [[02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/Sesion_2026-11-17_1632_Plantilla_Limpia_y_Skills|Sesión 2026-11-17 16:32: Plantilla limpia y skills]]
 * **Última decisión:** [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Matriz_de_Cambios_y_Acuerdos|DEC-32]]: bóveda de trabajo en carpeta aparte (`arnes-boveda`).
-* **Tarea en curso:** [[02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tareas/TAR_07_Plantilla_Limpia_y_Skills|TAR_07]]: fases C, D, E y F pendientes.
+* **Tarea en curso:** [[02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tareas/TAR_07_Plantilla_Limpia_y_Skills|TAR_07]]: fases C y D en curso; E y F pendientes.
 * **Último entregable:** [[03_Entregables_Finales/Flujograma_Orquestador_y_Ciclo_de_Vida|Flujograma de Ciclo de Vida]].
 * **Registro de retiros:** [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Registro_de_Retiros_2026-11-17|Qué se retiró de la plantilla, dónde estaba y cómo recuperarlo]].
 * **Aprendizajes de la sesión:** [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/README|Carpeta de aprendizajes]].
+* **Índices (Bases):** [[02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/Indice_de_Sesiones.base|Sesiones]] · [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Indice_de_Decisiones.base|Decisiones]] · [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Indice_de_Aprendizajes.base|Aprendizajes]]
 
 ---
 

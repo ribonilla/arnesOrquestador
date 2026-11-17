@@ -4,8 +4,10 @@ tema: "Mejoras de Experiencia de Usuario en Bóveda, Prompts Asistidos, Pregunta
 participantes:
   - "Ricardo Bonilla (Sponsor)"
   - "Director Estratégico & Chief of Staff (IA)"
-tipo: "sesion-ideacion-y-arquitectura"
+tipo: "sesion"
 estado: "concluida"
+tipo_previo: "sesion-ideacion-y-arquitectura"
+tarea: "ninguna"
 ---
 
 # 💡 Sesión 2026-10-29 12:30: Calibración de UX, Prompts Asistidos y Estándares del Arnés

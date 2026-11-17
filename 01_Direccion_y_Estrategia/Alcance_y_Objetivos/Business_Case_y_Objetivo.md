@@ -1,3 +1,11 @@
+---
+tipo: "entregable"
+fecha: "2026-10-08 00:00"
+tema: "Business case y fundamentos estratégicos del arnés"
+tarea: "ninguna"
+estado: "vigente"
+---
+
 # 🏛️ Business Case y Fundamentos Estratégicos del Arnés
 
 **Proyecto:** Construcción del Arnés de Gestión de Decisiones y Entregables con IA  

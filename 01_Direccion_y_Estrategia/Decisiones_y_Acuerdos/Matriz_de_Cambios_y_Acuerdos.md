@@ -1,3 +1,11 @@
+---
+tipo: "registro"
+fecha: "2026-10-08 00:00"
+tema: "Matriz de decisiones y acuerdos del arnés"
+tarea: "ninguna"
+estado: "vigente"
+---
+
 # ⚖️ Matriz de Decisiones Arquitectónicas y Trazabilidad
 
 **Proyecto:** Construcción del Arnés PARA-Zettelkasten con IA  

@@ -1,3 +1,11 @@
+---
+tipo: "sesion"
+fecha: "2026-10-08 00:00"
+tema: "Arquitectura del staff de agentes, skills y gobernanza de scripts"
+tarea: "ninguna"
+estado: "cerrado"
+---
+
 # 💡 Sesión de Diseño: Arquitectura del Staff de Agentes, Skills y Scripts
 
 **Fecha:** 2026-10-08  

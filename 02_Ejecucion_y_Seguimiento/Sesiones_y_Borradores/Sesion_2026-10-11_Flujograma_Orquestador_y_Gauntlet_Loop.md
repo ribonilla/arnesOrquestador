@@ -1,3 +1,11 @@
+---
+tipo: "sesion"
+fecha: "2026-10-11 00:00"
+tema: "Flujograma del orquestador, Professor Synapse y Gauntlet Loop"
+tarea: "TAR_04"
+estado: "cerrado"
+---
+
 # 💡 Sesión de Diseño: Flujograma del Orquestador, Professor Synapse y Compuerta Gauntlet Loop
 
 **Fecha:** 2026-10-11  

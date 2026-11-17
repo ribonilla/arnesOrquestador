@@ -1,3 +1,11 @@
+---
+tipo: "centro_de_mando"
+fecha: "2026-10-08 00:00"
+tema: "Entregables finales"
+tarea: "ninguna"
+estado: "vigente"
+---
+
 # 📦 03. Entregables Finales
 
 Esta macro-carpeta responde a la pregunta de resultados: **¿Qué tengo que entregar a mi jefe, comité o cliente?**
@@ -28,3 +36,5 @@ Es el escaparate limpio de la bóveda. Solo contiene las versiones definitivas l
 * **Regla de Oro:**
   - Los archivos `.docx` obsoletos nunca se acumulan aquí.
   - El histórico de revisiones se almacena exclusivamente en Markdown (`.md`), resaltando los cambios e iteraciones en **color rojo** (`<span style="color:#DC2626;">`) junto con la justificación del cambio.
+
+## ¿Qué hay aquí y cómo encuentro lo último?\n\n* Esta carpeta todavía no tiene índice Base propio. Para lo más reciente, consulta el [[00_Centro_de_Mando|Centro de Mando]] (sección Dónde quedé).

@@ -8,6 +8,9 @@ fecha_limite: "2026-10-15"
 tags:
   - tarea
   - proyecto
+fecha: "2026-10-15 00:00"
+tema: "Automatización de Obsidian Bases por defecto"
+tarea: "TAR_03"
 ---
 
 # 📌 Automatización de Obsidian Bases (.base) por Defecto

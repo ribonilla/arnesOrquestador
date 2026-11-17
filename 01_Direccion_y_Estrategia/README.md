@@ -1,3 +1,11 @@
+---
+tipo: "centro_de_mando"
+fecha: "2026-10-08 00:00"
+tema: "Dirección y estrategia"
+tarea: "ninguna"
+estado: "vigente"
+---
+
 # 🏛️ 01. Dirección y Estrategia
 
 Esta macro-carpeta responde a la pregunta de negocio: **¿Por qué y bajo qué reglas hacemos este proyecto?**
@@ -25,3 +33,5 @@ Aquí se definen las bases, restricciones, acuerdos vinculantes y los aprendizaj
   - Notas atómicas de arquitectura, metodologías y lecciones aprendidas en proyectos reales.
   - `Prompts/`: Biblioteca de patrones de interacción. Muestra cómo formula el usuario las solicitudes normalmente y cómo sugerirle versiones de alto impacto sin exigirle conocer la fontanería interna de la bóveda.
   - Principio activo: Toda pregunta o duda del usuario (ej. descuadres de fórmulas en Excel) se investiga y se capitaliza como nota en esta carpeta.
+
+## ¿Qué hay aquí y cómo encuentro lo último?\n\n* Decisiones y registros: [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Indice_de_Decisiones.base|Índice de decisiones]].\n* Aprendizajes y prompts: [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Indice_de_Aprendizajes.base|Índice de aprendizajes]].

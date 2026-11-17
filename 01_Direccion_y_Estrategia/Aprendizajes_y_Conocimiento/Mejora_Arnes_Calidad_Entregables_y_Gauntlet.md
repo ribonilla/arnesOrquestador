@@ -1,7 +1,7 @@
 ---
 title: "Propuesta de Mejora y Blindaje del Arnés: Generación de Artefactos (DOCX, PPTX, HTML, XLSX) y Robustecimiento del Revisor Adversarial"
 fecha: 2026-10-12
-tipo: leccion-aprendida-arquitectura
+tipo: "aprendizaje"
 modulo: "Arnés Metodológico de IA (Harness Engine)"
 destinatario: "Arquitecto / Desarrollador del Arnés"
 estado: listo-para-integracion
@@ -12,6 +12,9 @@ tags:
   - generacion-documental
   - excel-audit
   - buenas-practicas
+tipo_previo: leccion-aprendida-arquitectura
+tema: "Calidad de entregables y Gauntlet: mejora del arnés"
+tarea: "ninguna"
 ---
 
 # 🚀 Propuesta Integral de Mejora del Arnés de IA

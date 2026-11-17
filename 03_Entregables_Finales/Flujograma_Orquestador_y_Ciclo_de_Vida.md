@@ -1,6 +1,6 @@
 ---
 titulo: "Flujograma de Ciclo de Vida del Arnés: Orquestación, Professor Synapse y Gauntlet Loop"
-tipo: "Entregable Final / Arquitectura y Flujo de Procesos"
+tipo: "entregable"
 fecha: "2026-10-29 19:30"
 version: "2.0 - Decisión Temática (Synapse) vs. Producción de Artefactos"
 autor: "Ricardo Bonilla"
@@ -8,6 +8,10 @@ rol: "Consultor en Ciencia de Datos"
 email: "ribonilla@gmail.com"
 linkedin: "https://www.linkedin.com/in/ricardo-bonilla-jimenez/"
 audiencia: "Vicepresidentes y Directores C-Level (Operaciones, RRHH, Logística)"
+tipo_previo: "Entregable Final / Arquitectura y Flujo de Procesos"
+tema: "Flujograma de Ciclo de Vida del Arnés"
+tarea: "TAR_04"
+estado: "vigente"
 ---
 
 # 🔄 Flujograma de Ciclo de Vida: El Motor de Decisiones del Arnés

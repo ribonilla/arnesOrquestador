@@ -1,12 +1,15 @@
 ---
 titulo: "Sesión: Plantilla Limpia, Skills de Terceros y Bóveda de Trabajo en Carpeta Aparte"
 fecha: "2026-11-17 16:32"
-tipo: "Sesion de Trabajo / Cierre Ejecutivo"
+tipo: "sesion"
 autor: "Ricardo Bonilla"
 rol: "Consultor en Ciencia de Datos"
 estado: "Completada"
 repo: "arnesOrquestador (rama refactor/plantilla-limpia)"
 bóveda: "arnes-boveda (worktree de la rama dev-vault)"
+tipo_previo: "Sesion de Trabajo / Cierre Ejecutivo"
+tema: "Plantilla limpia, skills de terceros y bóveda de trabajo"
+tarea: "TAR_07"
 ---
 
 # 📋 Resumen de Sesión: Plantilla Limpia, Skills de Terceros y Bóveda de Trabajo

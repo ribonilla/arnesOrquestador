@@ -1,3 +1,11 @@
+---
+tipo: "aprendizaje"
+fecha: "2026-10-13 00:00"
+tema: "Protocolo de cardinalidad y llaves primarias para tablas"
+tarea: "ninguna"
+estado: "cerrado"
+---
+
 # Propuesta de Mejora al Arnés Universal: Protocolo Mandatorio de Cardinalidad y Llaves Primarias para Tablas
 
 > **Para:** Diseñador / Mantenedor del Arnés Universal (Decision & Deliverable Harness)  

@@ -8,6 +8,9 @@ fecha_limite: "2026-10-08"
 tags:
   - tarea
   - proyecto
+fecha: "2026-10-08 00:00"
+tema: "Integración de Suite de Skills (Word, Excel, PPTX, Web)"
+tarea: "TAR_02"
 ---
 
 # 📌 Integración de Suite de Skills (Word, Excel, PPTX, Web)
