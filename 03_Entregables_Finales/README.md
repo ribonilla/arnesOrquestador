@@ -4,6 +4,10 @@ Esta macro-carpeta responde a la pregunta de resultados: **¿Qué tengo que entr
 
 Es el escaparate limpio de la bóveda. Solo contiene las versiones definitivas listas para distribución ejecutiva.
 
+## 🔎 ¿Qué hay aquí y cómo encuentro lo último?
+
+Esta carpeta no tiene índice de Bases propio. Para encontrar el último entregable, revisa la sección **Dónde quedé** de `00_Centro_de_Mando.md` o ordena esta carpeta por fecha de modificación en tu explorador de archivos.
+
 ---
 
 ## 📂 Subcarpetas y Contenidos

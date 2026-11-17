@@ -1,6 +1,10 @@
 ---
+tipo: centro_de_mando
+fecha: "{{FECHA_Y_HORA}}"
+tema: "{{NOMBRE_PROYECTO}}"
+tarea: ninguna
+estado: vigente
 proyecto: "{{NOMBRE_PROYECTO}}"
-tipo: "Estratégico / Corporativo / Académico"
 sponsor: "{{SPONSOR}}"
 fecha_inicio: "{{FECHA_INICIO}}"
 fecha_limite: "{{FECHA_LIMITE}}"
@@ -14,6 +18,17 @@ ultimo_repaso: "{{FECHA_Y_HORA}}"
 
 > **Objetivo de Negocio / Mandato Central:**
 > {{DESCRIPCION_DEL_PROPOSITO_Y_DECISION_QUE_HABILITA}}
+
+---
+
+## 🧭 Dónde quedé
+
+* **Última sesión:** {{ULTIMA_SESION}}
+* **Última decisión:** {{ULTIMA_DECISION}}
+* **Tarea en curso:** {{TAREA_EN_CURSO}}
+* **Último entregable:** {{ULTIMO_ENTREGABLE}}
+
+**Índices:** [[TPL_IDX_Sesiones.base|Sesiones]] · [[TPL_IDX_Decisiones.base|Decisiones]] · [[TPL_IDX_Aprendizajes.base|Aprendizajes]]
 
 ---
 

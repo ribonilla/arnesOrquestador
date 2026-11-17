@@ -4,6 +4,15 @@ Esta macro-carpeta responde a la pregunta de negocio: **¿Por qué y bajo qué r
 
 Aquí se definen las bases, restricciones, acuerdos vinculantes y los aprendizajes que blindan la ejecución.
 
+## 🔎 ¿Qué hay aquí y cómo encuentro lo último?
+
+Para ver lo más reciente, abre el índice correspondiente (ordenado por fecha, de más nuevo a más antiguo):
+
+* ⚖️ Decisiones y acuerdos: [[.harness/Plantillas/TPL_IDX_Decisiones.base|Índice de decisiones]]
+* 🧠 Aprendizajes: [[.harness/Plantillas/TPL_IDX_Aprendizajes.base|Índice de aprendizajes]]
+
+También puedes ver la última decisión en la sección **Dónde quedé** de `00_Centro_de_Mando.md`.
+
 ---
 
 ## 📂 Subcarpetas y Contenidos

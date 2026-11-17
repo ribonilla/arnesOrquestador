@@ -1,0 +1,28 @@
+# Verificar en Obsidian: sintaxis de Bases (filters, properties, views, sort) no comprobada en una bóveda real.
+# Las decisiones viven como filas DEC-NN en Matriz_de_Cambios_y_Acuerdos.md. Este índice aplica a notas individuales
+# de decisión (tipo: decision) cuando existan; mientras no existan, la vista puede quedar vacía.
+filters:
+  and:
+    - note.tipo == "decision"
+
+properties:
+  file.name:
+    displayName: "Decisión"
+  note.fecha:
+    displayName: "Fecha"
+  note.tema:
+    displayName: "Tema"
+  note.estado:
+    displayName: "Estado"
+
+views:
+  - type: table
+    name: "Decisiones (tabla)"
+    order:
+      - file.name
+      - note.fecha
+      - note.tema
+      - note.estado
+    sort:
+      - property: note.fecha
+        direction: DESC

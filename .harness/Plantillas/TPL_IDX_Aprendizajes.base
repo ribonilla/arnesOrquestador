@@ -1,0 +1,37 @@
+# Verificar en Obsidian: sintaxis de Bases (filters, properties, views, sort) no comprobada en una bóveda real.
+filters:
+  and:
+    - note.tipo == "aprendizaje"
+
+properties:
+  file.name:
+    displayName: "Aprendizaje"
+  note.fecha:
+    displayName: "Fecha"
+  note.tema:
+    displayName: "Tema"
+  note.estado:
+    displayName: "Estado"
+
+views:
+  - type: table
+    name: "Aprendizajes (tabla)"
+    order:
+      - file.name
+      - note.fecha
+      - note.tema
+      - note.estado
+    sort:
+      - property: note.fecha
+        direction: DESC
+
+  - type: cards
+    name: "Aprendizajes (cards)"
+    order:
+      - file.name
+      - note.fecha
+      - note.tema
+      - note.estado
+    sort:
+      - property: note.fecha
+        direction: DESC

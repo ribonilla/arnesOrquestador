@@ -4,6 +4,14 @@ Esta macro-carpeta responde a la pregunta de trabajo: **¿En qué estamos trabaj
 
 Es el taller activo de trabajo colaborativo entre el usuario y el arnés de IA.
 
+## 🔎 ¿Qué hay aquí y cómo encuentro lo último?
+
+Para ver lo más reciente, abre el índice de sesiones (ordenado por fecha, de más nuevo a más antiguo):
+
+* 💡 Sesiones: [[.harness/Plantillas/TPL_IDX_Sesiones.base|Índice de sesiones]]
+
+También puedes ver la tarea en curso en la sección **Dónde quedé** de `00_Centro_de_Mando.md`.
+
 ---
 
 ## 📂 Subcarpetas y Contenidos

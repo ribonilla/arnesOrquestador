@@ -61,3 +61,52 @@ El arnés sigue una secuencia única de 8 pasos:
 8. **Aprendizaje:** se crea una nota atómica (una idea por nota).
 
 Flujo visual: `.harness/Agentes/FLUJOGRAMA_ORQUESTADOR.md`.
+
+---
+
+## 🏷️ Frontmatter estándar
+
+Toda nota de la bóveda lleva estos cinco campos YAML obligatorios:
+
+| Campo | Valores | Descripción |
+|---|---|---|
+| `tipo` | `sesion`, `decision`, `aprendizaje`, `prompt`, `tarea`, `entregable`, `centro_de_mando`, `registro` | Clase de nota. Los índices filtran por este campo. |
+| `fecha` | `YYYY-MM-DD HH:MM` | Fecha y hora del registro. |
+| `tema` | Texto libre | Tema corto de la nota. |
+| `tarea` | `TAR_XX` o `ninguna` | Tarea a la que pertenece la nota. |
+| `estado` | `vigente`, `borrador`, `cerrado`, `pendiente` | Situación actual de la nota. |
+
+Ejemplo:
+
+```yaml
+---
+tipo: sesion
+fecha: "2026-11-17 10:30"
+tema: "Revisión del flujo de aprobación"
+tarea: TAR_03
+estado: cerrado
+---
+```
+
+## 🗂️ Nombres de archivo
+
+| Nota | Patrón | Ejemplo |
+|---|---|---|
+| Sesión | `Sesion_YYYY-MM-DD_HHmm_Tema.md` | `Sesion_2026-11-17_1030_Flujo_Aprobacion.md` |
+| Tarea | `TAR_XX_Nombre.md` | `TAR_03_Revision_Flujo.md` |
+| Aprendizaje | `Aprendizaje_YYYY-MM-DD_HHmm_Tema.md` | `Aprendizaje_2026-11-17_1030_Validar_Cifras.md` |
+| Decisión | No tiene archivo propio: es una fila `DEC-NN` en `Matriz_de_Cambios_y_Acuerdos.md` | `DEC-07` |
+
+## 📑 Índices
+
+Los índices son vistas de Obsidian Bases que listan las notas por `tipo`. Están en `.harness/Plantillas/`:
+
+| Índice | Muestra | Orden |
+|---|---|---|
+| `TPL_IDX_Sesiones.base` | Notas con `tipo: sesion` (fecha, tema, estado, tarea) | Fecha descendente |
+| `TPL_IDX_Decisiones.base` | Notas con `tipo: decision` (fecha, tema, estado) | Fecha descendente |
+| `TPL_IDX_Aprendizajes.base` | Notas con `tipo: aprendizaje` (fecha, tema, estado) | Fecha descendente |
+
+Las decisiones principales viven como filas `DEC-NN` en la matriz; `TPL_IDX_Decisiones.base` cubre las notas individuales de decisión cuando existan.
+
+El Centro de Mando (`00_Centro_de_Mando.md`) muestra la sección **Dónde quedé** con la última sesión, la última decisión, la tarea en curso y el último entregable, y enlaza los tres índices.
