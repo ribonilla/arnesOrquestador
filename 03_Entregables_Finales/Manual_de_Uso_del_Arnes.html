@@ -467,7 +467,7 @@
             <a href="#inicio" class="nav-link"><span class="icon">🚀</span> Inicio en 3 Pasos</a>
             <a href="#dia-a-dia" class="nav-link"><span class="icon">☕</span> Flujo Diario</a>
             <a href="#alcances" class="nav-link"><span class="icon">⚖️</span> Alcances y Límites</a>
-            <a href="#staff" class="nav-link"><span class="icon">👥</span> Staff de 8 Agentes</a>
+            <a href="#staff" class="nav-link"><span class="icon">👥</span> Staff de 9 Roles</a>
             <a href="#comandos" class="nav-link"><span class="icon">⚡</span> Comandos y Lenguaje</a>
             <a href="#boveda" class="nav-link"><span class="icon">📂</span> Mapa de la Bóveda</a>
             <a href="#entregables" class="nav-link"><span class="icon">📄</span> Exportar Entregables</a>
@@ -507,7 +507,7 @@
                 <div class="step-card">
                     <span class="step-number">1</span>
                     <h3 class="step-title">Copiar el Arnés</h3>
-                    <p class="step-text">Copia la carpeta <code>.harness/</code> y los archivos <code>AGENTS.md</code> / <code>GEMINI.md</code> / <code>CLAUDE.md</code> a tu carpeta de trabajo real donde tienes tus archivos de Word y Excel.</p>
+                    <p class="step-text">Descarga el Starter Kit (paquete inicial de archivos del arnés) desde la página del proyecto, o clona el repositorio con <code>git clone</code>. Luego copia la carpeta <code>.harness/</code> y los archivos <code>AGENTS.md</code> / <code>GEMINI.md</code> / <code>CLAUDE.md</code> a tu carpeta de trabajo real donde tienes tus archivos de Word y Excel.</p>
                 </div>
 
                 <div class="step-card">
@@ -545,22 +545,22 @@
                         <tr>
                             <td><strong>Al empezar el día</strong></td>
                             <td>Dices: <em>"¿En qué quedamos ayer?"</em></td>
-                            <td>Lee <code>02_Planificacion_y_Kanban/</code>, resume el estado y propone la tarea inmediata.</td>
+                            <td>Lee <code>02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/</code>, resume el estado y propone la tarea inmediata.</td>
                         </tr>
                         <tr>
                             <td><strong>Al debatir ideas</strong></td>
                             <td>Chateas con la IA para ganar comprensión</td>
-                            <td>Guarda la síntesis estructurada del debate en <code>03_Sesiones_e_Ideacion/</code>.</td>
+                            <td>Guarda la síntesis estructurada del debate en <code>02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/</code>.</td>
                         </tr>
                         <tr>
                             <td><strong>Al cambiar una cifra o texto</strong></td>
                             <td>Ajustas supuestos o redacción</td>
-                            <td>Registra la justificación en <code>04_Decisiones_y_Trazabilidad/</code> con sello de auditoría.</td>
+                            <td>Registra la justificación en <code>01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/</code> con sello de auditoría.</td>
                         </tr>
                         <tr>
                             <td><strong>Reunión con tu jefe</strong></td>
                             <td>Dices: <code>/reporte-jefe</code></td>
-                            <td>Genera un resumen ejecutivo de 3 párrafos listo para leer en <code>05_Entregables/</code>.</td>
+                            <td>Genera un resumen ejecutivo de 3 párrafos listo para leer en <code>03_Entregables_Finales/</code>.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -596,7 +596,7 @@
             </div>
 
             <div class="callout" style="margin-top: 18px;">
-                📌 <strong>Restricción vs Limitación:</strong> Una <em>Restricción</em> es un mandato inamovible del jefe (ej. "máximo 2 páginas", "entrega el 15 de octubre"). Una <em>Limitación</em> es una frontera técnica o de datos (ej. "basado en estados financieros de 2025"). Ambas se registran en <code>01_Estrategia_y_Alcance/Business_Case_y_Objetivo.md</code>.
+                📌 <strong>Restricción vs Limitación:</strong> Una <em>Restricción</em> es un mandato inamovible del jefe (ej. "máximo 2 páginas", "entrega el 15 de octubre"). Una <em>Limitación</em> es una frontera técnica o de datos (ej. "basado en estados financieros de 2025"). Ambas se registran en <code>01_Direccion_y_Estrategia/Alcance_y_Objetivos/Business_Case_y_Objetivo.md</code>.
             </div>
         </section>
 
@@ -604,7 +604,7 @@
         <section class="doc-section" id="staff">
             <div class="section-header">
                 <div class="section-icon">👥</div>
-                <h2 class="section-title">5. El Staff de 8 Agentes Especialistas</h2>
+                <h2 class="section-title">5. El Staff de 9 Roles Especialistas</h2>
             </div>
             <p style="color: var(--text-muted); margin-bottom: 12px;">El <strong>Orquestador PM</strong> invoca a cada especialista según lo que requiera tu tarea:</p>
 
@@ -612,6 +612,11 @@
                 <div class="agent-card">
                     <div class="agent-header"><span class="agent-icon">🧙‍♂️</span><span class="agent-name">Orquestador PM</span></div>
                     <div class="agent-desc">Conduce el proyecto, evita divagaciones, concerta fases y mantiene el foco del sponsor.</div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header"><span class="agent-icon">🧙🏾‍♂️</span><span class="agent-name">Professor Synapse</span></div>
+                    <div class="agent-desc">Convoca al experto temático adecuado para tu tema y guía el diálogo socrático hasta definir qué quieres.</div>
                 </div>
 
                 <div class="agent-card">
@@ -645,8 +650,8 @@
                 </div>
 
                 <div class="agent-card">
-                    <div class="agent-header"><span class="agent-icon">😈</span><span class="agent-name">Abogado del Diablo</span></div>
-                    <div class="agent-desc">Simula preguntas duras y objeciones de la junta directiva antes de tu entrega.</div>
+                    <div class="agent-header"><span class="agent-icon">😈</span><span class="agent-name">Revisor Adversarial</span></div>
+                    <div class="agent-desc">Audita entregables con el protocolo Gauntlet (máximo 2 rondas) y simula las objeciones de la junta directiva.</div>
                 </div>
             </div>
         </section>
@@ -682,12 +687,12 @@
                         <tr>
                             <td><code>/decision [Detalle]</code></td>
                             <td><em>"El cliente pidió adelantar la fecha, anótalo"</em></td>
-                            <td>Registra entrada en <code>04_Decisiones_y_Trazabilidad/</code>.</td>
+                            <td>Registra entrada en <code>01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/</code>.</td>
                         </tr>
                         <tr>
                             <td><code>/reporte-jefe</code></td>
                             <td><em>"Tengo reunión en 5 minutos, resúmeme qué hicimos"</em></td>
-                            <td>Informe ejecutivo listo en <code>05_Entregables/</code>.</td>
+                            <td>Informe ejecutivo listo en <code>03_Entregables_Finales/</code>.</td>
                         </tr>
                         <tr>
                             <td><code>/abogado-diablo</code></td>
@@ -697,7 +702,7 @@
                         <tr>
                             <td><code>/capitalizar</code></td>
                             <td><em>"Guardemos esta regla de pricing para siempre"</em></td>
-                            <td>Crea nota atómica en <code>06_Zettelkasten_Conocimiento/</code>.</td>
+                            <td>Crea nota atómica en <code>01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/</code>.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -727,32 +732,32 @@
                             <td>Tu vista principal para ver avance, KPIs y enlaces.</td>
                         </tr>
                         <tr>
-                            <td><code>📁 01_Estrategia_y_Alcance/</code></td>
+                            <td><code>📁 01_Direccion_y_Estrategia/Alcance_y_Objetivos/</code></td>
                             <td>Business Case y límites</td>
                             <td>El mandato del jefe, justificación y qué está fuera de alcance.</td>
                         </tr>
                         <tr>
-                            <td><code>📁 02_Planificacion_y_Kanban/</code></td>
+                            <td><code>📁 02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/</code></td>
                             <td>Gestión de tareas</td>
                             <td>El tablero Kanban visual (Por Hacer, En Curso, Bloqueado, Hecho).</td>
                         </tr>
                         <tr>
-                            <td><code>📁 03_Sesiones_e_Ideacion/</code></td>
+                            <td><code>📁 02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/</code></td>
                             <td>Charlas de comprensión</td>
                             <td>Las discusiones profundas guardadas automáticamente.</td>
                         </tr>
                         <tr>
-                            <td><code>📁 04_Decisiones_y_Trazabilidad/</code></td>
+                            <td><code>📁 01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/</code></td>
                             <td>Auditoría de cambios</td>
                             <td>La evidencia de por qué se cambió cada dato o texto.</td>
                         </tr>
                         <tr>
-                            <td><code>📁 05_Entregables/</code></td>
+                            <td><code>📁 03_Entregables_Finales/</code></td>
                             <td>Productos finales</td>
                             <td>Informes en Word, Excel, PPTX, HTML y reportes al jefe.</td>
                         </tr>
                         <tr>
-                            <td><code>📁 06_Zettelkasten_Conocimiento/</code></td>
+                            <td><code>📁 01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/</code></td>
                             <td>Activos reutilizables</td>
                             <td>Lecciones aprendidas que sirven para todos los proyectos futuros.</td>
                         </tr>
