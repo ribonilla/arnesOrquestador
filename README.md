@@ -1,10 +1,10 @@
 # 🏛️ Cerebro Digital Corporativo: Arnés de Decisiones y Entregables con IA
 
-> **Bóveda Operativa Inteligente basada en Obsidian, Metodología P.A.R.A. y Zettelkasten**  
-> Diseñada para comités directivos, líderes de operaciones, consultores y analistas que requieren gobernar la IA con rigor empresarial, trazabilidad innegociable y cero alucinaciones.
+> **Bóveda Operativa Inteligente basada en Obsidian, Metodología P.A.R.A. (organiza por Proyectos, Áreas, Recursos y Archivo) y Zettelkasten (notas enlazadas entre sí)**  
+> Diseñada para comités directivos, líderes de operaciones, consultores y analistas que requieren gobernar la IA con rigor empresarial, trazabilidad innegociable y control de alucinaciones (respuestas inventadas por la IA; la IA puede equivocarse, revisa las cifras clave).
 
 [![Sitio Web Oficial](https://img.shields.io/badge/Sitio_En_Vivo-cerebro--digital--arnes.netlify.app-9a675c?style=for-the-badge&logo=netlify)](https://cerebro-digital-arnes.netlify.app/)
-[![Licencia](https://img.shields.io/badge/Licencia-MIT-120a09?style=for-the-badge)](LICENSE)
+![Licencia MIT (archivo LICENSE pendiente de publicar)](https://img.shields.io/badge/Licencia-MIT-120a09?style=for-the-badge)
 [![Arquitectura](https://img.shields.io/badge/Arquitectura-PARA_+_Zettelkasten-2b201d?style=for-the-badge&logo=obsidian)](https://obsidian.md/)
 [![Protocolo](https://img.shields.io/badge/Calidad-Gauntlet_Protocol_Loop-b7a397?style=for-the-badge)](#-protocolo-gauntlet-auditoría-adversarial-activa)
 
@@ -16,7 +16,7 @@ Accede a la experiencia interactiva en formato diapositiva editorial inspirada e
 👉 **[https://cerebro-digital-arnes.netlify.app/](https://cerebro-digital-arnes.netlify.app/)**
 
 Incluye:
-* Navegación en 13 diapositivas interactivas en tema claro editorial.
+* Navegación en 14 diapositivas interactivas en tema claro editorial.
 * Inspector táctil de la **Anatomía del Arnés** con pin deslizador y scroll horizontal asistido.
 * Organigrama de la **Cadena de Mando (L0 a L7)** con explicación de quién llama a quién.
 * Simulador interactivo de los tres escenarios del **Tribunal Gauntlet**.
@@ -32,7 +32,7 @@ El 80% de las corporaciones interactúan con la IA como si fuera un simple chat 
 * **Alucinaciones Silenciosas:** Modelos que inventan cifras, pegan números estáticos en Excel o aprueban supuestos sin contrastar.
 * **Cero Trazabilidad:** Nadie puede auditar para una Junta Directiva quién tomó una decisión, qué parámetros se aplicaron o por qué cambió una cifra.
 
-**El Arnés PARA-Zettelkasten** transforma cualquier modelo de lenguaje de frontera (Claude, Gemini, GPT-4o, DeepSeek) en un **Chief of Staff & Sparring Partner** que reside en tu disco duro local, auto-escribe informes limpios, ejecuta validaciones matemáticas en caliente y acumula memoria corporativa permanente.
+**El Arnés PARA-Zettelkasten** transforma cualquier modelo de lenguaje de frontera (Claude, Gemini, GPT-4o, DeepSeek) en un **Chief of Staff** (jefe de gabinete) y **Sparring Partner** (interlocutor que cuestiona tus ideas) que reside en tu disco duro local, auto-escribe informes limpios, ejecuta validaciones matemáticas en caliente y acumula memoria corporativa permanente.
 
 ---
 
@@ -52,7 +52,7 @@ El 80% de las corporaciones interactúan con la IA como si fuera un simple chat 
 └───────────────────────────────┴────────────────────────────────────────┘
 ```
 
-1. **Obsidian:** Tu base física local. Todo se guarda en archivos Markdown estándar (`.md`). Si un proveedor de IA cambia sus términos o se corta internet, tu conocimiento corporativo sigue 100% intacto en tu equipo.
+1. **Obsidian:** Tu base física local. Todo se guarda en archivos Markdown estándar (`.md`). Si un proveedor de IA cambia sus términos o se corta internet, tu conocimiento corporativo sigue guardado en tu equipo.
 2. **Método Dual (PARA + Zettelkasten):** Estructura orientada a la acción ejecutiva inmediata (encontrar cualquier documento en menos de tres clics) fusionada con enlaces bidireccionales que interconectan decisiones con minutas y entregables.
 3. **Ingeniería de Arnés:** Marco metodológico estricto que impone reglas duras: prohibición de complacencia, auto-escritura obligatoria y separación de roles.
 4. **Protocolo Gauntlet:** Compuerta de calidad activa donde un *Revisor Crítico* examina sin piedad el borrador de *The Builder* antes de que el usuario lo vea.
@@ -118,7 +118,7 @@ El arnés opera bajo un árbol de ejecución jerárquico que desciende desde la 
 
 ### Anatomía Interna:
 * **¿Qué es un Agente?** Un perfil de cargo directivo con autonomía, criterio de negocio y reglas innegociables.
-* **¿Qué es una Skill?** Un manual de procedimientos estándar (SOP) modular y reutilizable. Si una instrucción para un agente es puramente metodológica, se extrae a una Skill.
+* **¿Qué es una Skill?** Un manual de procedimientos estándar (SOP, *Standard Operating Procedure*, o procedimiento operativo estándar) modular y reutilizable. Si una instrucción para un agente es puramente metodológica, se extrae a una Skill.
 * **¿Qué es un Script Determinista?** Código puro en Python para tareas donde un error numérico cuesta dinero o reputación.
 * **¿Qué es un MCP (Model Context Protocol)?** Un conector seguro para que la IA consulte bases de datos corporativas sin exponer credenciales.
 
@@ -130,29 +130,29 @@ A diferencia de un chat simple, el arnés evalúa la madurez de cada requerimien
 
 ```mermaid
 flowchart TD
-    Start([📥 Entrada del Usuario]) --> InitCheck{¿Bóveda inicializada?<br/>00_Centro_de_Mando existe}
+    Start([📥 Entrada del Usuario]) --> InitCheck{"¿Bóveda inicializada?<br/>00_Centro_de_Mando existe"}
     
     %% FASE INICIAL: DIAGNÓSTICO
-    InitCheck -- No / Comando /iniciar --> Phase1[Fase 1: Diagnóstico de Inicio<br/>3 Preguntas: Sponsor, Propósito, Restricciones]
-    Phase1 --> Phase2[Fase 2: Propuesta de Fases y Tareas]
+    InitCheck -- No / Comando /iniciar --> Phase1["Fase 1: Diagnóstico de Inicio<br/>3 Preguntas: Sponsor, Propósito, Restricciones"]
+    Phase1 --> Phase2["Fase 2: Propuesta de Fases y Tareas"]
     Phase2 --> Phase2Wait[/¿Concertamos este plan?/]
     Phase2Wait --> ApprovePlan{¿Usuario aprueba?}
     ApprovePlan -- Ajustes --> Phase2
-    ApprovePlan -- Sí --> SetupVault[Fase 3: Setup Inicial Bóveda<br/>Crear Tareas TAR_XX, Tablero_Kanban.base y Centro_de_Mando]
+    ApprovePlan -- Sí --> SetupVault["Fase 3: Setup Inicial Bóveda<br/>Crear Tareas TAR_XX, Tablero_Kanban.base y Centro_de_Mando"]
     SetupVault --> NextTask[Seleccionar Tarea Inmediata ⏳ En Progreso]
 
     %% CICLO CONTINUO DE INTERACCIÓN
     InitCheck -- Sí --> ReqCheck[Analizar Intención del Usuario]
     NextTask --> ReqCheck
     
-    ReqCheck --> ScopeCheck{¿El requerimiento entra en el alcance<br/>y restricciones del proyecto?}
+    ReqCheck --> ScopeCheck{"¿El requerimiento entra en el alcance<br/>y restricciones del proyecto?"}
     ScopeCheck -- Desviación de Alcance --> ScopeAlert[⚠️ Alerta de Alcance y Registro en Matriz]
     ScopeAlert --> ConsultUser[/Consultar si ajustamos alcance o descartamos/]
     
     ScopeCheck -- En Alcance --> TypeCheck{¿Qué tipo de trabajo es?}
 
     %% CAMINO TEMÁTICO: PROFESSOR SYNAPSE
-    TypeCheck -- "Co-diseño / Debate / Estrategia" --> SynapseSummon[🧙🏾‍♂️ Professor Synapse: Invocar Experto de Dominio Dinámico]
+    TypeCheck -- "Co-diseño / Debate / Estrategia" --> SynapseSummon["🧙🏾‍♂️ Professor Synapse: Invocar Experto de Dominio Dinámico"]
     subgraph SynapseCoCreation [Co-creación Temática Socrática]
         SynapseSummon --> DynamicExpert[🧠 Experto Temático Invocado a Medida]
         DynamicExpert --> CoDesignStep[Diálogo socrático paso a paso con el Usuario]
@@ -174,7 +174,7 @@ flowchart TD
         Routing -->|Estructura / Enlaces| E_Arq[🏛️ Arquitecto Bóveda]
     end
 
-    E_Fin --> CritFilter{¿Es Tarea Crítica?<br/>Entregable final, finanzas, alta dirección}
+    E_Fin --> CritFilter{"¿Es Tarea Crítica?<br/>Entregable final, finanzas, alta dirección"}
     E_Doc --> CritFilter
     E_Vis --> CritFilter
     E_Web --> CritFilter
@@ -187,15 +187,15 @@ flowchart TD
     %% PROTOCOLO GAUNTLET LOOP
     CritFilter -- Sí (Crítica) --> Gauntlet[🛡️ Disparo de Protocolo Gauntlet en 4 Bloques]
     
-    subgraph GauntletLoop [Compuerta de Calidad: Gauntlet Loop con Auditoría Activa]
+    subgraph GauntletLoop ["Compuerta de Calidad: Gauntlet Loop con Auditoría Activa"]
         Gauntlet --> BuilderStep[The Builder: Generar Artefacto según Estándar]
-        BuilderStep --> CriticStep[Revisor Adversarial: Auditoría Activa en Caliente<br/>Evaluar celdas .xlsx / fuentes .pptx / HTML]
-        CriticStep --> BenchCheck{¿Cumple el Listón?<br/>Cero discrepancias numéricas y diseño directivo}
+        BuilderStep --> CriticStep["Revisor Adversarial: Auditoría Activa en Caliente<br/>Evaluar celdas .xlsx / fuentes .pptx / HTML"]
+        CriticStep --> BenchCheck{"¿Cumple el Listón?<br/>Cero discrepancias numéricas y diseño directivo"}
         BenchCheck -- Aprobado --> PassGauntlet[Veredicto: APROBADO]
         BenchCheck -- Rechazado --> IterCheck{"¿Iteraciones menor a 2?"}
         IterCheck -- Sí --> FixStep["Reporte de Defectos: Subsanar en caliente"]
         FixStep --> BuilderStep
-        IterCheck -- "No (Circuit Breaker)" --> Escalation[Circuit Breaker: Escalar discrepancias al Usuario]
+        IterCheck -- "No (Circuit Breaker)" --> Escalation["Circuit Breaker: Escalar discrepancias al Usuario"]
     end
 
     Escalation --> UserResolve[/Decisión del Usuario/]
@@ -222,9 +222,9 @@ El agente **no "mira" el dibujo de Mermaid** para actuar en tiempo real. El diag
    * **Regla #0:** Auto-bootstrap y las 3 preguntas de diagnóstico inicial.
    * **Regla #1:** Auto-escritura proactiva obligatoria en las 3 macro-carpetas físicas.
    * **Regla #2:** Flujo de interacción de **Professor Synapse** (la plantilla de diálogo socrático paso a paso).
-   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos y el Circuit Breaker de 2 rondas).
+   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos o validación previa de tablas antes de cruzarlas, y el Circuit Breaker o freno automático tras 2 rondas).
 2. **El Organigrama del Staff (`.harness/Agentes/EXPERTOS_Y_ROLES.md`):**  
-   Define los perfiles de cargo exactos: el Orquestador PM, Professor Synapse (*Summoner* dinámico) y los 5 especialistas de formato (Auditor Cuantitativo, Diseñador Documental, PPTX, HTML y Arquitecto Bóveda).
+   Define los 9 roles del catálogo: el Orquestador (Director Estratégico), Professor Synapse (convocador dinámico de expertos de dominio, en inglés *Summoner*) y 7 especialistas: Arquitecto de Bóveda, Controller de Proyecto, Auditor Cuantitativo, Diseñador Documental, Especialista PPTX, Especialista Web y Revisor Adversarial.
 3. **El Tablero de Control para el Humano (`00_Centro_de_Mando.md`):**  
    Este archivo **NO contiene las órdenes del agente**, sino la interfaz de usuario en Obsidian: el tablero de llaves de paso, switches e indicadores para que el director opere la casa en un clic sin tener que meterse en las cañerías de `.harness/`.
 
@@ -240,32 +240,34 @@ El agente **no "mira" el dibujo de Mermaid** para actuar en tiempo real. El diag
 Ningún entregable se publica en el primer borrador. El arnés activa un careo interno entre dos actores:
 
 1. **The Builder (Constructor):** Genera el informe, el modelo financiero o la presentación.
-2. **Revisor Crítico (Auditor Severo):** Aplica la compuerta **Gate 0 de Datos** (cardinalidad, llaves compuestas, relaciones 1:1, 1:N), audita fórmulas vivas en Excel y exige un piso tipográfico de 16pt en diapositivas.
+2. **Revisor Crítico (Auditor Severo):** Aplica la compuerta **Gate 0 de Datos** (validación previa de tablas; revisa la **cardinalidad**, es decir, cuántos registros de una tabla se relacionan con otra, las llaves compuestas y las relaciones 1:1, 1:N), audita fórmulas vivas en Excel y exige un piso tipográfico de 16pt en diapositivas.
 
 ```mermaid
 flowchart TD
-    A[The Builder: Genera Borrador] --> B[Revisor Crítico: Aplica Gate 0 y Estándares]
+    A["The Builder: Genera Borrador"] --> B["Revisor Crítico: Aplica Gate 0 y Estándares"]
     B -->|Aprobado en Ronda 1| C[Auto-Escritura Inmediata en Disco]
-    B -->|Detecta Discrepancia| D{¿Iteración <= 2?}
+    B -->|Detecta Discrepancia| D{"¿Iteración menor o igual a 2?"}
     D -->|Sí| E[Autocorrección Silenciosa en Ronda 2]
     E --> B
-    D -->|No: Ronda 3| F[Circuit Breaker: Se Frena y Eleva al Sponsor Humano]
+    D -->|No: Ronda 3| F["Circuit Breaker: Se Frena y Eleva al Sponsor Humano"]
 ```
 
-* **Circuit Breaker:** Si tras dos rondas persiste una discrepancia metodológica o financiera, el arnés **detiene la publicación** y eleva el conflicto al sponsor humano con evidencia exacta, impidiendo bucles infinitos y costos desmedidos de tokens.
+* **Circuit Breaker** (freno automático de seguridad): si tras dos rondas persiste una discrepancia metodológica o financiera, el arnés **detiene la publicación** y eleva el conflicto al sponsor humano con evidencia exacta, impidiendo bucles infinitos y costos desmedidos de tokens.
 
 ---
 
-## 🔄 8. Las Seis Estaciones (Experiencia Directiva UX)
+## 🔄 8. La Secuencia de 8 Pasos (Experiencia Directiva UX)
 
-Lo que el directivo experimenta en el frente de trabajo:
+Lo que el directivo experimenta en el frente de trabajo, en este orden:
 
-1. **Estación 1: Diagnóstico Inicial:** 3 preguntas de alineación (Sponsor/Audiencia, Propósito de Negocio y Restricciones duras).
-2. **Estación 2: Plan Concertado:** Aprobación del desglose de fases y tareas en el Kanban antes de ejecutar.
-3. **Estación 3: Invocación Experta:** Delegación en el especialista temático adecuado.
-4. **Estación 4: Compuerta Gauntlet:** Careo de calidad y auditoría de celdas vivas en caliente.
-5. **Estación 5: Auto-Escritura Proactiva:** Generación directa en disco del Word final limpio y su réplica Markdown gemela.
-6. **Estación 6: Aprendizaje y Zettelkasten:** Captura de cada retroalimentación o duda como una lección permanente en el banco de conocimiento.
+1. **Bootstrap:** el arnés se presenta y comprueba si la bóveda ya está inicializada.
+2. **Diagnóstico:** 3 preguntas (Sponsor y audiencia, propósito de negocio y restricciones o plazos).
+3. **Professor Synapse:** diálogo socrático (preguntas guiadas) hasta que defines qué quieres.
+4. **Contrato de Logro (pendiente):** acuerdas el nivel de "listo". La plantilla aún no existe.
+5. **Especialista de dominio:** construye el entregable.
+6. **Gauntlet:** el Revisor Adversarial audita el borrador con el listón acordado; máximo 2 rondas.
+7. **Persistir y /guardar (pendiente):** guarda los archivos y entrega un recibo. El comando aún no existe.
+8. **Aprendizaje:** se registra una nota atómica (una idea por nota) con lo aprendido.
 
 ---
 
@@ -279,7 +281,7 @@ No se requieren servidores corporativos ni configuraciones complejas. Solo neces
 
 ### Rutina de Arranque:
 ```bash
-# 1. Clona este repositorio o descomprime arnes_starter.zip en tu nueva carpeta
+# 1. Clona este repositorio o descomprime 03_Entregables_Finales/Starter_Kit_Arnes_Universal.zip en tu nueva carpeta
 git clone https://github.com/ribonilla/arnesOrquestador.git Mi_Nuevo_Proyecto
 cd Mi_Nuevo_Proyecto
 
@@ -358,4 +360,4 @@ Diseñado y desarrollado por:
 
 ## 📄 12. Licencia
 
-Este proyecto está distribuido bajo la licencia MIT. Eres libre de usarlo, adaptarlo e implementarlo en tu organización manteniendo los créditos de autoría originales.
+Este proyecto está distribuido bajo la licencia MIT (archivo LICENSE pendiente de publicar). Eres libre de usarlo, adaptarlo e implementarlo en tu organización manteniendo los créditos de autoría originales.
