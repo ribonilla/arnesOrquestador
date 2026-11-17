@@ -45,7 +45,7 @@ flowchart TD
     BenchCheck -- No, máximo de 4 rondas --> Escalation[/Escalar discrepancias al usuario y decidir/] --> S7
 
     %% PASO 7: PERSISTIR
-    S7["Paso 7 · Persistir y /guardar<br/>Recibo de lo guardado; actualizar Kanban y 00_Centro_de_Mando"]
+    S7["Paso 7 · Persistir y /guardar<br/>Procedimiento: Skills/GUARDAR_BOVEDA.md<br/>Recibo verificable; actualizar Kanban y 00_Centro_de_Mando"]
 
     %% PASO 8: APRENDIZAJE
     S7 --> S8["Paso 8 · Aprendizaje<br/>Nota atómica si hay lección, regla o patrón"]
@@ -88,6 +88,7 @@ flowchart TD
 1. **Entregables:** Guarda los productos terminados en `03_Entregables_Finales/`. La versión previa se archiva en `Historico/` con diffs en rojo.
 2. **Trazabilidad:** Cualquier cambio de números, alcance o redacción relevante se asienta en `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Matriz_de_Cambios_y_Acuerdos.md`.
 3. **Sincronización Kanban:** Actualiza la nota individual de la tarea en `02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tareas/TAR_XX.md` y refresca `00_Centro_de_Mando.md`.
+4. **/guardar:** Pasos de escritura, frontmatter y formato del recibo en [GUARDAR_BOVEDA.md](../Skills/GUARDAR_BOVEDA.md).
 
 ### Fase F: Capitalización Zettelkasten (paso 8)
 1. Si durante la tarea se descubrió un patrón de diseño, error recurrente, preferencia corporativa o lección de negocio, crea una nota atómica en `01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/`.

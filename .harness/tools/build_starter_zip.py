@@ -16,6 +16,7 @@ INCLUDED_ROOT_FILES = [
     "CLAUDE.md",
     "GUIA_ESTRUCTURA_BOVEDA.md",
     "README.md",
+    "requirements.txt",
     ".gitignore",
     "LICENSE",
     "01_Direccion_y_Estrategia/README.md",

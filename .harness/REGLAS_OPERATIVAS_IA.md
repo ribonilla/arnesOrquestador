@@ -15,7 +15,7 @@ Este documento es el cerebro de ejecución para cualquier Agente o LLM (Gemini, 
    Plantilla: [TPL_07_Contrato_de_Logro.md](Plantillas/TPL_07_Contrato_de_Logro.md).
 5. **Especialista de dominio:** construye.
 6. **Gauntlet:** Revisor Adversarial con el listón del nivel elegido (entre 2 y 4 rondas). Detalle en [PLANTILLA_GAUNTLET_PROMPT.md](templates/PLANTILLA_GAUNTLET_PROMPT.md).
-7. **Persistir y /guardar:** recibo de lo guardado.
+7. **Persistir y /guardar:** recibo de lo guardado. Procedimiento: [GUARDAR_BOVEDA.md](Skills/GUARDAR_BOVEDA.md).
 8. **Aprendizaje:** nota atómica.
 
 Flujo visual de la secuencia: [FLUJOGRAMA_ORQUESTADOR.md](Agentes/FLUJOGRAMA_ORQUESTADOR.md).
@@ -103,6 +103,7 @@ Estructura centrada en el usuario para evitar parálisis de navegación:
 
 * **/iniciar [Proyecto]**: Diagnóstico inicial $\to$ Propuesta de Fases $\to$ Setup minimalista de 3 carpetas.
 * **/sesion**: Lee el estado actual en el Kanban, resume dónde quedamos y retoma la tarea activa.
+* **/guardar [sesion|decisiones|aprendizajes|tareas]**: Guarda lo de la conversación en la bóveda y entrega un recibo verificable (archivo, acción y verificación). Procedimiento: [GUARDAR_BOVEDA.md](Skills/GUARDAR_BOVEDA.md).
 * **/decision [Detalle]**: Registra un acuerdo en `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/` con fecha y hora (`YYYY-MM-DD HH:MM`).
 * **/auditar-vault [Pregunta]**: Activa el rol de Auditor de Bóveda: rastrea sesiones, acuerdos y versiones para responder qué cambió, por qué y quién lo pidió, citando notas exactas.
 * **/informe-acuerdos**: Genera un documento formal consolidando el historial de acuerdos y lo guarda en `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Informe_de_Acuerdos_YYYY-MM-DD.md`.

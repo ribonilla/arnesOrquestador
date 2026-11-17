@@ -266,7 +266,7 @@ Lo que el directivo experimenta en el frente de trabajo, en este orden:
 4. **Contrato de Logro (pendiente):** acuerdas el nivel de "listo". La plantilla aún no existe.
 5. **Especialista de dominio:** construye el entregable.
 6. **Gauntlet:** el Revisor Adversarial audita el borrador con el listón acordado; entre 2 y 4 rondas (mínimo 2, máximo 4).
-7. **Persistir y /guardar (pendiente):** guarda los archivos y entrega un recibo. El comando aún no existe.
+7. **Persistir y /guardar:** guarda los archivos y entrega un recibo verificable. Comando: `/guardar`.
 8. **Aprendizaje:** se registra una nota atómica (una idea por nota) con lo aprendido.
 
 ---
@@ -278,6 +278,8 @@ No se requieren servidores corporativos ni configuraciones complejas. Solo neces
 1. **Obsidian:** Interfaz gráfica para explorar tu bóveda ([Descargar en obsidian.md](https://obsidian.md/download)).
 2. **Python 3.10+:** Motor silencioso de cálculo y validación de datos ([Descargar en python.org](https://www.python.org/downloads/)).
 3. **Una CLI a Elección:** Consola para interactuar en lenguaje natural con permisos en tu disco (**Claude Code**, **Antigravity**, **Codex**, **Pi** u **OpenCode**).
+
+Si el arnés usa scripts de Python, instala sus dependencias con `pip install -r requirements.txt` (Python 3.12 o superior).
 
 ### Rutina de Arranque:
 ```bash

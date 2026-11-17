@@ -61,3 +61,9 @@ Puedes escribir estos comandos en tu chat con la IA (o pedírselos en lenguaje n
 ### 10. `/capitalizar` (Guardar Aprendizaje Zettelkasten) *(propuesto)*
 * **Qué hace:** Extrae un aprendizaje metodológico, criterio corporativo validado o plantilla útil (Zettelkasten es un sistema de notas atómicas enlazadas) y crea una nota atómica en `01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/`.
 * **Ejemplo:** `/capitalizar Principio: En B2B la venta se cierra con la reportería para el comprador, no con las funciones del usuario.`
+
+---
+
+### 11. `/guardar [sesion|decisiones|aprendizajes|tareas]` (Guardar en la Bóveda con Recibo)
+* **Qué hace:** Guarda en la bóveda lo de la conversación (sesión, decisiones, aprendizajes, tareas y entregables) y entrega un recibo con cada archivo escrito, su acción y si quedó verificado. Sin ámbito, guarda todo. Procedimiento completo: `.harness/Skills/GUARDAR_BOVEDA.md`.
+* **Ejemplo:** `/guardar decisiones`
