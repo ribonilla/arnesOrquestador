@@ -38,3 +38,6 @@ arnes_starter.zip
 
 # Local Obsidian UI preference, not part of the harness
 .obsidian/appearance.json
+
+# Bóveda de trabajo de Obsidian: worktree local de la rama dev-vault
+/boveda/
