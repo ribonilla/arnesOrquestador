@@ -5,7 +5,6 @@ fecha: "2026-10-29 19:35"
 version: "5.0 - 14 Diapositivas, Flujograma Completo Synapse & Mermaid Integrado"
 autor: "Ricardo Bonilla"
 rol: "Consultor en Ciencia de Datos"
-email: "ribonilla@gmail.com"
 linkedin: "https://www.linkedin.com/in/ricardo-bonilla-jimenez/"
 audiencia: "Vicepresidentes y Directores C-Level (Operaciones, RRHH, Logística)"
 archivo_html_gemelo: "[[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.html]]"
@@ -19,7 +18,7 @@ flujograma_maestro: "[[03_Entregables_Finales/Flujograma_Orquestador_y_Ciclo_de_
 > Compendio estratégico destilado para la alta dirección. Diseñado para ejecutivos analíticos no programadores, priorizando la utilidad operativa, la mitigación de alucinaciones y la trazabilidad institucional. Antes de la toma de decisiones críticas de inversión o gestión humana, valide los parámetros de negocio aplicados.
 > 
 > **Diseñado por:** Ricardo Bonilla · Consultor en Ciencia de Datos  
-> **Contacto:** [ribonilla@gmail.com](mailto:ribonilla@gmail.com) · [LinkedIn Perfil](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)
+> **Contacto:** [LinkedIn Perfil](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)
 
 ---
 
@@ -39,7 +38,7 @@ No se trata de "usar ChatGPT". Es la articulación sinérgica de cuatro tecnolog
 ---
 
 ## 💎 03. Obsidian: La Bóveda Local Soberana
-* **Soberanía y Cero Fuga:** A diferencia de las plataformas SaaS en la nube, Obsidian guarda todo en archivos planos Markdown (`.md`) dentro de tu propio disco. Si se cae internet o la plataforma del proveedor, tus activos siguen intactos.
+* **Soberanía local:** A diferencia de las plataformas SaaS (software en la nube), Obsidian guarda todo en archivos planos Markdown (`.md`) dentro de tu propio disco. Si se cae internet o la plataforma del proveedor, tus archivos siguen disponibles en tu disco.
 * **Interconexión Orgánica:** Permite vincular decisiones estratégicas con minutas operativas y entregables finales mediante enlaces bidireccionales, creando un grafo vivo del negocio.
 
 ---
@@ -146,7 +145,7 @@ flowchart TD
         Gauntlet --> Builder[Builder genera entregable]
         Builder --> Critic[Revisor audita Gate 0 y celdas vivas]
         Critic --> Veredicto{¿Aprobado?}
-        Veredicto -- No --> Circuit{"¿Ronda menor a 2?"}
+        Veredicto -- No --> Circuit{"¿Ronda menor a 4?"}
         Circuit -- Sí --> Fix["Autocorrección silenciosa"]
         Fix --> Builder
         Circuit -- No --> Escalar[Circuit Breaker: Frena y Consulta al Humano]
@@ -167,9 +166,9 @@ El agente **no "mira" el dibujo de Mermaid** para actuar en tiempo real. El diag
    * **Regla #0:** Auto-bootstrap y las 3 preguntas de diagnóstico inicial.
    * **Regla #1:** Auto-escritura proactiva obligatoria en las 3 macro-carpetas físicas.
    * **Regla #2:** Flujo de interacción de **Professor Synapse** (la plantilla de diálogo socrático paso a paso).
-   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos y el Circuit Breaker de 2 rondas).
+   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos o validación previa de tablas, y el Circuit Breaker o freno automático tras 4 rondas).
 2. **El Organigrama del Staff (`.harness/Agentes/EXPERTOS_Y_ROLES.md`):**  
-   Define los perfiles de cargo exactos: el Orquestador PM, Professor Synapse (*Summoner* dinámico) y los 5 especialistas de formato (Auditor Cuantitativo, Diseñador Documental, PPTX, HTML y Arquitecto Bóveda).
+   Define los 9 roles del catálogo: el Orquestador (Director Estratégico), Professor Synapse (convocador dinámico de expertos de dominio, en inglés *Summoner*) y 7 especialistas: Arquitecto de Bóveda, Controller de Proyecto, Auditor Cuantitativo, Diseñador Documental, Especialista PPTX, Especialista Web y Revisor Adversarial.
 3. **El Tablero de Control para el Humano (`00_Centro_de_Mando.md`):**  
    Este archivo **NO contiene las órdenes del agente**, sino la interfaz de usuario en Obsidian: el tablero de llaves de paso, switches e indicadores para que el director opere la casa en un clic sin tener que meterse en las cañerías de `.harness/`.
 
@@ -183,21 +182,23 @@ El agente **no "mira" el dibujo de Mermaid** para actuar en tiempo real. El diag
 ## 🛡️ 08. Protocolo Gauntlet (Loop de Calidad & Circuit Breaker)
 El arnés nunca te entrega un primer borrador sin someterlo a un careo interno entre dos actores:
 1. **The Builder (Constructor):** Genera el informe, modelo o propuesta siguiendo las mejores prácticas.
-2. **Revisor Crítico (Auditor Severo):** Aplica la compuerta *Gate 0 de Datos* (cardinalidad, llaves compuestas, relaciones 1:1, 1:N), verifica fórmulas vivas en hojas de cálculo y piso tipográfico de 16pt.
+2. **Revisor Crítico (Auditor Severo):** Aplica la compuerta *Gate 0 de Datos* (validación previa de tablas; revisa la **cardinalidad**, es decir, cuántos registros de una tabla se relacionan con otra, las llaves compuestas y las relaciones 1:1, 1:N), verifica fórmulas vivas en hojas de cálculo y piso tipográfico de 16pt.
 * **Aprobado:** Pasa directo a auto-escritura en disco.
 * **Autocorrección (Ronda 2):** El constructor corrige las observaciones del auditor en silencio.
-* **Circuit Breaker (Límite 2 rondas):** Si tras dos iteraciones persiste la discrepancia, se detiene la ejecución y se eleva la decisión directamente al sponsor humano.
+* **Circuit Breaker (Límite 4 rondas):** Si tras cuatro iteraciones persiste la discrepancia, se detiene la ejecución y se eleva la decisión directamente al sponsor humano.
 
 ---
 
-## 🔄 09. Las Seis Estaciones (Experiencia Directiva UX)
-Lo que el directivo experimenta en el frente de trabajo:
-1. **Estación 1: Diagnóstico Inicial:** 3 preguntas clave (Sponsor/Audiencia, Propósito de Negocio, Restricciones/Plazos).
-2. **Estación 2: Plan Concertado:** Aprobación del desglose de tareas antes de mover un solo byte.
-3. **Estación 3: Invocación Experta:** Selección y delegación al agente especialista adecuado.
-4. **Estación 4: Compuerta Gauntlet:** Careo de calidad y verificación matemática en caliente.
-5. **Estación 5: Auto-Escritura Proactiva:** Generación directa en disco del Word limpio y su Markdown gemelo.
-6. **Estación 6: Aprendizaje y Zettelkasten:** Registro de cada retroalimentación como lección permanente.
+## 🔄 09. La Secuencia de 8 Pasos (Experiencia Directiva UX)
+Lo que el directivo experimenta en el frente de trabajo, en este orden:
+1. **Bootstrap:** el arnés se presenta y comprueba si la bóveda ya está inicializada.
+2. **Diagnóstico:** 3 preguntas (Sponsor y audiencia, propósito de negocio, restricciones o plazos).
+3. **Professor Synapse:** diálogo socrático (preguntas guiadas) hasta que defines qué quieres.
+4. **Contrato de Logro (pendiente):** acuerdas el nivel de "listo". La plantilla aún no existe.
+5. **Especialista de dominio:** construye el entregable.
+6. **Gauntlet:** el Revisor Adversarial audita el borrador con el listón acordado; entre 2 y 4 rondas (mínimo 2, máximo 4).
+7. **Persistir y /guardar (pendiente):** guarda los archivos y entrega un recibo. El comando aún no existe.
+8. **Aprendizaje:** se registra una nota atómica (una idea por nota) con lo aprendido.
 
 ---
 
@@ -250,7 +251,7 @@ Entiende que en este arnés, cada solicitud mía no es un chat efímero, sino un
 - Identificar el requerimiento de negocio exacto.
 - Seleccionar y activar al agente especialista adecuado.
 - Ejecutar validaciones matemáticas o cruces de datos mediante scripts deterministas en Python (sin alucinaciones numéricas).
-- Pasar obligatoriamente por una compuerta adversarial tipo "Gauntlet" (Constructor vs. Auditor Crítico, con un máximo de 2 rondas de corrección antes de elevar discrepancias).
+- Pasar obligatoriamente por una compuerta adversarial tipo "Gauntlet" (Constructor vs. Auditor Crítico, con entre 2 y 4 rondas de corrección (mínimo 2, máximo 4) antes de elevar discrepancias).
 - Auto-escribir el resultado directamente en disco en las 3 macro-carpetas físicas.
 - Extraer cualquier duda, corrección o aprendizaje en una nota atómica de Zettelkasten para capitalizar el conocimiento compuesto.
 
@@ -278,5 +279,5 @@ Hazme las 3 preguntas clave del Diagnóstico Inicial (Sponsor/Audiencia, Propós
 
 ---
 
-*Diseñado por **Ricardo Bonilla** · Consultor en Ciencia de Datos · [ribonilla@gmail.com](mailto:ribonilla@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)*  
+*Diseñado por **Ricardo Bonilla** · Consultor en Ciencia de Datos · [LinkedIn](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)*  
 *Documento gemelo bimodal sincronizado con el artefacto visual interactivo en [[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.html]]*

@@ -24,4 +24,4 @@ tags:
 ---
 
 ## 📝 Notas y Evidencias
-* Entregable o documento generado: [[05_Entregables/{{ARCHIVO}}|{{ARCHIVO}}]]
+* Entregable o documento generado: [[03_Entregables_Finales/{{ARCHIVO}}|{{ARCHIVO}}]]

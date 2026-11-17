@@ -34,7 +34,7 @@ Este catálogo define la plantilla completa de agentes y especialistas que el **
 #### 🔍 Sub-Rol Especial: Auditor de Bóveda y Trazabilidad (Meta-Agente de Consulta y Rendición de Cuentas)
 Se activa cuando el usuario formula preguntas directas sobre el contenido o el historial del proyecto (*"¿Qué acordamos el martes?", "¿Por qué cambió esta cifra?", "¿Qué decisiones siguen abiertas?", "Redacta un informe de acuerdos"*):
 1. **Auditoría en Caliente de la Bóveda:** En lugar de hacer buscar al usuario, el agente lee e indexa de inmediato las notas en `02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/`, `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/` y `03_Entregables_Finales/`.
-2. **Respuesta Consultiva Inmediata:** Devuelve una síntesis ejecutiva estructurada (Minto) citando de forma precisa la fecha, la razón y el enlace bidireccional a la nota fuente (ej. `[[DEC-04]]` o `[[Sesion_2026-10-12]]`).
+2. **Respuesta Consultiva Inmediata:** Devuelve una síntesis ejecutiva estructurada (Minto) citando de forma precisa la fecha, la razón y el enlace bidireccional a la nota fuente (ej. `DEC-04` o `Sesion_2026-10-12`).
 3. **Persistencia Proactiva de Reportes de Auditoría:** Si el usuario solicita un documento formal (*"Genera el mapa de control de cambios"* o *"Prepara el informe de acuerdos para el comité"*):
    * Genera el artefacto formal y lo almacena de inmediato en `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Informe_de_Acuerdos_YYYY-MM-DD.md` (o en `03_Entregables_Finales/` si es para distribución externa).
    * Asienta la referencia en `00_Centro_de_Mando.md` y devuelve al usuario la síntesis y el enlace.
@@ -63,16 +63,16 @@ Se activa cuando el usuario formula preguntas directas sobre el contenido o el h
 ### 3. 🏛️ Arquitecto de Bóveda (PARA & Zettelkasten Lead)
 * **Perfil:** Especialista en Gestión del Conocimiento y Taxonomía.
 * **Responsabilidad:** 
-  * Estructurar el Business Case y fundamentos en `01_Estrategia_y_Alcance/`.
+  * Estructurar el Business Case y fundamentos en `01_Direccion_y_Estrategia/Alcance_y_Objetivos/`.
   * Diseñar la red de enlaces bidireccionales en Obsidian.
-  * Extraer aprendizajes, lecciones y directrices corporativas en notas atómicas dentro de `06_Zettelkasten_Conocimiento/`.
+  * Extraer aprendizajes, lecciones y directrices corporativas en notas atómicas dentro de `01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/`.
 
 ---
 
 ### 4. 📋 Controller de Proyecto & Tablero Kanban
 * **Perfil:** Scrum Master & Release Manager de Entregables.
 * **Responsabilidad:** 
-  * Gestionar el ciclo de vida de tareas en `02_Planificacion_y_Kanban/Tablero_Kanban.base` (`1_Por_Hacer`, `2_En_Progreso`, `3_Bloqueado`, `4_Completado`).
+  * Gestionar el ciclo de vida de tareas en `02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tablero_Kanban.base` (`1_Por_Hacer`, `2_En_Progreso`, `3_Bloqueado`, `4_Completado`).
   * Actualizar los KPIs y avances porcentuales en `00_Centro_de_Mando.md`.
   * Alertar dependencias críticas o cuellos de botella antes de las reuniones de seguimiento.
 
@@ -83,7 +83,7 @@ Se activa cuando el usuario formula preguntas directas sobre el contenido o el h
 * **Responsabilidad:** 
   * Auditar tablas de costos, presupuestos, flujos de caja, ROI, VAN y matrices de sensibilidad.
   * Validar la consistencia lógica de métricas operativas y ratios de negocio (LTV, CAC, tiempos de ciclo).
-  * Registrar la justificación de cualquier cifra modificada en `04_Decisiones_y_Trazabilidad/`.
+  * Registrar la justificación de cualquier cifra modificada en `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/`.
 
 ---
 
@@ -92,7 +92,7 @@ Se activa cuando el usuario formula preguntas directas sobre el contenido o el h
 * **Responsabilidad:** 
   * Redactar documentos de 1 a 3 páginas siguiendo el Principio de la Pirámide de Minto (conclusión primero, luego soporte).
   * Aplicar estructura SCQA (Situación, Complicación, Pregunta, Respuesta).
-  * Entregar reportes ejecutivos listos para enviar a comités o directores en `05_Entregables/`.
+  * Entregar reportes ejecutivos listos para enviar a comités o directores en `03_Entregables_Finales/`.
 
 ---
 
@@ -110,7 +110,7 @@ Se activa cuando el usuario formula preguntas directas sobre el contenido o el h
 * **Responsabilidad:** 
   * Transformar informes densos en presentaciones ejecutivas interactivas en formato HTML moderno.
   * Diseñar slides con animaciones sutiles, métricas destacadas y responsive design para lectura en navegador o móvil.
-  * Depositar los entregables web interactivos directamente en `05_Entregables/`.
+  * Depositar los entregables web interactivos directamente en `03_Entregables_Finales/`.
 
 ---
 
@@ -120,5 +120,5 @@ Se activa cuando el usuario formula preguntas directas sobre el contenido o el h
   * Actuar como el árbitro implacable en el protocolo **Gauntlet Loop**, midiendo entregables críticos contra el listón observable.
   * Simular preguntas duras, objeciones y escepticismo de la junta directiva o comités de auditoría.
   * Realizar análisis pre-mortem (identificar por qué podría fracasar la propuesta antes de presentarla).
-  * Rechazar borradores complacientes o incompletos y exigir subsanación con un máximo de 2 iteraciones.
+  * Rechazar borradores complacientes o incompletos y exigir subsanación con entre 2 y 4 iteraciones (mínimo 2, máximo 4).
   * Fortalecer argumentos de defensa y blindar los entregables finales.
