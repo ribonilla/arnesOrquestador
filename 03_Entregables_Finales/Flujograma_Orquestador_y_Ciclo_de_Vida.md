@@ -5,7 +5,6 @@ fecha: "2026-10-29 19:30"
 version: "2.0 - Decisión Temática (Synapse) vs. Producción de Artefactos"
 autor: "Ricardo Bonilla"
 rol: "Consultor en Ciencia de Datos"
-email: "ribonilla@gmail.com"
 linkedin: "https://www.linkedin.com/in/ricardo-bonilla-jimenez/"
 audiencia: "Vicepresidentes y Directores C-Level (Operaciones, RRHH, Logística)"
 ---
@@ -83,7 +82,7 @@ flowchart TD
         BuilderStep --> CriticStep[Revisor Adversarial: Auditoría Activa en Caliente<br/>Evaluar celdas .xlsx / fuentes .pptx / HTML]
         CriticStep --> BenchCheck{¿Cumple el Listón?<br/>Cero discrepancias numéricas y diseño directivo}
         BenchCheck -- Aprobado --> PassGauntlet[Veredicto: APROBADO]
-        BenchCheck -- Rechazado --> IterCheck{"¿Iteraciones menor a 2?"}
+        BenchCheck -- Rechazado --> IterCheck{"¿Ronda menor a 4?"}
         IterCheck -- Sí --> FixStep["Reporte de Defectos: Subsanar en caliente"]
         FixStep --> BuilderStep
         IterCheck -- "No (Circuit Breaker)" --> Escalation[Circuit Breaker: Escalar discrepancias al Usuario]
@@ -123,7 +122,7 @@ Cuando la idea madura y requiere un entregable formal, la batuta pasa a los agen
 * **Arquitecto de Bóveda:** Enlaza notas atómicas y mantiene sincronizado el tablero Kanban.
 
 ### D. La Compuerta Gauntlet y el Circuit Breaker
-Para entregables críticos de alta dirección, se activa el careo interno entre **The Builder** y el **Revisor Crítico**. Si el borrador tiene fórmulas rotas o datos desalineados, el constructor corrige en caliente (máximo 2 rondas). Si la discrepancia es insalvable, el **Circuit Breaker** frena la publicación y eleva la evidencia exacta al director humano.
+Para entregables críticos de alta dirección, se activa el careo interno entre **The Builder** y el **Revisor Crítico**. Si el borrador tiene fórmulas rotas o datos desalineados, el constructor corrige en caliente (mínimo 2 y máximo 4 rondas). Si la discrepancia es insalvable, el **Circuit Breaker** frena la publicación y eleva la evidencia exacta al director humano.
 
 ---
 
@@ -136,7 +135,7 @@ El agente **no "mira" el dibujo de Mermaid** para actuar en tiempo real. El diag
    * **Regla #0:** Auto-bootstrap y las 3 preguntas de diagnóstico inicial.
    * **Regla #1:** Auto-escritura proactiva obligatoria en las 3 macro-carpetas físicas.
    * **Regla #2:** Flujo de interacción de **Professor Synapse** (la plantilla de diálogo socrático paso a paso).
-   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos y el Circuit Breaker de 2 rondas).
+   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos y el Circuit Breaker de 4 rondas).
 2. **El Organigrama del Staff (`.harness/Agentes/EXPERTOS_Y_ROLES.md`):**  
    Define los perfiles de cargo exactos: el Orquestador PM, Professor Synapse (*Summoner* dinámico) y los 5 especialistas de formato (Auditor Cuantitativo, Diseñador Documental, PPTX, HTML y Arquitecto Bóveda).
 3. **El Tablero de Control para el Humano (`00_Centro_de_Mando.md`):**  
@@ -149,4 +148,4 @@ El agente **no "mira" el dibujo de Mermaid** para actuar en tiempo real. El diag
 
 ---
 
-*Diseñado por **Ricardo Bonilla** · Consultor en Ciencia de Datos · [ribonilla@gmail.com](mailto:ribonilla@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)*
+*Diseñado por **Ricardo Bonilla** · Consultor en Ciencia de Datos · [LinkedIn](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)*

@@ -56,7 +56,7 @@ El arnés sigue una secuencia única de 8 pasos:
 3. **Professor Synapse:** diálogo guiado (socrático: con preguntas) hasta que defines qué quieres.
 4. **Contrato de Logro:** eliges el nivel de "listo" (*pendiente: la plantilla aún no existe*).
 5. **Especialista de dominio:** construye el entregable.
-6. **Gauntlet:** revisión adversarial (un revisor independiente que busca fallas), con máximo 2 rondas.
+6. **Gauntlet:** revisión adversarial (un revisor independiente que busca fallas), con entre 2 y 4 rondas (mínimo 2, máximo 4).
 7. **Persistir y /guardar:** guarda el resultado y entrega un recibo (*pendiente: el comando aún no existe*).
 8. **Aprendizaje:** se crea una nota atómica (una idea por nota).
 

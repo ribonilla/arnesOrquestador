@@ -12,7 +12,7 @@ Este documento es el cerebro de ejecución para cualquier Agente o LLM (Gemini, 
 3. **Professor Synapse:** diálogo socrático hasta que el usuario define qué quiere.
 4. **Contrato de Logro:** el usuario elige el nivel de "listo". *(Plantilla pendiente: `TPL_07_Contrato_de_Logro.md`, Fase C.)*
 5. **Especialista de dominio:** construye.
-6. **Gauntlet:** Revisor Adversarial con el listón del nivel elegido (máx. 2 rondas). Detalle en [PLANTILLA_GAUNTLET_PROMPT.md](templates/PLANTILLA_GAUNTLET_PROMPT.md).
+6. **Gauntlet:** Revisor Adversarial con el listón del nivel elegido (entre 2 y 4 rondas). Detalle en [PLANTILLA_GAUNTLET_PROMPT.md](templates/PLANTILLA_GAUNTLET_PROMPT.md).
 7. **Persistir y /guardar:** recibo de lo guardado.
 8. **Aprendizaje:** nota atómica.
 
@@ -78,7 +78,7 @@ Synapse invoca al experto de dominio con la plantilla de 3 pasos y conduce el di
 
 Aplica a tareas críticas: entregables finales, análisis cuantitativos o financieros, hojas de cálculo, presentaciones de alta dirección y memorandos ejecutivos.
 - Nunca se entrega la primera versión del especialista. Constructor y Revisor Adversarial son roles independientes; el Revisor no aprueba por apariencia.
-- Máximo 2 rondas de corrección interna; después se escalan las discrepancias al usuario.
+- Entre 2 y 4 rondas de corrección interna (mínimo 2, máximo 4); después se escalan las discrepancias al usuario.
 - Protocolo completo (Gate 0 de Datos, listón por formato, bimodalidad, 5 preguntas, aviso de auditoría y registro de lecciones): [PLANTILLA_GAUNTLET_PROMPT.md](templates/PLANTILLA_GAUNTLET_PROMPT.md).
 
 ---

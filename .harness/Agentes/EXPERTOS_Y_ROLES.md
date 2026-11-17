@@ -120,5 +120,5 @@ Se activa cuando el usuario formula preguntas directas sobre el contenido o el h
   * Actuar como el árbitro implacable en el protocolo **Gauntlet Loop**, midiendo entregables críticos contra el listón observable.
   * Simular preguntas duras, objeciones y escepticismo de la junta directiva o comités de auditoría.
   * Realizar análisis pre-mortem (identificar por qué podría fracasar la propuesta antes de presentarla).
-  * Rechazar borradores complacientes o incompletos y exigir subsanación con un máximo de 2 iteraciones.
+  * Rechazar borradores complacientes o incompletos y exigir subsanación con entre 2 y 4 iteraciones (mínimo 2, máximo 4).
   * Fortalecer argumentos de defensa y blindar los entregables finales.

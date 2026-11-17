@@ -47,7 +47,7 @@ Puedes escribir estos comandos en tu chat con la IA (o pedírselos en lenguaje n
 ---
 
 ### 8. `/gauntlet` (Blindaje Adversarial de Entregable Crítico) *(propuesto)*
-* **Qué hace:** Activa manualmente la compuerta Gauntlet (una revisión adversarial que mide el entregable contra un listón observable, con máximo 2 rondas de corrección).
+* **Qué hace:** Activa manualmente la compuerta Gauntlet (una revisión adversarial que mide el entregable contra un listón observable, con entre 2 y 4 rondas de corrección).
 * **Ejemplo:** `/gauntlet Audita la propuesta económica y el modelo financiero para detectar discrepancias antes de la firma.`
 
 ---

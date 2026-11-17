@@ -42,7 +42,7 @@ flowchart TD
     S6 --> BenchCheck{¿Cumple el listón?<br/>Cero discrepancias numéricas y diseño directivo}
     BenchCheck -- Sí --> S7
     BenchCheck -- No, quedan rondas --> Fix[Reporte de defectos y subsanar en caliente] --> S6
-    BenchCheck -- No, máximo de 2 rondas --> Escalation[/Escalar discrepancias al usuario y decidir/] --> S7
+    BenchCheck -- No, máximo de 4 rondas --> Escalation[/Escalar discrepancias al usuario y decidir/] --> S7
 
     %% PASO 7: PERSISTIR
     S7["Paso 7 · Persistir y /guardar<br/>Recibo de lo guardado; actualizar Kanban y 00_Centro_de_Mando"]
@@ -82,7 +82,7 @@ flowchart TD
    * Invoca al **Constructor (Builder)** y al **Revisor Adversarial (Adversarial Auditor)** mediante la plantilla formal de 4 bloques (`[.harness/templates/PLANTILLA_GAUNTLET_PROMPT.md](../templates/PLANTILLA_GAUNTLET_PROMPT.md)`).
    * El listón es el del nivel elegido en el Contrato de Logro (paso 4).
    * Aplica auditoría activa en frío (scripts Python) antes de aprobar.
-   * **Bucle controlado:** Máximo 2 iteraciones internas de corrección. Si persiste el desacuerdo, activa el *Circuit Breaker* y presenta el conflicto al usuario.
+   * **Bucle controlado:** Entre 2 y 4 iteraciones internas de corrección (mínimo 2, máximo 4). Si persiste el desacuerdo, activa el *Circuit Breaker* y presenta el conflicto al usuario.
 
 ### Fase E: Auto-Escritura y Persistencia en Bóveda (paso 7)
 1. **Entregables:** Guarda los productos terminados en `03_Entregables_Finales/`. La versión previa se archiva en `Historico/` con diffs en rojo.

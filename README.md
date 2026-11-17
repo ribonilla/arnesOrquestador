@@ -4,7 +4,7 @@
 > Diseñada para comités directivos, líderes de operaciones, consultores y analistas que requieren gobernar la IA con rigor empresarial, trazabilidad innegociable y control de alucinaciones (respuestas inventadas por la IA; la IA puede equivocarse, revisa las cifras clave).
 
 [![Sitio Web Oficial](https://img.shields.io/badge/Sitio_En_Vivo-cerebro--digital--arnes.netlify.app-9a675c?style=for-the-badge&logo=netlify)](https://cerebro-digital-arnes.netlify.app/)
-![Licencia MIT (archivo LICENSE pendiente de publicar)](https://img.shields.io/badge/Licencia-MIT-120a09?style=for-the-badge)
+![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-120a09?style=for-the-badge)
 [![Arquitectura](https://img.shields.io/badge/Arquitectura-PARA_+_Zettelkasten-2b201d?style=for-the-badge&logo=obsidian)](https://obsidian.md/)
 [![Protocolo](https://img.shields.io/badge/Calidad-Gauntlet_Protocol_Loop-b7a397?style=for-the-badge)](#-protocolo-gauntlet-auditoría-adversarial-activa)
 
@@ -192,7 +192,7 @@ flowchart TD
         BuilderStep --> CriticStep["Revisor Adversarial: Auditoría Activa en Caliente<br/>Evaluar celdas .xlsx / fuentes .pptx / HTML"]
         CriticStep --> BenchCheck{"¿Cumple el Listón?<br/>Cero discrepancias numéricas y diseño directivo"}
         BenchCheck -- Aprobado --> PassGauntlet[Veredicto: APROBADO]
-        BenchCheck -- Rechazado --> IterCheck{"¿Iteraciones menor a 2?"}
+        BenchCheck -- Rechazado --> IterCheck{"¿Ronda menor a 4?"}
         IterCheck -- Sí --> FixStep["Reporte de Defectos: Subsanar en caliente"]
         FixStep --> BuilderStep
         IterCheck -- "No (Circuit Breaker)" --> Escalation["Circuit Breaker: Escalar discrepancias al Usuario"]
@@ -222,7 +222,7 @@ El agente **no "mira" el dibujo de Mermaid** para actuar en tiempo real. El diag
    * **Regla #0:** Auto-bootstrap y las 3 preguntas de diagnóstico inicial.
    * **Regla #1:** Auto-escritura proactiva obligatoria en las 3 macro-carpetas físicas.
    * **Regla #2:** Flujo de interacción de **Professor Synapse** (la plantilla de diálogo socrático paso a paso).
-   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos o validación previa de tablas antes de cruzarlas, y el Circuit Breaker o freno automático tras 2 rondas).
+   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos o validación previa de tablas antes de cruzarlas, y el Circuit Breaker o freno automático tras cuatro rondas).
 2. **El Organigrama del Staff (`.harness/Agentes/EXPERTOS_Y_ROLES.md`):**  
    Define los 9 roles del catálogo: el Orquestador (Director Estratégico), Professor Synapse (convocador dinámico de expertos de dominio, en inglés *Summoner*) y 7 especialistas: Arquitecto de Bóveda, Controller de Proyecto, Auditor Cuantitativo, Diseñador Documental, Especialista PPTX, Especialista Web y Revisor Adversarial.
 3. **El Tablero de Control para el Humano (`00_Centro_de_Mando.md`):**  
@@ -246,13 +246,13 @@ Ningún entregable se publica en el primer borrador. El arnés activa un careo i
 flowchart TD
     A["The Builder: Genera Borrador"] --> B["Revisor Crítico: Aplica Gate 0 y Estándares"]
     B -->|Aprobado en Ronda 1| C[Auto-Escritura Inmediata en Disco]
-    B -->|Detecta Discrepancia| D{"¿Iteración menor o igual a 2?"}
+    B -->|Detecta Discrepancia| D{"¿Ronda menor a 4?"}
     D -->|Sí| E[Autocorrección Silenciosa en Ronda 2]
     E --> B
     D -->|No: Ronda 3| F["Circuit Breaker: Se Frena y Eleva al Sponsor Humano"]
 ```
 
-* **Circuit Breaker** (freno automático de seguridad): si tras dos rondas persiste una discrepancia metodológica o financiera, el arnés **detiene la publicación** y eleva el conflicto al sponsor humano con evidencia exacta, impidiendo bucles infinitos y costos desmedidos de tokens.
+* **Circuit Breaker** (freno automático de seguridad): si tras cuatro rondas persiste una discrepancia metodológica o financiera, el arnés **detiene la publicación** y eleva el conflicto al sponsor humano con evidencia exacta, impidiendo bucles infinitos y costos desmedidos de tokens.
 
 ---
 
@@ -265,7 +265,7 @@ Lo que el directivo experimenta en el frente de trabajo, en este orden:
 3. **Professor Synapse:** diálogo socrático (preguntas guiadas) hasta que defines qué quieres.
 4. **Contrato de Logro (pendiente):** acuerdas el nivel de "listo". La plantilla aún no existe.
 5. **Especialista de dominio:** construye el entregable.
-6. **Gauntlet:** el Revisor Adversarial audita el borrador con el listón acordado; máximo 2 rondas.
+6. **Gauntlet:** el Revisor Adversarial audita el borrador con el listón acordado; entre 2 y 4 rondas (mínimo 2, máximo 4).
 7. **Persistir y /guardar (pendiente):** guarda los archivos y entrega un recibo. El comando aún no existe.
 8. **Aprendizaje:** se registra una nota atómica (una idea por nota) con lo aprendido.
 
@@ -318,7 +318,7 @@ Entiende que en este arnés, cada solicitud mía no es un chat efímero, sino un
 - Identificar el requerimiento de negocio exacto.
 - Seleccionar y activar al agente especialista adecuado.
 - Ejecutar validaciones matemáticas o cruces de datos mediante scripts deterministas en Python (sin alucinaciones numéricas).
-- Pasar obligatoriamente por una compuerta adversarial tipo "Gauntlet" (Constructor vs. Auditor Crítico, con un máximo de 2 rondas de corrección antes de elevar discrepancias).
+- Pasar obligatoriamente por una compuerta adversarial tipo "Gauntlet" (Constructor vs. Auditor Crítico, con entre 2 y 4 rondas de corrección (mínimo 2, máximo 4) antes de elevar discrepancias).
 - Auto-escribir el resultado directamente en disco en las 3 macro-carpetas físicas.
 - Extraer cualquier duda, corrección o aprendizaje en una nota atómica de Zettelkasten para capitalizar el conocimiento compuesto.
 
@@ -352,7 +352,6 @@ Diseñado y desarrollado por:
 
 * **Ricardo Bonilla**  
   *Consultor en Ciencia de Datos, Arquitectura de Información e IA Aplicada*  
-  ✉️ **Correo Directo:** [ribonilla@gmail.com](mailto:ribonilla@gmail.com)  
   🔗 **LinkedIn:** [linkedin.com/in/ricardo-bonilla-jimenez](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)  
   🌐 **Sitio Web del Curso:** [cerebro-digital-arnes.netlify.app](https://cerebro-digital-arnes.netlify.app/)
 
@@ -360,4 +359,4 @@ Diseñado y desarrollado por:
 
 ## 📄 12. Licencia
 
-Este proyecto está distribuido bajo la licencia MIT (archivo LICENSE pendiente de publicar). Eres libre de usarlo, adaptarlo e implementarlo en tu organización manteniendo los créditos de autoría originales.
+Este proyecto está distribuido bajo la licencia MIT (ver el archivo [LICENSE](LICENSE)). Eres libre de usarlo, adaptarlo e implementarlo en tu organización manteniendo los créditos de autoría originales.

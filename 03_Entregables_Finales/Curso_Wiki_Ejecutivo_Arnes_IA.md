@@ -5,7 +5,6 @@ fecha: "2026-10-29 19:35"
 version: "5.0 - 14 Diapositivas, Flujograma Completo Synapse & Mermaid Integrado"
 autor: "Ricardo Bonilla"
 rol: "Consultor en Ciencia de Datos"
-email: "ribonilla@gmail.com"
 linkedin: "https://www.linkedin.com/in/ricardo-bonilla-jimenez/"
 audiencia: "Vicepresidentes y Directores C-Level (Operaciones, RRHH, Logística)"
 archivo_html_gemelo: "[[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.html]]"
@@ -19,7 +18,7 @@ flujograma_maestro: "[[03_Entregables_Finales/Flujograma_Orquestador_y_Ciclo_de_
 > Compendio estratégico destilado para la alta dirección. Diseñado para ejecutivos analíticos no programadores, priorizando la utilidad operativa, la mitigación de alucinaciones y la trazabilidad institucional. Antes de la toma de decisiones críticas de inversión o gestión humana, valide los parámetros de negocio aplicados.
 > 
 > **Diseñado por:** Ricardo Bonilla · Consultor en Ciencia de Datos  
-> **Contacto:** [ribonilla@gmail.com](mailto:ribonilla@gmail.com) · [LinkedIn Perfil](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)
+> **Contacto:** [LinkedIn Perfil](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)
 
 ---
 
@@ -146,7 +145,7 @@ flowchart TD
         Gauntlet --> Builder[Builder genera entregable]
         Builder --> Critic[Revisor audita Gate 0 y celdas vivas]
         Critic --> Veredicto{¿Aprobado?}
-        Veredicto -- No --> Circuit{"¿Ronda menor a 2?"}
+        Veredicto -- No --> Circuit{"¿Ronda menor a 4?"}
         Circuit -- Sí --> Fix["Autocorrección silenciosa"]
         Fix --> Builder
         Circuit -- No --> Escalar[Circuit Breaker: Frena y Consulta al Humano]
@@ -167,7 +166,7 @@ El agente **no "mira" el dibujo de Mermaid** para actuar en tiempo real. El diag
    * **Regla #0:** Auto-bootstrap y las 3 preguntas de diagnóstico inicial.
    * **Regla #1:** Auto-escritura proactiva obligatoria en las 3 macro-carpetas físicas.
    * **Regla #2:** Flujo de interacción de **Professor Synapse** (la plantilla de diálogo socrático paso a paso).
-   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos o validación previa de tablas, y el Circuit Breaker o freno automático tras 2 rondas).
+   * **Regla #4:** El protocolo **Gauntlet Loop** (The Builder vs. Revisor Crítico, Gate 0 de datos o validación previa de tablas, y el Circuit Breaker o freno automático tras 4 rondas).
 2. **El Organigrama del Staff (`.harness/Agentes/EXPERTOS_Y_ROLES.md`):**  
    Define los 9 roles del catálogo: el Orquestador (Director Estratégico), Professor Synapse (convocador dinámico de expertos de dominio, en inglés *Summoner*) y 7 especialistas: Arquitecto de Bóveda, Controller de Proyecto, Auditor Cuantitativo, Diseñador Documental, Especialista PPTX, Especialista Web y Revisor Adversarial.
 3. **El Tablero de Control para el Humano (`00_Centro_de_Mando.md`):**  
@@ -186,7 +185,7 @@ El arnés nunca te entrega un primer borrador sin someterlo a un careo interno e
 2. **Revisor Crítico (Auditor Severo):** Aplica la compuerta *Gate 0 de Datos* (validación previa de tablas; revisa la **cardinalidad**, es decir, cuántos registros de una tabla se relacionan con otra, las llaves compuestas y las relaciones 1:1, 1:N), verifica fórmulas vivas en hojas de cálculo y piso tipográfico de 16pt.
 * **Aprobado:** Pasa directo a auto-escritura en disco.
 * **Autocorrección (Ronda 2):** El constructor corrige las observaciones del auditor en silencio.
-* **Circuit Breaker (Límite 2 rondas):** Si tras dos iteraciones persiste la discrepancia, se detiene la ejecución y se eleva la decisión directamente al sponsor humano.
+* **Circuit Breaker (Límite 4 rondas):** Si tras cuatro iteraciones persiste la discrepancia, se detiene la ejecución y se eleva la decisión directamente al sponsor humano.
 
 ---
 
@@ -197,7 +196,7 @@ Lo que el directivo experimenta en el frente de trabajo, en este orden:
 3. **Professor Synapse:** diálogo socrático (preguntas guiadas) hasta que defines qué quieres.
 4. **Contrato de Logro (pendiente):** acuerdas el nivel de "listo". La plantilla aún no existe.
 5. **Especialista de dominio:** construye el entregable.
-6. **Gauntlet:** el Revisor Adversarial audita el borrador con el listón acordado; máximo 2 rondas.
+6. **Gauntlet:** el Revisor Adversarial audita el borrador con el listón acordado; entre 2 y 4 rondas (mínimo 2, máximo 4).
 7. **Persistir y /guardar (pendiente):** guarda los archivos y entrega un recibo. El comando aún no existe.
 8. **Aprendizaje:** se registra una nota atómica (una idea por nota) con lo aprendido.
 
@@ -252,7 +251,7 @@ Entiende que en este arnés, cada solicitud mía no es un chat efímero, sino un
 - Identificar el requerimiento de negocio exacto.
 - Seleccionar y activar al agente especialista adecuado.
 - Ejecutar validaciones matemáticas o cruces de datos mediante scripts deterministas en Python (sin alucinaciones numéricas).
-- Pasar obligatoriamente por una compuerta adversarial tipo "Gauntlet" (Constructor vs. Auditor Crítico, con un máximo de 2 rondas de corrección antes de elevar discrepancias).
+- Pasar obligatoriamente por una compuerta adversarial tipo "Gauntlet" (Constructor vs. Auditor Crítico, con entre 2 y 4 rondas de corrección (mínimo 2, máximo 4) antes de elevar discrepancias).
 - Auto-escribir el resultado directamente en disco en las 3 macro-carpetas físicas.
 - Extraer cualquier duda, corrección o aprendizaje en una nota atómica de Zettelkasten para capitalizar el conocimiento compuesto.
 
@@ -280,5 +279,5 @@ Hazme las 3 preguntas clave del Diagnóstico Inicial (Sponsor/Audiencia, Propós
 
 ---
 
-*Diseñado por **Ricardo Bonilla** · Consultor en Ciencia de Datos · [ribonilla@gmail.com](mailto:ribonilla@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)*  
+*Diseñado por **Ricardo Bonilla** · Consultor en Ciencia de Datos · [LinkedIn](https://www.linkedin.com/in/ricardo-bonilla-jimenez/)*  
 *Documento gemelo bimodal sincronizado con el artefacto visual interactivo en [[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.html]]*
