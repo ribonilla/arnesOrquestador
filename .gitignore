@@ -31,3 +31,7 @@ node_modules/
 # Releases & Packages
 arnes_starter.zip
 
+
+# Local personal copies and agent state
+*-ribonilla.*
+.atl/
