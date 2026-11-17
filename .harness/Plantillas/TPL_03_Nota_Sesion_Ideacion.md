@@ -1,3 +1,11 @@
+---
+tipo: sesion
+fecha: "{{FECHA_Y_HORA}}"
+tema: "{{TEMA_DE_LA_SESION}}"
+tarea: "{{TAR_ID_O_NINGUNA}}"
+estado: vigente
+---
+
 # 💡 Sesión de Ideación y Comprensión: {{TEMA_DE_LA_SESION}}
 
 **Fecha y Hora:** {{FECHA_Y_HORA}}  

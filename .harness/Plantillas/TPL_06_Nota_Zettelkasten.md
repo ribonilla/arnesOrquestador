@@ -1,8 +1,10 @@
 ---
-id: "{{ID_UNICO_FECHA_HORA}}"
-tipo: "Lección_Aprendida / Criterio_Corporativo / Patrón_Estratégico"
+tipo: aprendizaje
+fecha: "{{FECHA_Y_HORA}}"
+tema: "{{TEMA}}"
+tarea: "{{TAR_ID_O_NINGUNA}}"
+estado: vigente
 proyecto_origen: "[[{{NOMBRE_PROYECTO}}]]"
-fecha_hora_creacion: "{{FECHA_Y_HORA}}"
 tags:
   - conocimiento/reutilizable
   - criterio/{{AREA}}

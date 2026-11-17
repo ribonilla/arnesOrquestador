@@ -276,7 +276,7 @@ Lo que el directivo experimenta en el frente de trabajo, en este orden:
 No se requieren servidores corporativos ni configuraciones complejas. Solo necesitas tres piezas ligeras:
 
 1. **Obsidian:** Interfaz gráfica para explorar tu bóveda ([Descargar en obsidian.md](https://obsidian.md/download)).
-2. **Python 3.10+:** Motor silencioso de cálculo y validación de datos ([Descargar en python.org](https://www.python.org/downloads/)).
+2. **Python 3.12 o superior:** Motor silencioso de cálculo y validación de datos ([Descargar en python.org](https://www.python.org/downloads/)).
 3. **Una CLI a Elección:** Consola para interactuar en lenguaje natural con permisos en tu disco (**Claude Code**, **Antigravity**, **Codex**, **Pi** u **OpenCode**).
 
 Si el arnés usa scripts de Python, instala sus dependencias con `pip install -r requirements.txt` (Python 3.12 o superior).
