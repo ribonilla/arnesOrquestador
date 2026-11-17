@@ -48,5 +48,5 @@ Bienvenido a tu Bóveda de Trabajo con Inteligencia Artificial. Esta estructura 
 
 ### *"¿Cómo veo el flujograma metodológico de lo que está haciendo el arnés?"*
 Puedes preguntarle directamente al agente: *"Dime qué estás haciendo"* o consultar el flujograma visual en:
-👉 **`[.harness/Agentes/FLUJOGRAMA_ORQUESTADOR.md](file:///.harness/Agentes/FLUJOGRAMA_ORQUESTADOR.md)`**.
+👉 **`[.harness/Agentes/FLUJOGRAMA_ORQUESTADOR.md](.harness/Agentes/FLUJOGRAMA_ORQUESTADOR.md)`**.
 El arnés opera un ciclo transparente: **Diagnóstico $\to$ Plan Concertado $\to$ Especialista de Dominio $\to$ Compuerta Gauntlet (Calidad) $\to$ Auto-Escritura $\to$ Aprendizajes**.
