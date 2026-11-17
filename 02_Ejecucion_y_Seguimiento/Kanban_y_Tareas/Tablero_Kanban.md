@@ -25,6 +25,7 @@
 
 ### ⏳ En Progreso
 - [ ] Validación integral del arnés en proyectos reales y calibración de experiencia de usuario
+- [ ] TAR_07: Plantilla limpia, skills de terceros y bóveda de trabajo (fases A y B hechas; C, D, E, F pendientes) ([[02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tareas/TAR_07_Plantilla_Limpia_y_Skills|Ver tarea]])
 
 ### ⚠️ Bloqueado / Requiere Validación
 - *(Ningún bloqueo activo)*
