@@ -770,10 +770,10 @@
             <p style="color: var(--text-muted); margin-bottom: 12px;">Cuando concluyas una fase o el proyecto completo, dile a la IA qué entregable necesitas:</p>
 
             <ul class="clean-list" style="gap: 12px;">
-                <li><strong>Para Word:</strong> <em>"Genera el informe ejecutivo en .docx"</em> $\to$ La IA usa <code>docx_executive</code> y guarda el archivo con formato Minto en <code>05_Entregables/</code>.</li>
-                <li><strong>Para Excel:</strong> <em>"Crea el modelo financiero en .xlsx"</em> $\to$ La IA usa <code>xlsx_financial</code> con fórmulas nativas y pestañas de supuestos.</li>
-                <li><strong>Para PowerPoint:</strong> <em>"Prepara las diapositivas para el comité"</em> $\to$ La IA usa <code>pptx_executive</code> con títulos de acción y notas de oratoria.</li>
-                <li><strong>Para Presentación Web:</strong> <em>"Crea una presentación interactiva en HTML"</em> $\to$ La IA usa <code>web_storytelling</code> para crear una experiencia visual en navegador.</li>
+                <li><strong>Para Word:</strong> <em>"Genera el informe ejecutivo en .docx"</em> $\to$ La IA crea el documento con la skill <code>docx</code> si la instalaste; si no, lo escribe en modo básico y revisa el formato a mano.</li>
+                <li><strong>Para Excel:</strong> <em>"Crea el modelo financiero en .xlsx"</em> $\to$ La IA usa la skill <code>xlsx</code> si la instalaste, con fórmulas nativas y pestañas de supuestos.</li>
+                <li><strong>Para PowerPoint:</strong> <em>"Prepara las diapositivas para el comité"</em> $\to$ La IA usa la skill <code>pptx</code> si la instalaste, con títulos de acción y notas de oratoria.</li>
+                <li><strong>Para Presentación Web:</strong> <em>"Crea una presentación interactiva en HTML"</em> $\to$ La IA usa la skill <code>frontend-design</code> si la instalaste. Para instalarlas, sigue la guía <code>.harness/INSTALACION_SKILLS.md</code>.</li>
             </ul>
         </section>
 
