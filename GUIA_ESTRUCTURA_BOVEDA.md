@@ -107,6 +107,22 @@ Los índices son vistas de Obsidian Bases que listan las notas por `tipo`. Está
 | `TPL_IDX_Decisiones.base` | Notas con `tipo: decision` (fecha, tema, estado) | Fecha descendente |
 | `TPL_IDX_Aprendizajes.base` | Notas con `tipo: aprendizaje` (fecha, tema, estado) | Fecha descendente |
 
+## Esqueleto de una bóveda nueva
+
+Al inicializar, el agente copia las plantillas a estas rutas (sin prefijo `TPL_`):
+
+| Plantilla | Ruta en la bóveda |
+|---|---|
+| `TPL_00_Centro_de_Mando.md` | `00_Centro_de_Mando.md` |
+| `TPL_01_Business_Case_y_Objetivo.md` | `01_Direccion_y_Estrategia/Alcance_y_Objetivos/Business_Case_y_Objetivo.md` |
+| `TPL_04_Matriz_de_Cambios_y_Acuerdos.md` | `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Matriz_de_Cambios_y_Acuerdos.md` |
+| `TPL_02_Tablero_Kanban.base` | `02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tablero_Kanban.base` |
+| `TPL_IDX_Sesiones.base` | `02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/Indice_de_Sesiones.base` |
+| `TPL_IDX_Decisiones.base` | `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Indice_de_Decisiones.base` |
+| `TPL_IDX_Aprendizajes.base` | `01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Indice_de_Aprendizajes.base` |
+
+Las carpetas `01_`, `02_` y `03_` traen su `README.md`. Las notas individuales (`TAR_`, sesiones, aprendizajes, contratos) se crean a partir de sus plantillas cuando hacen falta.
+
 Las decisiones principales viven como filas `DEC-NN` en la matriz; `TPL_IDX_Decisiones.base` cubre las notas individuales de decisión cuando existan.
 
 El Centro de Mando (`00_Centro_de_Mando.md`) muestra la sección **Dónde quedé** con la última sesión, la última decisión, la tarea en curso y el último entregable, y enlaza los tres índices.

@@ -18,6 +18,9 @@ INCLUDED_ROOT_FILES = [
     "README.md",
     ".gitignore",
     "LICENSE",
+    "01_Direccion_y_Estrategia/README.md",
+    "02_Ejecucion_y_Seguimiento/README.md",
+    "03_Entregables_Finales/README.md",
 ]
 
 INCLUDED_DIRS = [

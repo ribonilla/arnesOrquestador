@@ -28,7 +28,7 @@ ultimo_repaso: "{{FECHA_Y_HORA}}"
 * **Tarea en curso:** {{TAREA_EN_CURSO}}
 * **Último entregable:** {{ULTIMO_ENTREGABLE}}
 
-**Índices:** [[TPL_IDX_Sesiones.base|Sesiones]] · [[TPL_IDX_Decisiones.base|Decisiones]] · [[TPL_IDX_Aprendizajes.base|Aprendizajes]]
+**Índices:** [[02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/Indice_de_Sesiones.base|Sesiones]] · [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Indice_de_Decisiones.base|Decisiones]] · [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Indice_de_Aprendizajes.base|Aprendizajes]]
 
 ---
 
@@ -56,7 +56,7 @@ ultimo_repaso: "{{FECHA_Y_HORA}}"
 
 * 🏛️ [[01_Direccion_y_Estrategia/Alcance_y_Objetivos/Business_Case_y_Objetivo|01. Estrategia, Alcance y Business Case]]
 * 📋 [[02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tablero_Kanban|02. Tablero Kanban y Flujograma de Fases]]
-* 💡 [[02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/README|03. Sesiones de Ideación y Charlas con IA]]
+* 💡 [[02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/Indice_de_Sesiones|03. Sesiones de Ideación y Charlas con IA]]
 * ⚖️ [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Matriz_de_Cambios_y_Acuerdos|04. Matriz de Decisiones y Trazabilidad Auditable]]
 * 📄 [[03_Entregables_Finales/README|05. Informes Ejecutivos y Entregables]]
-* 🧠 [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/README|06. Banco Zettelkasten de Conocimiento Reutilizable]]
+* 🧠 [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Indice_de_Aprendizajes|06. Banco Zettelkasten de Conocimiento Reutilizable]]

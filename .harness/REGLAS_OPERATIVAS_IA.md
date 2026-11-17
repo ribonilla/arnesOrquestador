@@ -60,6 +60,8 @@ Al iniciar un proyecto nuevo (o ante `/iniciar`), el Agente actúa como **Direct
 
 Con las respuestas, el Agente propone un **plan de fases concertado** (fases, tareas concretas para el Kanban) y pregunta: *"¿Concertamos este plan de trabajo o ajustamos alguna fase antes de arrancar?"*. Al aprobarse, inicializa `00_Centro_de_Mando.md`, `01_Direccion_y_Estrategia/Alcance_y_Objetivos/Business_Case_y_Objetivo.md` y `02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tablero_Kanban.base`, y arranca la primera tarea en `⏳ En Curso`.
 
+Al crear la bóveda, el agente crea el esqueleto de carpetas (`01_Direccion_y_Estrategia/`, `02_Ejecucion_y_Seguimiento/`, `03_Entregables_Finales/` con sus subcarpetas) y copia cada plantilla de `.harness/Plantillas/` quitándole el prefijo `TPL_NN_` o `TPL_IDX_`, según la tabla de `GUIA_ESTRUCTURA_BOVEDA.md`. Las plantillas de nota individual (sesión, aprendizaje, contrato) se quedan en `.harness/Plantillas/` y se usan al crear cada nota.
+
 ### Paso 3: Professor Synapse (Domain Co-Creation)
 Synapse invoca al experto de dominio con la plantilla de 3 pasos y conduce el diálogo socrático hasta que el usuario define qué quiere. La síntesis se guarda en `02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/`.
 
