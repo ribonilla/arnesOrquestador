@@ -24,9 +24,9 @@ estado: "vigente"
 
 ## 🧭 Dónde quedé
 
-* **Última sesión:** [[02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/Sesion_2026-11-17_1632_Plantilla_Limpia_y_Skills|Sesión 2026-11-17 16:32: Plantilla limpia y skills]]
-* **Última decisión:** [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Matriz_de_Cambios_y_Acuerdos|DEC-32]]: bóveda de trabajo en carpeta aparte (`arnes-boveda`).
-* **Tarea en curso:** [[02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tareas/TAR_07_Plantilla_Limpia_y_Skills|TAR_07]]: fases C y D en curso; E y F pendientes.
+* **Última sesión:** [[02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/Sesion_2026-11-17_1849_Fases_C_a_F|Sesión 2026-11-17 18:49: Fases C a F]]
+* **Última decisión:** [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Matriz_de_Cambios_y_Acuerdos|DEC-41]]: dependencias declaradas en `requirements.txt`, sin instalación automática.
+* **Tarea en curso:** [[02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tareas/TAR_07_Plantilla_Limpia_y_Skills|TAR_07]]: fases A a F completadas; pendientes pruebas de motores (Gemini/agy, Codex, Pi, macOS), render de Mermaid en Obsidian y revisión de criterios de Óptimo y Profesional.
 * **Último entregable:** [[03_Entregables_Finales/Flujograma_Orquestador_y_Ciclo_de_Vida|Flujograma de Ciclo de Vida]].
 * **Registro de retiros:** [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Registro_de_Retiros_2026-11-17|Qué se retiró de la plantilla, dónde estaba y cómo recuperarlo]].
 * **Aprendizajes de la sesión:** [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/README|Carpeta de aprendizajes]].
