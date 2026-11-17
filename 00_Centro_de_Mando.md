@@ -23,6 +23,8 @@ ultimo_repaso: "2026-10-29 12:30"
 * **Última decisión:** [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Matriz_de_Cambios_y_Acuerdos|DEC-32]]: bóveda de trabajo en carpeta aparte (`arnes-boveda`).
 * **Tarea en curso:** [[02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tareas/TAR_07_Plantilla_Limpia_y_Skills|TAR_07]]: fases C, D, E y F pendientes.
 * **Último entregable:** [[03_Entregables_Finales/Flujograma_Orquestador_y_Ciclo_de_Vida|Flujograma de Ciclo de Vida]].
+* **Registro de retiros:** [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Registro_de_Retiros_2026-11-17|Qué se retiró de la plantilla, dónde estaba y cómo recuperarlo]].
+* **Aprendizajes de la sesión:** [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/README|Carpeta de aprendizajes]].
 
 ---
 
@@ -88,4 +90,4 @@ ultimo_repaso: "2026-10-29 12:30"
 * 🌐 [[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.html|Curso y Wiki Ejecutiva (Scrollytelling C-Level)]]
 * 📄 [[03_Entregables_Finales/Curso_Wiki_Ejecutivo_Arnes_IA.md|Guía Ejecutiva en Markdown]]
 * 🌐 [[03_Entregables_Finales/Manual_de_Uso_del_Arnes.html|Manual de Uso en HTML]]
-* 📁 [[03_Entregables_Finales/Historico/README|Histórico de Versiones Anteriores (Diffs en Rojo)]]
+* 📁 Histórico de Versiones Anteriores (Diffs en Rojo): carpeta aún no creada.

@@ -54,11 +54,25 @@ Separar la plantilla del arnés de la bóveda viva de desarrollo. La plantilla d
 * **Fase E:** comando `/guardar` con recibo.
 * **Fase F:** `requirements.txt`, `LICENSE` y dependencias.
 * **Pruebas de motores:** Gemini CLI, Codex, Pi y macOS.
-* **Render visual de mermaids en Obsidian:** el usuario lo confirma.
+* **Render visual de mermaids en Obsidian:** confirmado para el Flujograma. Falta confirmar el resto de bloques Mermaid (README y Curso_Wiki).
 * **Manual de uso:** `03_Entregables_Finales/Manual_de_Uso_del_Arnes.html`, líneas ~773-776, mencionan skills eliminadas.
 * **Revisión de cambios:** el hook de revisión pidió consentimiento varias veces por `.obsidian/appearance.json`. Ya se dejó de rastrear.
 
 ---
+
+## Trazabilidad generada
+
+* Aprendizajes (carpeta `01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/`):
+  * [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Aprendizaje_2026-11-17_1638_Skills_de_Terceros_Fuera_del_Repo|Skills de terceros fuera del repositorio]]
+  * [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Aprendizaje_2026-11-17_1638_git_rm_Borra_Del_Disco|git rm borra también del disco]]
+  * [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Aprendizaje_2026-11-17_1638_Validar_Mermaid_Sintaxis_No_Render|Validar Mermaid confirma sintaxis, no render]]
+  * [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Aprendizaje_2026-11-17_1638_Instalacion_Skills_Multi_Motor|Instalación de skills para varios motores]]
+  * [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Aprendizaje_2026-11-17_1638_Configuracion_Local_No_Se_Versiona|La configuración local de Obsidian no se versiona]]
+  * [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Aprendizaje_2026-11-17_1638_Verificar_Reportes_de_Subagentes|Verificar reportes de subagentes antes de aceptarlos]]
+* Prompts (carpeta `01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Prompts/`):
+  * [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Prompts/PROMPT_02_Delegacion_Por_Fases|PROMPT_02: Delegación por fases]]
+  * [[01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/Prompts/PROMPT_03_Prueba_De_Instalacion_Skills|PROMPT_03: Prueba de instalación de skills]]
+* Registro: [[01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Registro_de_Retiros_2026-11-17|Registro de retiros y restauraciones]]
 
 ## 🚀 Siguiente Paso
 Completar la Fase C (niveles de logro y `TPL_07_Contrato_de_Logro.md`) y corregir las líneas del manual que mencionan skills eliminadas. Ver [[02_Ejecucion_y_Seguimiento/Kanban_y_Tareas/Tareas/TAR_07_Plantilla_Limpia_y_Skills|TAR_07]].
