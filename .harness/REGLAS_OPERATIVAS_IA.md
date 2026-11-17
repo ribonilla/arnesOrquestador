@@ -10,7 +10,9 @@ Este documento es el cerebro de ejecución para cualquier Agente o LLM (Gemini, 
 1. **Bootstrap:** si no existe `00_Centro_de_Mando.md`, arranca el diagnóstico.
 2. **Diagnóstico:** 3 preguntas (sponsor, propósito, restricciones).
 3. **Professor Synapse:** diálogo socrático hasta que el usuario define qué quiere.
-4. **Contrato de Logro:** el usuario elige el nivel de "listo". *(Plantilla pendiente: `TPL_07_Contrato_de_Logro.md`, Fase C.)*
+4. **Contrato de Logro:** Synapse propone los niveles (Óptimo, Profesional, Retador) con una sola pregunta.
+   La persona elige el nivel de "listo" y se guarda en la tarea (`nivel_logro`).
+   Plantilla: [TPL_07_Contrato_de_Logro.md](Plantillas/TPL_07_Contrato_de_Logro.md).
 5. **Especialista de dominio:** construye.
 6. **Gauntlet:** Revisor Adversarial con el listón del nivel elegido (entre 2 y 4 rondas). Detalle en [PLANTILLA_GAUNTLET_PROMPT.md](templates/PLANTILLA_GAUNTLET_PROMPT.md).
 7. **Persistir y /guardar:** recibo de lo guardado.

@@ -1,5 +1,7 @@
 # 🛡️ PLANTILLA CANÓNICA: PROTOCOLO GAUNTLET LOOP
-## Estructura de 4 Bloques: [TAREA] + [MÉTODO] + [LISTÓN] + [ENTREGABLE]
+## Estructura de 4 Bloques: [TAREA] + [MÉTODO] + [LISTÓN OBSERVABLE] + [ENTREGABLE]
+
+El listón depende del nivel de logro aprobado en TPL_07_Contrato_de_Logro.md.
 
 Esta plantilla estandariza el llamado exacto y riguroso para la ejecución adversarial en tareas críticas del arnés. Se prohíben términos analógicos débiles; el rol evaluador opera formalmente como **Revisor Adversarial (*Adversarial Auditor / Harsh Critic*)**.
 
@@ -29,12 +31,27 @@ Opera bajo una disociación estricta de dos roles técnicos independientes:
    - Auditor técnico e independiente que NO participó en la construcción del artefacto.
    - Su único objetivo es buscar fallos técnicos, numéricos y de formato a propósito, como si su incentivo fuera rechazar y tumbar el entregable.
    - TIENE PROHIBIDO APROBAR POR APARIENCIA: No evalúa texto superficial. En hojas de cálculo debe ejecutar scripts de evaluación dinámica en frío; en presentaciones debe auditar jerarquía y contenedores; en documentos debe cotejar trazabilidad total de fuentes.
-   - El bucle repite internamente: si el Revisor Adversarial detecta un fallo, el Constructor refactoriza de inmediato (entre 2 y 4 rondas de corrección interna antes de escalar al usuario).
+   - El bucle repite internamente: si el Revisor Adversarial detecta un fallo, el Constructor refactoriza de inmediato (mínimo 2, máximo 4 rondas de corrección interna antes de escalar al usuario; Óptimo: 2).
 
 [LISTÓN OBSERVABLE]:
 Un entregable definitivo que firmaría sin tocar una sola coma el directivo o auditor más exigente e implacable de la organización.
-El listón se fija con el nivel elegido en el Contrato de Logro (paso 4 de la secuencia; plantilla pendiente, Fase C).
+Nivel de logro aprobado: {NIVEL_LOGRO} (fijado en TPL_07_Contrato_de_Logro.md, paso 4 de la secuencia).
 Criterios binarios de rechazo inmediato (Pasa / No Pasa):
+{CRITERIOS_BINARIOS}
+
+[ENTREGABLE]:
+1. Artefacto final aprobado en `03_Entregables_Finales/{NOMBRE_ARCHIVO}`.
+2. Certificado de auditoría y dictamen de aprobación asentado en `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/`.
+3. Fallas y lecciones del ciclo registradas en `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Matriz_de_Cambios_y_Acuerdos.md` o en `01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/`.
+================================================================================
+```
+
+## 🎚️ Preset Retador (criterios por tipo de archivo)
+
+Listón del nivel **Retador**. Se referencia desde TPL_07_Contrato_de_Logro.md. Los niveles Óptimo y Profesional usan los criterios de TPL_07.
+
+Criterios binarios de rechazo inmediato (Pasa / No Pasa):
+
 - Hojas de Cálculo (.xlsx): Cero discrepancias numéricas contra el modelo formal. Cero números fijos quemados en celdas de cálculo. Cero violaciones de aforos físicos o techos de capacidad. Auditoría activa aprobada con `.harness/tools/audit_excel.py`.
 - Tablas y cruces (.xlsx, .csv, bases de datos), Gate 0 de Datos antes de cualquier unión, cruce o cálculo relacional: (1) perfilar cardinalidad y verificar unicidad de la PK candidata; si no hay PK simple, identificar la clave compuesta mínima (script `.harness/tools/audit_table_cardinality.py`); (2) declarar la relación 1:1, 1:N o N:M; queda prohibido unir por la clave del lado "Muchos" sin regla de desambiguación (agrupación previa, filtro temporal o clave compuesta); (3) alinear la granularidad del entregable: entidad agregada o transaccional.
 - Presentaciones (.pptx): Piso tipográfico absoluto de 16pt en cuerpo de texto, celdas y notas directivas. Textos 100% encapsulados en formas nativas (cero cuadros flotantes desalineados). Auditoría activa aprobada con `.harness/tools/audit_pptx_fonts.py`.
@@ -45,13 +62,6 @@ Criterios binarios de rechazo inmediato (Pasa / No Pasa):
   * **Histórico y Diff:** Todo histórico vive en Markdown en `03_Entregables_Finales/Historico/` con marcado explícito de cambios en rojo (<span style="color:#DC2626;">). La versión vigente en Markdown encabeza con `🟢 VERSIÓN VIGENTE - Iteración N.N` e incluye una Tabla de Historial de Iteraciones (fecha, solicitante, qué cambió y justificación). Alternativa al rojo: alertas `[!WARNING]`.
   * **Descargo de Auditoría Humana Obligatorio:** Todo entregable en chat, Word, Markdown y hojas de cálculo cierra con este aviso, sin modificarlo:
   > ⚠️ **Aviso de Auditoría:** *Este entregable ha sido verificado dinámicamente por el arnés, pero no reemplaza el criterio experto. Es indispensable que el usuario revise supuestos, valores y fórmulas clave antes de su presentación o toma de decisiones. En caso de discrepancia, solicite una corrección de escenario.*
-
-[ENTREGABLE]:
-1. Artefacto final aprobado en `03_Entregables_Finales/{NOMBRE_ARCHIVO}`.
-2. Certificado de auditoría y dictamen de aprobación asentado en `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/`.
-3. Fallas y lecciones del ciclo registradas en `01_Direccion_y_Estrategia/Decisiones_y_Acuerdos/Matriz_de_Cambios_y_Acuerdos.md` o en `01_Direccion_y_Estrategia/Aprendizajes_y_Conocimiento/`.
-================================================================================
-```
 
 ---
 

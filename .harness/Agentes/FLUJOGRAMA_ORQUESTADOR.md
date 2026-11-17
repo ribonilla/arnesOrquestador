@@ -26,7 +26,7 @@ flowchart TD
     S3 -- Contenido maduro --> S4
 
     %% PASO 4: CONTRATO DE LOGRO
-    S4["Paso 4 · Contrato de Logro<br/>El usuario elige el nivel de listo<br/>Plantilla pendiente: TPL_07, Fase C"]
+    S4["Paso 4 · Contrato de Logro<br/>Synapse propone niveles; la persona elige<br/>Plantilla: TPL_07_Contrato_de_Logro"]
     S4 --> ScopeCheck{¿Entra en el alcance del proyecto?}
     ScopeCheck -- Desviación de alcance --> ScopeAlert[/Alerta de alcance: ¿ajustamos o descartamos?/]
     ScopeAlert --> S4
@@ -70,7 +70,7 @@ flowchart TD
    * La síntesis del debate se guarda automáticamente en `02_Ejecucion_y_Seguimiento/Sesiones_y_Borradores/`.
 
 ### Fase C: Contrato de Logro, control de alcance y enrutamiento (pasos 4 y 5)
-1. **Contrato de Logro (paso 4):** El usuario elige el nivel de "listo". La plantilla `TPL_07_Contrato_de_Logro.md` está pendiente de Fase C.
+1. **Contrato de Logro (paso 4):** Synapse propone los niveles y la persona elige el de "listo"; el nivel se guarda en la tarea. Plantilla: `TPL_07_Contrato_de_Logro.md`.
 2. **Verificación contra Restricciones:** Valida que cada nueva instrucción no rompa los límites de `01_Direccion_y_Estrategia/Alcance_y_Objetivos/Business_Case_y_Objetivo.md`.
 3. **Selección del Especialista de Formato (paso 5):** Delega la construcción del archivo a Word, Excel, PPTX o HTML.
 
