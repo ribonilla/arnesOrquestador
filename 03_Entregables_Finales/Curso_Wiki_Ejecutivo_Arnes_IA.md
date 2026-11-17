@@ -194,10 +194,10 @@ Lo que el directivo experimenta en el frente de trabajo, en este orden:
 1. **Bootstrap:** el arnés se presenta y comprueba si la bóveda ya está inicializada.
 2. **Diagnóstico:** 3 preguntas (Sponsor y audiencia, propósito de negocio, restricciones o plazos).
 3. **Professor Synapse:** diálogo socrático (preguntas guiadas) hasta que defines qué quieres.
-4. **Contrato de Logro (pendiente):** acuerdas el nivel de "listo". La plantilla aún no existe.
+4. **Contrato de Logro:** acuerdas el nivel de "listo" (Óptimo, Profesional o Retador) con la plantilla `TPL_07_Contrato_de_Logro.md`.
 5. **Especialista de dominio:** construye el entregable.
 6. **Gauntlet:** el Revisor Adversarial audita el borrador con el listón acordado; entre 2 y 4 rondas (mínimo 2, máximo 4).
-7. **Persistir y /guardar (pendiente):** guarda los archivos y entrega un recibo. El comando aún no existe.
+7. **Persistir y /guardar:** guarda los archivos y entrega un recibo verificable.
 8. **Aprendizaje:** se registra una nota atómica (una idea por nota) con lo aprendido.
 
 ---
