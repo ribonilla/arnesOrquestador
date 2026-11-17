@@ -15,7 +15,7 @@ Instalar las skills mejora el resultado, pero no es obligatorio.
 
 ## Paso 1: prerrequisitos
 
-Necesitas **Node.js** (que incluye `npx`) y **Python**. Abre una terminal y sigue el sistema operativo que tengas.
+Necesitas **Node.js** (que incluye `npx`, un programa que descarga y ejecuta herramientas de Node desde una sola línea) y **Python**. Abre una terminal y sigue el sistema operativo que tengas.
 
 **Windows (PowerShell):**
 
@@ -32,8 +32,6 @@ Cierra la terminal y ábrela de nuevo.
 brew install node python
 ```
 
-*Esta parte no la probamos en macOS.*
-
 Verifica que todo quedó instalado. Deben aparecer tres números de versión:
 
 ```bash
@@ -46,7 +44,7 @@ Si alguno no aparece, repite su instalación antes de seguir.
 
 ## Paso 2: elige tu herramienta
 
-Usa el identificador de la tabla en el comando del paso 3.
+Usa el identificador de la tabla en el comando del paso 3. El identificador es el valor de la opción `-a`, que indica en qué herramienta de IA se instala la skill.
 
 | Herramienta | Identificador (`-a`) | Estado de la prueba |
 |---|---|---|
@@ -59,24 +57,30 @@ Usa el identificador de la tabla en el comando del paso 3.
 
 ## Paso 3: instalar las skills
 
-Abre la terminal **dentro de la carpeta de tu proyecto** y ejecuta los dos comandos, cambiando `TU-HERRAMIENTA` por el identificador del paso 2.
+Abre la terminal **dentro de la carpeta de tu proyecto** y ejecuta los dos comandos, cambiando `TU-HERRAMIENTA` por el identificador del paso 2. La opción `--copy` hace que las skills se copien dentro de tu proyecto.
 
 **Documentos Word, Excel, PowerPoint, PDF y diseño (recomendada):**
 
+Revisa que el nombre del repositorio sea `anthropics/skills` o `kepano/obsidian-skills`. Si la herramienta te pide confirmación, acepta solo si la lista corresponde a esta guía.
+
 ```bash
-npx skills add anthropics/skills -a TU-HERRAMIENTA -s docx -s pdf -s pptx -s xlsx -s frontend-design --copy -y
+npx skills add anthropics/skills -a TU-HERRAMIENTA -s docx -s pdf -s pptx -s xlsx -s frontend-design --copy
 ```
 
 **Obsidian (recomendada si usas una bóveda de Obsidian):**
 
+Revisa que el nombre del repositorio sea `anthropics/skills` o `kepano/obsidian-skills`. Si la herramienta te pide confirmación, acepta solo si la lista corresponde a esta guía.
+
 ```bash
-npx skills add kepano/obsidian-skills -a TU-HERRAMIENTA -s obsidian-markdown --copy -y
+npx skills add kepano/obsidian-skills -a TU-HERRAMIENTA -s obsidian-markdown --copy
 ```
 
 Ejemplo para Antigravity:
 
+Revisa que el nombre del repositorio sea `anthropics/skills` o `kepano/obsidian-skills`. Si la herramienta te pide confirmación, acepta solo si la lista corresponde a esta guía.
+
 ```bash
-npx skills add anthropics/skills -a antigravity -s docx -s pdf -s pptx -s xlsx -s frontend-design --copy -y
+npx skills add anthropics/skills -a antigravity -s docx -s pdf -s pptx -s xlsx -s frontend-design --copy
 ```
 
 Las skills quedan dentro de tu carpeta de proyecto, no en el repositorio del arnés.
@@ -99,8 +103,10 @@ Deben aparecer `docx`, `pdf`, `pptx`, `xlsx`, `frontend-design` y `obsidian-mark
 
 Probado en Windows con Node 22 y Python 3.12, en una carpeta temporal aislada:
 
-- `npx skills add` con varios motores a la vez, usando `--copy`: funciona.
+- `npx skills add` con varios motores a la vez, usando `--copy`: funciona. Esas pruebas se hicieron con la opción `-y` (que acepta todo sin preguntar); la versión sin `-y` que aparece arriba **no se ha probado**.
 - OpenCode lista las skills instaladas en el proyecto.
 - `npx skills list` muestra las skills instaladas.
 
-Pendiente: uso real de las skills dentro de Antigravity, Gemini CLI, Codex y Pi, y prueba en macOS.
+Pendiente: uso real de las skills dentro de Antigravity, Gemini CLI, Codex y Pi.
+
+macOS: **no se probó** ni la instalación de Node y Python con Homebrew ni los comandos de este documento.

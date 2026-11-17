@@ -49,4 +49,15 @@ Bienvenido a tu Bóveda de Trabajo con Inteligencia Artificial. Esta estructura 
 ### *"¿Cómo veo el flujograma metodológico de lo que está haciendo el arnés?"*
 Puedes preguntarle directamente al agente: *"Dime qué estás haciendo"* o consultar el flujograma visual en:
 👉 **`[.harness/Agentes/FLUJOGRAMA_ORQUESTADOR.md](.harness/Agentes/FLUJOGRAMA_ORQUESTADOR.md)`**.
-El arnés opera un ciclo transparente: **Diagnóstico $\to$ Plan Concertado $\to$ Especialista de Dominio $\to$ Compuerta Gauntlet (Calidad) $\to$ Auto-Escritura $\to$ Aprendizajes**.
+El arnés sigue una secuencia única de 8 pasos:
+
+1. **Bootstrap:** arranque del arnés en la primera conversación de una carpeta de trabajo.
+2. **Diagnóstico:** 3 preguntas (sponsor, propósito de negocio y restricciones).
+3. **Professor Synapse:** diálogo guiado (socrático: con preguntas) hasta que defines qué quieres.
+4. **Contrato de Logro:** eliges el nivel de "listo" (*pendiente: la plantilla aún no existe*).
+5. **Especialista de dominio:** construye el entregable.
+6. **Gauntlet:** revisión adversarial (un revisor independiente que busca fallas), con máximo 2 rondas.
+7. **Persistir y /guardar:** guarda el resultado y entrega un recibo (*pendiente: el comando aún no existe*).
+8. **Aprendizaje:** se crea una nota atómica (una idea por nota).
+
+Flujo visual: `.harness/Agentes/FLUJOGRAMA_ORQUESTADOR.md`.
